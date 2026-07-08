@@ -1,0 +1,399 @@
+.topbar {
+  background: var(--color-blue);
+  height: 54px;
+
+  @include small-tablet {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__phone {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--color-cream);
+    text-decoration: none;
+    line-height: 1.02;
+
+    @include small-tablet {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__social {
+    flex-shrink: 0;
+    transition: all 0.3s ease-in-out;
+    width: 34px;
+    height: 34px;
+    background-size: cover;
+
+    &:nth-child(1) {
+      background-image: url(../img/header-social-1.svg);
+
+
+    }
+
+    &:nth-child(2) {
+      background-image: url(../img/header-social-2.svg);
+
+
+    }
+
+    &:nth-child(3) {
+      background-image: url(../img/header-social-3.svg);
+
+
+    }
+
+    &:nth-child(4) {
+      background-image: url(../img/header-social-4.svg);
+
+
+    }
+
+    &:nth-child(5) {
+      background-image: url(../img/header-social-5.svg);
+
+
+    }
+
+    @include small-tablet {
+      width: 34px;
+      height: 34px;
+
+
+    }
+
+
+  }
+}
+
+.header {
+  background: var(--color-white);
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 103px;
+    gap: 40px;
+
+    @include laptop {
+      gap: 28px;
+    }
+
+    @include medium-desktop {
+      gap: 20px;
+    }
+
+    @include tablet {
+      gap: 24px;
+    }
+
+    @include small-tablet {
+      flex-wrap: wrap;
+      height: auto;
+      min-height: 60px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      gap: 10px;
+    }
+  }
+
+  &__logo {
+    font-family: var(--font-angst);
+    font-size: 48px;
+    font-weight: 400;
+    color: var(--color-red);
+    line-height: 1.02;
+    text-decoration: none;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      font-family: var(--font-family);
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 102%;
+      letter-spacing: 1.12em;
+      text-transform: uppercase;
+      color: #e93922;
+
+      @include laptop {
+        letter-spacing: 0.84em;
+        font-size: 18px;
+      }
+
+      @include small-tablet {
+
+        font-size: 16px;
+
+
+      }
+
+      @include mobile {
+        font-size: 13px;
+        letter-spacing: 0.48em;
+      }
+    }
+
+    @include laptop {
+      font-size: 36px;
+    }
+
+    @include tablet {
+      font-size: 36px;
+    }
+
+    @include small-tablet {
+      font-size: 32px;
+      flex: 1;
+      flex-shrink: 1;
+    }
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @include laptop {
+      gap: 24px;
+    }
+
+    @include medium-desktop {
+      gap: 16px;
+    }
+
+    @include tablet {
+      gap: 20px;
+    }
+
+    @include small-tablet {
+      position: absolute;
+      top: 115px;
+      left: 0;
+      order: 3;
+      height: 100vh;
+      width: 100%;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 10px;
+      z-index: 10;
+      background-color: #fff;
+
+      &.menu--active {
+        display: flex;
+      }
+    }
+  }
+
+  &__nav-link {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--color-dark);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s;
+
+    @include laptop {
+      font-size: 20px;
+    }
+
+    @include medium-desktop {
+      font-size: 18px;
+    }
+
+    @include tablet {
+      font-size: 18px;
+    }
+
+    @include small-tablet {
+      font-size: 20px;
+      white-space: normal;
+      text-align: center;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
+
+    &:hover {
+      color: var(--color-blue);
+    }
+  }
+
+  &__call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 67px;
+    padding: 10px 30px;
+    background: none;
+    border: 3px solid var(--color-blue);
+    border-radius: 50px;
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-blue);
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: opacity 0.2s;
+
+    @include laptop {
+      font-size: 20px;
+      height: 56px;
+      padding: 8px 24px;
+    }
+
+    @include medium-desktop {
+      font-size: 18px;
+      height: 50px;
+      padding: 8px 18px;
+    }
+
+    @include tablet {
+      font-size: 18px;
+      height: 52px;
+      padding: 8px 20px;
+    }
+
+    &:hover {
+      opacity: 0.75;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include small-tablet {
+        display: inline-flex;
+        font-size: 18px;
+        height: 52px;
+        padding: 8px 28px;
+        margin-top: 50px;
+        width: 100%;
+      }
+    }
+  }
+
+  &__cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 67px;
+    height: 67px;
+    border: 3px solid var(--color-blue);
+    border-radius: 50%;
+    color: var(--color-blue);
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+
+    @include laptop {
+      width: 56px;
+      height: 56px;
+    }
+
+    @include medium-desktop {
+      width: 50px;
+      height: 50px;
+    }
+
+    @include tablet {
+      width: 52px;
+      height: 52px;
+    }
+
+    @include small-tablet {
+      width: 44px;
+      height: 44px;
+
+      svg {
+        width: 22px;
+        height: 20px;
+      }
+    }
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  &__count {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--color-blue);
+    border-radius: 100%;
+    background-color: #fff;
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-blue);
+
+    &.is-empty {
+      display: none;
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include small-tablet {
+      order: 2;
+      flex-shrink: 0;
+
+      .header__call-btn {
+        display: none;
+      }
+    }
+  }
+}
+
+.burger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/menu.svg);
+
+  &--active {
+    background-image: url(../img/close.svg);
+  }
+
+  @include small-tablet {
+    display: block;
+  }
+}

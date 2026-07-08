@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+
+    <main class="main">
+
+      <!-- BANNER -->
+      <section class="cat-banner">
+        <div class="cat-banner__grass" aria-hidden="true">
+          <img src="img/catalog-grass.webp" alt="" width="1920" height="469">
+        </div>
+        <div class="container cat-banner__inner">
+          <h1 class="cat-banner__title">Статьи</h1>
+        </div>
+      </section>
+
+      <!-- ARTICLES -->
+      <section class="articles-page">
+        <div class="container">
+
+          <!-- CONTROLS -->
+          <div class="catalog-controls articles-page__controls">
+
+            <div class="catalog-sort">
+              <button class="catalog-sort__btn" type="button" aria-expanded="false" aria-haspopup="listbox">
+                <span class="catalog-sort__current">Все результаты</span>
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 8L11 14L17 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <ul class="catalog-sort__dropdown" role="listbox">
+                <li class="catalog-sort__option is-selected" data-value="all">Все результаты</li>
+                <li class="catalog-sort__option" data-value="new">Новые</li>
+                <li class="catalog-sort__option" data-value="reviews">Обзоры</li>
+                <li class="catalog-sort__option" data-value="guides">Инструкции</li>
+              </ul>
+            </div>
+
+            <label class="catalog-search">
+              <input class="catalog-search__input" type="text" placeholder="Поиск">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9.5" cy="9.5" r="6.5" stroke="currentColor" stroke-width="2"/><path d="M14 14L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </label>
+
+          </div>
+
+          <!-- ARTICLES GRID -->
+          <div class="articles-page__grid">
+
+            <a href="#" class="article-card">
+              <div class="article-card__img">
+                <img src="img/articles-1.webp" alt="" width="560" height="360">
+              </div>
+              <div class="article-card__body">
+                <time class="article-card__date" datetime="2026-03-03">3 марта 2026 г.</time>
+                <h2 class="article-card__title">Название 2 строки макс</h2>
+                <p class="article-card__text">Если вы всё ещё сомневаетесь, какой лосьон выбрать, или хотите узнать, как начать — просто напишите. Мы на связи, чтобы вы наконец увидели первые новые волосы уже через 2.5 месяца.</p>
+                <span class="article-card__link">Читать подробнее</span>
+              </div>
+            </a>
+
+            <a href="#" class="article-card">
+              <div class="article-card__img">
+                <img src="img/articles-1.webp" alt="" width="560" height="360">
+              </div>
+              <div class="article-card__body">
+                <time class="article-card__date" datetime="2026-03-03">3 марта 2026 г.</time>
+                <h2 class="article-card__title">Название 2 строки макс</h2>
+                <p class="article-card__text">Если вы всё ещё сомневаетесь, какой лосьон выбрать, или хотите узнать, как начать — просто напишите. Мы на связи, чтобы вы наконец увидели первые новые волосы уже через 2.5 месяца.</p>
+                <span class="article-card__link">Читать подробнее</span>
+              </div>
+            </a>
+
+            <a href="#" class="article-card">
+              <div class="article-card__img">
+                <img src="img/articles-1.webp" alt="" width="560" height="360">
+              </div>
+              <div class="article-card__body">
+                <time class="article-card__date" datetime="2026-03-03">3 марта 2026 г.</time>
+                <h2 class="article-card__title">Название 2 строки макс</h2>
+                <p class="article-card__text">Если вы всё ещё сомневаетесь, какой лосьон выбрать, или хотите узнать, как начать — просто напишите. Мы на связи, чтобы вы наконец увидели первые новые волосы уже через 2.5 месяца.</p>
+                <span class="article-card__link">Читать подробнее</span>
+              </div>
+            </a>
+
+            <a href="#" class="article-card">
+              <div class="article-card__img">
+                <img src="img/articles-1.webp" alt="" width="560" height="360">
+              </div>
+              <div class="article-card__body">
+                <time class="article-card__date" datetime="2026-03-03">3 марта 2026 г.</time>
+                <h2 class="article-card__title">Название 2 строки макс</h2>
+                <p class="article-card__text">Если вы всё ещё сомневаетесь, какой лосьон выбрать, или хотите узнать, как начать — просто напишите. Мы на связи, чтобы вы наконец увидели первые новые волосы уже через 2.5 месяца.</p>
+                <span class="article-card__link">Читать подробнее</span>
+              </div>
+            </a>
+
+            <a href="#" class="article-card">
+              <div class="article-card__img">
+                <img src="img/articles-1.webp" alt="" width="560" height="360">
+              </div>
+              <div class="article-card__body">
+                <time class="article-card__date" datetime="2026-03-03">3 марта 2026 г.</time>
+                <h2 class="article-card__title">Название 2 строки макс</h2>
+                <p class="article-card__text">Если вы всё ещё сомневаетесь, какой лосьон выбрать, или хотите узнать, как начать — просто напишите. Мы на связи, чтобы вы наконец увидели первые новые волосы уже через 2.5 месяца.</p>
+                <span class="article-card__link">Читать подробнее</span>
+              </div>
+            </a>
+
+            <a href="#" class="article-card">
+              <div class="article-card__img">
+                <img src="img/articles-1.webp" alt="" width="560" height="360">
+              </div>
+              <div class="article-card__body">
+                <time class="article-card__date" datetime="2026-03-03">3 марта 2026 г.</time>
+                <h2 class="article-card__title">Название 2 строки макс</h2>
+                <p class="article-card__text">Если вы всё ещё сомневаетесь, какой лосьон выбрать, или хотите узнать, как начать — просто напишите. Мы на связи, чтобы вы наконец увидели первые новые волосы уже через 2.5 месяца.</p>
+                <span class="article-card__link">Читать подробнее</span>
+              </div>
+            </a>
+
+            <a href="#" class="article-card">
+              <div class="article-card__img">
+                <img src="img/articles-1.webp" alt="" width="560" height="360">
+              </div>
+              <div class="article-card__body">
+                <time class="article-card__date" datetime="2026-03-03">3 марта 2026 г.</time>
+                <h2 class="article-card__title">Название 2 строки макс</h2>
+                <p class="article-card__text">Если вы всё ещё сомневаетесь, какой лосьон выбрать, или хотите узнать, как начать — просто напишите. Мы на связи, чтобы вы наконец увидели первые новые волосы уже через 2.5 месяца.</p>
+                <span class="article-card__link">Читать подробнее</span>
+              </div>
+            </a>
+
+            <a href="#" class="article-card">
+              <div class="article-card__img">
+                <img src="img/articles-1.webp" alt="" width="560" height="360">
+              </div>
+              <div class="article-card__body">
+                <time class="article-card__date" datetime="2026-03-03">3 марта 2026 г.</time>
+                <h2 class="article-card__title">Название 2 строки макс</h2>
+                <p class="article-card__text">Если вы всё ещё сомневаетесь, какой лосьон выбрать, или хотите узнать, как начать — просто напишите. Мы на связи, чтобы вы наконец увидели первые новые волосы уже через 2.5 месяца.</p>
+                <span class="article-card__link">Читать подробнее</span>
+              </div>
+            </a>
+
+            <a href="#" class="article-card">
+              <div class="article-card__img">
+                <img src="img/articles-1.webp" alt="" width="560" height="360">
+              </div>
+              <div class="article-card__body">
+                <time class="article-card__date" datetime="2026-03-03">3 марта 2026 г.</time>
+                <h2 class="article-card__title">Название 2 строки макс</h2>
+                <p class="article-card__text">Если вы всё ещё сомневаетесь, какой лосьон выбрать, или хотите узнать, как начать — просто напишите. Мы на связи, чтобы вы наконец увидели первые новые волосы уже через 2.5 месяца.</p>
+                <span class="article-card__link">Читать подробнее</span>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- PAGINATION -->
+          <div class="catalog-pagination">
+            <button class="pagination-btn pagination-btn--arrow" aria-label="Предыдущая страница">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 5L9 12L15 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="pagination-pages">
+              <button class="pagination-btn pagination-btn--active">1</button>
+              <button class="pagination-btn">2</button>
+              <button class="pagination-btn">3</button>
+              <button class="pagination-btn pagination-btn--dots">...123</button>
+            </div>
+            <button class="pagination-btn pagination-btn--arrow" aria-label="Следующая страница">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 5L15 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+.why {
+  margin-bottom: 140px;
+
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
+  @include small-tablet {
+    margin-bottom: 60px;
+  }
+
+  &__title {
+    font-family: var(--font-family);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 95%;
+    text-transform: uppercase;
+    color: var(--color-dark);
+    margin: 0 0 60px;
+
+    @include laptop {
+      font-size: 40px;
+    }
+
+    @include medium-desktop {
+      font-size: 36px;
+    }
+
+    @include tablet {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    @include small-tablet {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+.why-card {
+  background: var(--color-white);
+  border-radius: 40px;
+  padding: 25px;
+  min-height: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  @include medium-desktop {
+    min-height: 406px;
+  }
+
+  @include tablet {
+    min-height: 420px;
+  }
+
+  @include small-tablet {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  &__title {
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 109%;
+    text-transform: uppercase;
+    color: var(--color-dark);
+    margin: 0;
+    align-self: stretch;
+
+
+    @include laptop {
+      font-size: 20px;
+    }
+
+    @include small-tablet {
+      font-size: 20px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__img {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+
+
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+
+      @include mobile {
+        height: 120px;
+      }
+
+    }
+  }
+
+  &__desc {
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--color-dark);
+    line-height: 1.02;
+    margin: 0;
+
+    @include laptop {
+      font-size: 16px;
+    }
+
+    @include small-tablet {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}

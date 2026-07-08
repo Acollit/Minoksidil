@@ -1,0 +1,361 @@
+.footer {
+  background: var(--color-white);
+  padding: 60px 0 50px;
+
+  @include tablet {
+    padding: 50px 0 40px;
+  }
+
+  @include small-tablet {
+    padding: 40px 0 30px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 110px;
+
+    @include big-desktop {
+      gap: 80px;
+    }
+
+    @include laptop {
+      gap: 60px;
+    }
+
+    @include medium-desktop {
+      gap: 40px;
+    }
+
+    @include tablet {
+      gap: 60px;
+    }
+
+    @include small-tablet {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+
+  &__brand {
+    flex: 0 0 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 165px;
+
+    @include medium-desktop {
+      flex: 0 0 260px;
+      gap: 100px;
+    }
+
+    @include tablet {
+      flex: 0 0 220px;
+      gap: 60px;
+    }
+
+    @include small-tablet {
+      flex: none;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      width: 100%;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+  }
+
+  &__logo {
+    font-family: var(--font-angst);
+    font-size: 48px;
+    font-weight: 400;
+    color: var(--color-red);
+    line-height: 1.02;
+    text-decoration: none;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      font-family: var(--font-family);
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 102%;
+      letter-spacing: 1.12em;
+      text-transform: uppercase;
+      color: #e93922;
+
+      @include laptop {
+        letter-spacing: 0.84em;
+        font-size: 18px;
+      }
+
+      @include small-tablet {
+
+        font-size: 16px;
+
+
+      }
+
+      @include mobile {
+        font-size: 13px;
+        letter-spacing: 0.48em;
+      }
+    }
+
+    @include laptop {
+      font-size: 36px;
+    }
+
+    @include tablet {
+      font-size: 36px;
+    }
+
+    @include small-tablet {
+      font-size: 32px;
+      flex: 1;
+      flex-shrink: 1;
+    }
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__social {
+
+    flex-shrink: 0;
+    transition: all 0.3s ease-in-out;
+    width: 34px;
+    height: 34px;
+    background-size: cover;
+
+    &:nth-child(1) {
+      background-image: url(../img/social-1.svg);
+
+
+    }
+
+    &:nth-child(2) {
+      background-image: url(../img/social-2.svg);
+
+    }
+
+    &:nth-child(3) {
+      background-image: url(../img/social-3.svg);
+
+    }
+
+    &:nth-child(4) {
+      background-image: url(../img/social-4.svg);
+
+
+    }
+
+    &:nth-child(5) {
+      background-image: url(../img/social-5.svg);
+
+
+    }
+  }
+
+  &__cols {
+    display: flex;
+    gap: 214px;
+    flex: 1;
+
+    @include big-desktop {
+      gap: 120px;
+    }
+
+    @include laptop {
+      gap: 80px;
+      justify-content: space-between;
+    }
+
+    @include medium-desktop {
+      gap: 40px;
+    }
+
+    @include tablet {
+      gap: 40px;
+    }
+
+    @include small-tablet {
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+
+    @include small-tablet {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__col-title {
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--color-dark);
+    line-height: 1.02;
+    margin: 0 0 30px;
+
+    @include medium-desktop {
+      font-size: 22px;
+    }
+
+    @include tablet {
+      font-size: 20px;
+    }
+
+    @include small-tablet {
+      margin-bottom: 16px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  &__nav,
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__nav-link,
+  &__contacts-link {
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--color-dark);
+    text-decoration: none;
+    line-height: 1.02;
+    transition: color 0.2s;
+
+    @include medium-desktop {
+      font-size: 18px;
+    }
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include small-tablet {
+      text-align: center;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: var(--color-blue);
+    }
+  }
+
+  &__map {
+
+    border-radius: 40px;
+    overflow: hidden;
+    height: 263px;
+
+    iframe {
+      scale: 1.01;
+    }
+
+    @include laptop {
+      max-width: 300px;
+      width: 100%;
+    }
+
+    @include tablet {}
+
+    @include small-tablet {
+
+      width: 100%;
+      height: 220px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.footer-bottom {
+  background: var(--color-green);
+  height: 64px;
+
+  @include small-tablet {
+    height: auto;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    height: 100%;
+
+    @include tablet {
+      gap: 40px;
+    }
+
+    @include small-tablet {
+      flex-wrap: wrap;
+      gap: 10px 30px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+  }
+
+  &__link {
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--color-white);
+    text-decoration: none;
+    line-height: 1.02;
+    transition: opacity 0.2s;
+
+    @include laptop {
+      font-size: 20px;
+    }
+
+    @include tablet {
+      font-size: 18px;
+    }
+
+    @include small-tablet {
+      font-size: 16px;
+      text-align: center;
+      width: 100%;
+    }
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}

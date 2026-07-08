@@ -1,0 +1,166 @@
+<?php
+/**
+ * Template Name: Доставка и оплата
+ */
+defined('ABSPATH') || exit;
+get_header();
+
+$privacy  = get_option('minoksidil_privacy_url', '#');
+$consent  = get_option('minoksidil_consent_url', '#');
+$schedule = get_option('minoksidil_schedule', 'Пн-Пт с 9:00 до 18:00');
+?>
+<main class="main">
+
+  <!-- BANNER -->
+  <section class="cat-banner">
+    <div class="cat-banner__grass" aria-hidden="true">
+      <img src="<?php echo esc_url(MINOKSIDIL_IMG . 'catalog-grass.webp'); ?>" alt="" width="1920" height="469" loading="lazy">
+    </div>
+    <div class="container cat-banner__inner">
+      <h1 class="cat-banner__title"><?php echo esc_html(minoksidil_acf('banner_title', 'Доставка и оплата')); ?></h1>
+    </div>
+  </section>
+
+  <!-- КАК ОПЛАТИТЬ -->
+  <section class="payment">
+    <div class="container">
+      <h2 class="payment__title"><?php echo esc_html(minoksidil_acf('payment_title', 'Как оплатить:')); ?></h2>
+      <?php $payment_cards = minoksidil_acf_rows('payment_cards'); ?>
+      <?php if ($payment_cards) : ?>
+      <div class="payment__grid">
+        <?php foreach ($payment_cards as $pcard) :
+            $picon = minoksidil_acf_img($pcard['icon'] ?? '');
+        ?>
+        <div class="payment-card">
+          <?php if ($picon) : ?>
+          <div class="payment-card__icon" aria-hidden="true">
+            <img src="<?php echo esc_url($picon); ?>" alt="" width="52" height="52" loading="lazy">
+          </div>
+          <?php endif; ?>
+          <p class="payment-card__text"><?php echo wp_kses_post($pcard['text'] ?? ''); ?></p>
+        </div>
+        <?php endforeach; ?>
+      </div>
+      <?php else : ?>
+      <div class="payment__grid">
+        <div class="payment-card">
+          <div class="payment-card__icon" aria-hidden="true">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M45.5 8.9375H6.5C5.42256 8.9375 4.38925 9.36551 3.62738 10.1274C2.86551 10.8892 2.4375 11.9226 2.4375 13V39C2.4375 40.0774 2.86551 41.1108 3.62738 41.8726C4.38925 42.6345 5.42256 43.0625 6.5 43.0625H45.5C46.5774 43.0625 47.6108 42.6345 48.3726 41.8726C49.1345 41.1108 49.5625 40.0774 49.5625 39V13C49.5625 11.9226 49.1345 10.8892 48.3726 10.1274C47.6108 9.36551 46.5774 8.9375 45.5 8.9375ZM44.6875 13.8125V17.875H7.3125V13.8125H44.6875ZM7.3125 38.1875V22.75H44.6875V38.1875H7.3125ZM42.25 33.3125C42.25 33.959 41.9932 34.579 41.5361 35.0361C41.079 35.4932 40.459 35.75 39.8125 35.75H33.3125C32.666 35.75 32.046 35.4932 31.5889 35.0361C31.1318 34.579 30.875 33.959 30.875 33.3125C30.875 32.666 31.1318 32.046 31.5889 31.5889C32.046 31.1318 32.666 30.875 33.3125 30.875H39.8125C40.459 30.875 41.079 31.1318 41.5361 31.5889C41.9932 32.046 42.25 32.666 42.25 33.3125ZM28.4375 33.3125C28.4375 33.959 28.1807 34.579 27.7236 35.0361C27.2665 35.4932 26.6465 35.75 26 35.75H23.5625C22.916 35.75 22.296 35.4932 21.8389 35.0361C21.3818 34.579 21.125 33.959 21.125 33.3125C21.125 32.666 21.3818 32.046 21.8389 31.5889C22.296 31.1318 22.916 30.875 23.5625 30.875H26C26.6465 30.875 27.2665 31.1318 27.7236 31.5889C28.1807 32.046 28.4375 32.666 28.4375 33.3125Z" fill="#000D24" />
+            </svg>
+          </div>
+          <p class="payment-card__text">Банковской картой онлайн</p>
+        </div>
+        <div class="payment-card">
+          <div class="payment-card__icon" aria-hidden="true">
+           <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M48.75 10.5625H3.25C2.60353 10.5625 1.98355 10.8193 1.52643 11.2764C1.06931 11.7335 0.8125 12.3535 0.8125 13V39C0.8125 39.6465 1.06931 40.2665 1.52643 40.7236C1.98355 41.1807 2.60353 41.4375 3.25 41.4375H48.75C49.3965 41.4375 50.0165 41.1807 50.4736 40.7236C50.9307 40.2665 51.1875 39.6465 51.1875 39V13C51.1875 12.3535 50.9307 11.7335 50.4736 11.2764C50.0165 10.8193 49.3965 10.5625 48.75 10.5625ZM36.8083 36.5625H15.1917C14.7094 34.2229 13.5522 32.076 11.8631 30.3869C10.174 28.6978 8.02705 27.5406 5.6875 27.0583V24.9417C8.02705 24.4594 10.174 23.3022 11.8631 21.6131C13.5522 19.924 14.7094 17.7771 15.1917 15.4375H36.8083C37.2906 17.7771 38.4478 19.924 40.1369 21.6131C41.826 23.3022 43.9729 24.4594 46.3125 24.9417V27.0583C43.9729 27.5406 41.826 28.6978 40.1369 30.3869C38.4478 32.076 37.2906 34.2229 36.8083 36.5625ZM46.3125 19.8941C45.286 19.5276 44.3537 18.9377 43.583 18.167C42.8123 17.3963 42.2224 16.464 41.8559 15.4375H46.3125V19.8941ZM10.1441 15.4375C9.77761 16.464 9.18772 17.3963 8.417 18.167C7.64629 18.9377 6.714 19.5276 5.6875 19.8941V15.4375H10.1441ZM5.6875 32.1059C6.714 32.4724 7.64629 33.0623 8.417 33.833C9.18772 34.6037 9.77761 35.536 10.1441 36.5625H5.6875V32.1059ZM41.8559 36.5625C42.2224 35.536 42.8123 34.6037 43.583 33.833C44.3537 33.0623 45.286 32.4724 46.3125 32.1059V36.5625H41.8559ZM26 17.875C24.393 17.875 22.8221 18.3515 21.486 19.2443C20.1498 20.1371 19.1084 21.406 18.4935 22.8907C17.8785 24.3753 17.7176 26.009 18.0311 27.5851C18.3446 29.1612 19.1185 30.6089 20.2548 31.7452C21.3911 32.8815 22.8388 33.6554 24.4149 33.9689C25.991 34.2824 27.6247 34.1215 29.1093 33.5065C30.594 32.8916 31.8629 31.8502 32.7557 30.514C33.6485 29.1779 34.125 27.607 34.125 26C34.125 23.8451 33.269 21.7785 31.7452 20.2548C30.2215 18.731 28.1549 17.875 26 17.875ZM26 29.25C25.3572 29.25 24.7289 29.0594 24.1944 28.7023C23.6599 28.3452 23.2434 27.8376 22.9974 27.2437C22.7514 26.6499 22.687 25.9964 22.8124 25.366C22.9378 24.7355 23.2474 24.1564 23.7019 23.7019C24.1564 23.2474 24.7355 22.9378 25.366 22.8124C25.9964 22.687 26.6499 22.7514 27.2437 22.9974C27.8376 23.2434 28.3452 23.6599 28.7023 24.1944C29.0594 24.7289 29.25 25.3572 29.25 26C29.25 26.862 28.9076 27.6886 28.2981 28.2981C27.6886 28.9076 26.862 29.25 26 29.25Z" fill="#000D24" />
+          </svg>
+          </div>
+          <p class="payment-card__text">Наличными при самовывозе</p>
+        </div>
+        <div class="payment-card">
+          <div class="payment-card__icon" aria-hidden="true">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M47.023 4.70434C46.6592 4.39061 46.2167 4.18207 45.7431 4.10118C45.2696 4.02029 44.783 4.07011 44.3356 4.24528L3.17032 20.3551C2.42316 20.6461 1.79072 21.1719 1.36815 21.8533C0.945585 22.5348 0.75576 23.335 0.827238 24.1337C0.898717 24.9323 1.22763 25.6861 1.76449 26.2817C2.30135 26.8773 3.01711 27.2824 3.80407 27.4361L13.8141 29.4003V40.625C13.8141 41.4348 14.0561 42.2262 14.5091 42.8975C14.9621 43.5688 15.6054 44.0894 16.3565 44.3925C17.1075 44.6955 17.932 44.7671 18.724 44.5982C19.5161 44.4293 20.2396 44.0274 20.8016 43.4443L25.4064 38.6689L32.9789 45.2968C33.5072 45.7614 34.147 46.0808 34.8357 46.2239C35.5245 46.3669 36.2385 46.3286 36.9081 46.1128C37.5776 45.897 38.1796 45.5111 38.6552 44.9927C39.1308 44.4744 39.4636 43.8415 39.6211 43.1559L47.872 7.29419C47.9794 6.8261 47.9571 6.3376 47.8075 5.88126C47.6579 5.42492 47.3866 5.01801 47.023 4.70434ZM28.3192 15.7462L15.6869 24.7995L8.69329 23.4284L28.3192 15.7462ZM18.6891 38.6059V32.7742L21.736 35.4453L18.6891 38.6059ZM35.1747 40.7428L20.1678 27.5864L41.762 12.1123L35.1747 40.7428Z" fill="#000D24" />
+            </svg>
+          </div>
+          <p class="payment-card__text">В телеграм боте — картой онлайн</p>
+        </div>
+      </div>
+      <?php endif; ?>
+      <div class="payment__descr">
+        <?php echo wp_kses_post(minoksidil_acf('payment_descr',
+          '✅ После оформления заказа мы подтверждаем наличие товара, способ доставки и итоговую стоимость.  <br>  <br>
+           💵 Оплата производится после подтверждения заказа.  <br>  <br>
+           ⚡️ Отправляем в день получения заказа. <br>  <br>
+           📦 Заказ можно отследить в соответствующем приложении (СДЭК/Яндекс/ОЗОН/почта). По запросу- отправляем трек-номер. <br>  <br>
+           🤝 По вашему желанию, можем оформить доставку любым другим удобным для вас способом. <br> <br>
+           🌏 Авито Доставка доступна при оформлении заказа через наш профиль на Авито. <br> <br>')); ?>
+      </div>
+    </div>
+  </section>
+
+  <!-- СПОСОБЫ ДОСТАВКИ -->
+  <section class="delivery">
+    <div class="container">
+      <div class="delivery__header">
+        <h2 class="delivery__title"><?php echo esc_html(minoksidil_acf('delivery_title', 'Способы доставки:')); ?></h2>
+        <a href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>" class="btn btn--green"><?php echo esc_html(minoksidil_acf('delivery_btn', 'Перейти в каталог')); ?></a>
+      </div>
+      <?php
+      $delivery_defaults = [
+          ['title' => 'СДЭК',            'logo' => MINOKSIDIL_IMG . 'delivery-card-svg-1.svg', 'w' => 90,  'h' => 25, 'term' => '2–5 дней',      'price' => 'от 400 ₽',        'method' => 'пункт выдачи или курьер'],
+          ['title' => 'Яндекс Доставка', 'logo' => MINOKSIDIL_IMG . 'delivery-card-svg-2.svg', 'w' => 59,  'h' => 62, 'term' => '1–4 дня',       'price' => 'от 200 ₽',        'method' => 'пункт выдачи или постамат'],
+          ['title' => 'Ozon Доставка',   'logo' => MINOKSIDIL_IMG . 'delivery-card-svg-3.svg', 'w' => 58,  'h' => 58, 'term' => '2–5 дней',      'price' => 'от 200 ₽',        'method' => 'пункт выдачи или постамат'],
+          ['title' => 'Почта России',    'logo' => MINOKSIDIL_IMG . 'delivery-card-svg-4.svg', 'w' => 74,  'h' => 45, 'term' => '3–7 дней',      'price' => 'от 300 ₽',        'method' => 'отделение Почты России'],
+          ['title' => 'Яндекс Экспресс', 'logo' => MINOKSIDIL_IMG . 'delivery-card-svg-5.svg', 'w' => 75,  'h' => 63, 'term' => 'в день заказа', 'price' => 'от 500 ₽',        'method' => 'курьером по Москве'],
+          ['title' => 'Самовывоз',       'logo' => '',                                         'w' => 0,   'h' => 0,  'term' => 'в день заказа', 'price' => 'бесплатно',       'method' => 'г.Москва, м.Новомосковская, по предварительному согласованию'],
+          ['title' => 'Авито Доставка',  'logo' => MINOKSIDIL_IMG . 'delivery-card-svg-6.svg', 'w' => 114, 'h' => 29, 'term' => '2–14 дней',     'price' => 'по тарифу Авито', 'method' => 'пункт выдачи, постамат или курьер'],
+      ];
+      $acf_delivery = minoksidil_acf_rows('delivery_cards');
+      if ($acf_delivery) {
+          $delivery_cards = array_map(function (array $row): array {
+              $logo = $row['logo'] ?? null;
+              return [
+                  'title'  => $row['title']  ?? '',
+                  'logo'   => minoksidil_acf_img($logo),
+                  'w'      => is_array($logo) ? (int) ($logo['width'] ?? 0)  : 0,
+                  'h'      => is_array($logo) ? (int) ($logo['height'] ?? 0) : 0,
+                  'term'   => $row['term']   ?? '',
+                  'price'  => $row['price']  ?? '',
+                  'method' => $row['method'] ?? '',
+              ];
+          }, $acf_delivery);
+      } else {
+          $delivery_cards = $delivery_defaults;
+      }
+      ?>
+      <div class="delivery__grid">
+        <?php foreach ($delivery_cards as $dcard) : ?>
+        <div class="delivery-card">
+          <div class="delivery-card__top">
+            <p class="delivery-card__title"><?php echo esc_html($dcard['title']); ?></p>
+            <?php if (!empty($dcard['logo'])) : ?>
+            <img src="<?php echo esc_url($dcard['logo']); ?>" alt=""<?php echo $dcard['w'] ? ' width="' . (int) $dcard['w'] . '"' : ''; ?><?php echo $dcard['h'] ? ' height="' . (int) $dcard['h'] . '"' : ''; ?> loading="lazy">
+            <?php endif; ?>
+          </div>
+          <div class="delivery-card__specs">
+            <?php if ($dcard['term'])   : ?><div class="delivery-card__spec"><span class="delivery-card__label">Сроки:</span><span class="delivery-card__value"><?php echo esc_html($dcard['term']); ?></span></div><?php endif; ?>
+            <?php if ($dcard['price'])  : ?><div class="delivery-card__spec"><span class="delivery-card__label">Стоимость:</span><span class="delivery-card__value"><?php echo esc_html($dcard['price']); ?></span></div><?php endif; ?>
+            <?php if ($dcard['method']) : ?><div class="delivery-card__spec"><span class="delivery-card__label">Способ получения:</span><span class="delivery-card__value"><?php echo esc_html($dcard['method']); ?></span></div><?php endif; ?>
+          </div>
+        </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ОСТАЛИСЬ ВОПРОСЫ -->
+  <section class="delivery-cta">
+    <div class="container">
+      <div class="delivery-cta__grid">
+        <div class="delivery-cta__left">
+          <div>
+            <h2 class="delivery-cta__title"><?php echo esc_html(minoksidil_acf('cta_title', 'Остались вопросы?')); ?></h2>
+            <p class="delivery-cta__text"><?php echo wp_kses_post(minoksidil_acf('cta_text', 'С радостью ответим на них')); ?></p>
+          </div>
+          <div class="delivery-cta__schedule">
+            <p class="delivery-cta__schedule-label">График работы</p>
+            <p class="delivery-cta__schedule-value">круглосуточно</p>
+          </div>
+        </div>
+
+        <div class="delivery-cta__form">
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<?php get_footer(); ?>

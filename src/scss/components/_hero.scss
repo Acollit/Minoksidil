@@ -1,0 +1,278 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 50px;
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.02;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  padding: 10px 30px;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+
+  @include tablet {
+    font-size: 20px;
+    min-height: 56px;
+  }
+
+  @include small-tablet {
+    font-size: 18px;
+    min-height: 52px;
+    padding: 10px 24px;
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &--green {
+    max-width: 425px;
+    width: 100%;
+    background-color: var(--color-green);
+    color: var(--color-white);
+    min-height: 67px;
+
+    @include small-tablet {
+      width: 100%;
+      min-height: 50px;
+      font-size: 14px;
+    }
+  }
+
+  &--outline {
+    max-width: 425px;
+    width: 100%;
+    background: transparent;
+    border: 3px solid var(--color-blue);
+    color: var(--color-blue);
+    min-height: 67px;
+
+    @include small-tablet {
+      width: 100%;
+      min-height: 50px;
+      font-size: 14px;
+    }
+  }
+}
+
+.hero {
+  background-image: url(../img/hero-bg.webp);
+  background-size: cover;
+  background-position: center right;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 140px;
+
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
+  @include small-tablet {
+    background-image:none;
+    margin-bottom: 60px;
+  }
+
+  @include mobile {
+    margin-bottom: 40px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    min-height: 923px;
+    position: relative;
+    z-index: 1;
+
+    @include big-desktop {
+      min-height: 720px;
+    }
+
+    @include laptop {
+      min-height: 650px;
+      padding-bottom: 40px;
+    }
+
+    @include medium-desktop {
+      min-height: 650px;
+
+    }
+
+    @include tablet {
+      min-height: auto;
+    }
+
+    @include small-tablet {
+      flex-direction: column-reverse;
+      gap: 0;
+    }
+  }
+
+  &__btn {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 6px;
+      top: -11px;
+      width: 39px;
+      height: 28px;
+      background-image: url(../img/goad.webp);
+      background-size: cover;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    padding-top: 187px;
+    padding-bottom: 80px;
+    max-width: 850px;
+
+    @include big-desktop {
+      padding-top: 140px;
+    }
+
+    @include laptop {
+      padding-top: 100px;
+    }
+
+    @include medium-desktop {
+      padding-top: 80px;
+    }
+
+    @include tablet {
+      padding-top: 80px;
+    }
+
+    @include small-tablet {
+      padding-top: 30px;
+      padding-bottom: 120px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: var(--font-angst);
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 98%;
+    color: #000d24;
+
+    @include big-desktop {
+      font-size: 54px;
+    }
+
+    @include laptop {
+      font-size: 48px;
+    }
+
+    @include medium-desktop {
+      font-size: 44px;
+    }
+
+    @include tablet {
+      font-size: 44px;
+    }
+
+    @include small-tablet {
+      font-size: 20px;
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 102%;
+    color: #000d24;
+    max-width: 622px;
+
+    @include small-tablet {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 15px;
+    }
+  }
+
+  &__photo {
+    width: 870px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    overflow: hidden;
+    align-self: flex-start;
+
+    @include big-desktop {
+      width: 700px;
+    }
+
+    @include laptop {
+      width: 580px;
+    }
+
+    @include medium-desktop {
+      width: 48%;
+    }
+
+    @include tablet {
+      width: 45%;
+    }
+
+    @include small-tablet {
+      width: 100%;
+      border-radius: 0 0 24px 24px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+
+      @include small-tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__grass {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    pointer-events: none;
+    line-height: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__ladybug {
+    position: absolute;
+    left: calc(var(--container-offset) + 376px);
+    bottom: 220px;
+    z-index: 2;
+    pointer-events: none;
+
+    @include small-tablet {
+      display: none;
+    }
+
+    img {
+      display: block;
+    }
+  }
+}

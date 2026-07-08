@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+
+    <main class="main">
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <h1 class="hero__title">Мягкое восстановление без&nbsp;жесткой химии</h1>
+            <p class="hero__desc">Останавливаем выпадение, пробуждаем спящие фолликулы. Только сертифицированные аналоги Rogaine и Generolon. Консультация трихолога в подарок при заказе курса.</p>
+            <button class="btn-reset btn btn--green" data-modal-open>Записаться на консультацию</button>
+          </div>
+          <div class="hero__photo">
+            <img src="img/hero-woman.webp" alt="Восстановление волос" width="870" height="883">
+          </div>
+        </div>
+        <div class="hero__grass" aria-hidden="true">
+          <img src="img/hero-grass.webp" alt="" width="1920" height="640">
+        </div>
+
+      </section>
+
+      <!-- CATALOG -->
+      <section class="catalog" id="catalog">
+        <div class="container">
+          <div class="catalog__top">
+            <h2 class="catalog__title">Всё, что нужно для роста</h2>
+            <a href="catalog.html" class="btn btn--outline">Все товары</a>
+          </div>
+          <div class="catalog__grid">
+
+            <div class="product-card">
+              <div class="product-card__box">
+                <span class="product-card__badge">NEW</span>
+                <div class="product-card__img">
+                  <img src="img/product-1.webp" alt="EssenGen-6 Plus With PG" width="312" height="312">
+                </div>
+                <button class="product-card__add-btn">
+                  <span>Добавить в корзину</span>
+                  <span class="product-card__add-icon">
+                    <svg width="30" height="26" viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M5.53471 26C5.15159 26 4.80228 25.8805 4.48677 25.6415C4.17126 25.4015 3.95716 25.0877 3.84448 24.7L0.0583643 10.8789C-0.0543177 10.5596 -0.00383613 10.2632 0.209809 9.98947C0.424356 9.71579 0.71192 9.57895 1.0725 9.57895H7.90103L13.8506 0.61579C13.9633 0.433333 14.1211 0.285088 14.3239 0.171053C14.5267 0.0570175 14.7408 0 14.9662 0C15.1916 0 15.4057 0.0570175 15.6085 0.171053C15.8113 0.285088 15.9691 0.433333 16.0817 0.61579L22.0314 9.57895H28.9275C29.2881 9.57895 29.5756 9.71579 29.7902 9.98947C30.0038 10.2632 30.0543 10.5596 29.9416 10.8789L26.1555 24.7C26.0428 25.0877 25.8287 25.4015 25.5132 25.6415C25.1977 25.8805 24.8484 26 24.4653 26H5.53471ZM11.1801 9.57895H18.7861L14.9662 3.83158L11.1801 9.57895ZM15 20.5263C15.7437 20.5263 16.3806 20.2586 16.9106 19.7231C17.4398 19.1866 17.7044 18.5421 17.7044 17.7895C17.7044 17.0368 17.4398 16.3923 16.9106 15.8559C16.3806 15.3204 15.7437 15.0526 15 15.0526C14.2563 15.0526 13.6199 15.3204 13.0907 15.8559C12.5607 16.3923 12.2956 17.0368 12.2956 17.7895C12.2956 18.5421 12.5607 19.1866 13.0907 19.7231C13.6199 20.2586 14.2563 20.5263 15 20.5263Z"
+                        fill="#000D24" />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <p class="product-card__name">EssenGen-6 Plus With PG (60 мл)</p>
+              <p class="product-card__price">4 600₽</p>
+            </div>
+
+            <div class="product-card">
+              <div class="product-card__box">
+                <span class="product-card__badge">NEW</span>
+                <div class="product-card__img">
+                  <img src="img/product-2.webp" alt="EssenGen-6 Plus With PG" width="312" height="312">
+                </div>
+                <button class="product-card__add-btn">
+                  <span>Добавить в корзину</span>
+                  <span class="product-card__add-icon">
+                    <svg width="30" height="26" viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M5.53471 26C5.15159 26 4.80228 25.8805 4.48677 25.6415C4.17126 25.4015 3.95716 25.0877 3.84448 24.7L0.0583643 10.8789C-0.0543177 10.5596 -0.00383613 10.2632 0.209809 9.98947C0.424356 9.71579 0.71192 9.57895 1.0725 9.57895H7.90103L13.8506 0.61579C13.9633 0.433333 14.1211 0.285088 14.3239 0.171053C14.5267 0.0570175 14.7408 0 14.9662 0C15.1916 0 15.4057 0.0570175 15.6085 0.171053C15.8113 0.285088 15.9691 0.433333 16.0817 0.61579L22.0314 9.57895H28.9275C29.2881 9.57895 29.5756 9.71579 29.7902 9.98947C30.0038 10.2632 30.0543 10.5596 29.9416 10.8789L26.1555 24.7C26.0428 25.0877 25.8287 25.4015 25.5132 25.6415C25.1977 25.8805 24.8484 26 24.4653 26H5.53471ZM11.1801 9.57895H18.7861L14.9662 3.83158L11.1801 9.57895ZM15 20.5263C15.7437 20.5263 16.3806 20.2586 16.9106 19.7231C17.4398 19.1866 17.7044 18.5421 17.7044 17.7895C17.7044 17.0368 17.4398 16.3923 16.9106 15.8559C16.3806 15.3204 15.7437 15.0526 15 15.0526C14.2563 15.0526 13.6199 15.3204 13.0907 15.8559C12.5607 16.3923 12.2956 17.0368 12.2956 17.7895C12.2956 18.5421 12.5607 19.1866 13.0907 19.7231C13.6199 20.2586 14.2563 20.5263 15 20.5263Z"
+                        fill="#000D24" />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <p class="product-card__name">EssenGen-6 Plus With PG (60 мл)</p>
+              <p class="product-card__price">4 600₽</p>
+            </div>
+
+            <div class="product-card">
+              <div class="product-card__box">
+                <span class="product-card__badge">NEW</span>
+                <div class="product-card__img">
+                  <img src="img/product-3.webp" alt="EssenGen-6 Plus With PG" width="312" height="312">
+                </div>
+                <button class="product-card__add-btn">
+                  <span>Добавить в корзину</span>
+                  <span class="product-card__add-icon">
+                    <svg width="30" height="26" viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M5.53471 26C5.15159 26 4.80228 25.8805 4.48677 25.6415C4.17126 25.4015 3.95716 25.0877 3.84448 24.7L0.0583643 10.8789C-0.0543177 10.5596 -0.00383613 10.2632 0.209809 9.98947C0.424356 9.71579 0.71192 9.57895 1.0725 9.57895H7.90103L13.8506 0.61579C13.9633 0.433333 14.1211 0.285088 14.3239 0.171053C14.5267 0.0570175 14.7408 0 14.9662 0C15.1916 0 15.4057 0.0570175 15.6085 0.171053C15.8113 0.285088 15.9691 0.433333 16.0817 0.61579L22.0314 9.57895H28.9275C29.2881 9.57895 29.5756 9.71579 29.7902 9.98947C30.0038 10.2632 30.0543 10.5596 29.9416 10.8789L26.1555 24.7C26.0428 25.0877 25.8287 25.4015 25.5132 25.6415C25.1977 25.8805 24.8484 26 24.4653 26H5.53471ZM11.1801 9.57895H18.7861L14.9662 3.83158L11.1801 9.57895ZM15 20.5263C15.7437 20.5263 16.3806 20.2586 16.9106 19.7231C17.4398 19.1866 17.7044 18.5421 17.7044 17.7895C17.7044 17.0368 17.4398 16.3923 16.9106 15.8559C16.3806 15.3204 15.7437 15.0526 15 15.0526C14.2563 15.0526 13.6199 15.3204 13.0907 15.8559C12.5607 16.3923 12.2956 17.0368 12.2956 17.7895C12.2956 18.5421 12.5607 19.1866 13.0907 19.7231C13.6199 20.2586 14.2563 20.5263 15 20.5263Z"
+                        fill="#000D24" />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <p class="product-card__name">EssenGen-6 Plus With PG (60 мл)</p>
+              <p class="product-card__price">4 600₽</p>
+            </div>
+
+            <div class="product-card">
+              <div class="product-card__box">
+                <span class="product-card__badge">NEW</span>
+                <div class="product-card__img">
+                  <img src="img/product-4.webp" alt="EssenGen-6 Plus With PG" width="312" height="312">
+                </div>
+                <button class="product-card__add-btn">
+                  <span>Добавить в корзину</span>
+                  <span class="product-card__add-icon">
+                    <svg width="30" height="26" viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M5.53471 26C5.15159 26 4.80228 25.8805 4.48677 25.6415C4.17126 25.4015 3.95716 25.0877 3.84448 24.7L0.0583643 10.8789C-0.0543177 10.5596 -0.00383613 10.2632 0.209809 9.98947C0.424356 9.71579 0.71192 9.57895 1.0725 9.57895H7.90103L13.8506 0.61579C13.9633 0.433333 14.1211 0.285088 14.3239 0.171053C14.5267 0.0570175 14.7408 0 14.9662 0C15.1916 0 15.4057 0.0570175 15.6085 0.171053C15.8113 0.285088 15.9691 0.433333 16.0817 0.61579L22.0314 9.57895H28.9275C29.2881 9.57895 29.5756 9.71579 29.7902 9.98947C30.0038 10.2632 30.0543 10.5596 29.9416 10.8789L26.1555 24.7C26.0428 25.0877 25.8287 25.4015 25.5132 25.6415C25.1977 25.8805 24.8484 26 24.4653 26H5.53471ZM11.1801 9.57895H18.7861L14.9662 3.83158L11.1801 9.57895ZM15 20.5263C15.7437 20.5263 16.3806 20.2586 16.9106 19.7231C17.4398 19.1866 17.7044 18.5421 17.7044 17.7895C17.7044 17.0368 17.4398 16.3923 16.9106 15.8559C16.3806 15.3204 15.7437 15.0526 15 15.0526C14.2563 15.0526 13.6199 15.3204 13.0907 15.8559C12.5607 16.3923 12.2956 17.0368 12.2956 17.7895C12.2956 18.5421 12.5607 19.1866 13.0907 19.7231C13.6199 20.2586 14.2563 20.5263 15 20.5263Z"
+                        fill="#000D24" />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <p class="product-card__name">EssenGen-6 Plus With PG (60 мл)</p>
+              <p class="product-card__price">4 600₽</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- COURSE PICKER -->
+      <section class="course" id="guide">
+        <div class="container">
+          <div class="course__inner">
+            <div class="course__content">
+              <h2 class="course__title">Подберем курс для вас</h2>
+              <p class="course__desc">Останавливаем выпадение, пробуждаем спящие фолликулы. Только сертифицированные аналоги Rogaine и Generolon. Консультация трихолога в подарок при заказе курса.</p>
+              <a href="#" class="btn btn--green">Хочу подобрать курс</a>
+              <div class="course__images">
+                <div class="course__img-item">
+                  <img src="img/course-img-1.webp" alt="" width="277" height="277">
+                </div>
+                <div class="course__img-item">
+                  <img src="img/course-img-2.webp" alt="" width="277" height="277">
+                </div>
+                <div class="course__img-item">
+                  <img src="img/course-img-3.webp" alt="" width="277" height="277">
+                </div>
+              </div>
+            </div>
+            <div class="course__visual" aria-hidden="true">
+              <img src="img/course-grass.webp" alt="" class="course__grass">
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY US -->
+      <section class="why">
+        <div class="container">
+          <h2 class="why__title">Почему мы?</h2>
+          <div class="why__grid">
+
+            <div class="why-card">
+              <p class="why-card__title">Оригинальные средства</p>
+              <div class="why-card__img">
+                <img src="img/why-1.webp" alt="" width="279" height="253">
+              </div>
+              <p class="why-card__desc">Приобретаем товары у производителей и не работаем с сомнительными копиями</p>
+            </div>
+
+            <div class="why-card">
+              <p class="why-card__title">Всё в наличии</p>
+              <div class="why-card__img">
+                <img src="img/why-2.webp" alt="" width="279" height="249">
+              </div>
+              <p class="why-card__desc">Все позиции всегда держим на складе, чтобы вы могли использовать средства регулярно и без перерывов</p>
+            </div>
+
+            <div class="why-card">
+              <p class="why-card__title">Информация<br>и консультация</p>
+              <div class="why-card__img">
+                <img src="img/why-3.webp" alt="" width="311" height="253">
+              </div>
+              <p class="why-card__desc">Можно получить консультацию специалиста, а также изучить подробные инструкции и материалы на наших ресурсах, чтобы разобраться самостоятельно</p>
+            </div>
+
+            <div class="why-card">
+              <p class="why-card__title">Поддержка<br>на связи</p>
+              <div class="why-card__img">
+                <img src="img/why-4.webp" alt="" width="331" height="253">
+              </div>
+              <p class="why-card__desc">Быстро отвечаем по заказу, оплате, доставке, наличию и другим вопросам</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section class="reviews">
+        <div class="container">
+          <div class="reviews__header">
+            <h2 class="reviews__title">Истории восстановления</h2>
+            <div class="reviews__nav">
+              <button class="reviews__nav-btn" aria-label="Предыдущий отзыв">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 6L10 15L19 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="reviews__nav-btn" aria-label="Следующий отзыв">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 6L20 15L11 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="swiper reviews__slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="reviews__inner">
+                  <div class="reviews__content">
+                    <p class="reviews__name">Андрей, 37 лет</p>
+                    <div class="reviews__specs">
+                      <div class="reviews__spec">
+                        <span class="reviews__spec-label">Форма:</span>
+                        <span class="reviews__spec-value">Раствор 5%</span>
+                      </div>
+                      <div class="reviews__spec">
+                        <span class="reviews__spec-label">Частота применения:</span>
+                        <span class="reviews__spec-value">2 раза в день</span>
+                      </div>
+                      <div class="reviews__spec">
+                        <span class="reviews__spec-label">Срок:</span>
+                        <span class="reviews__spec-value">6 месяцев</span>
+                      </div>
+                      <div class="reviews__spec">
+                        <span class="reviews__spec-label">Результат:</span>
+                        <span class="reviews__spec-value">80% восстановления</span>
+                      </div>
+                    </div>
+                    <a href="#" class="btn btn--green reviews__cta">Попробовать</a>
+                  </div>
+                  <div class="reviews__photo">
+                    <img src="img/review-woman.webp" alt="Андрей — до и после применения" width="870" height="580">
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="reviews__inner">
+                  <div class="reviews__content">
+                    <p class="reviews__name">Мария, 42 года</p>
+                    <div class="reviews__specs">
+                      <div class="reviews__spec">
+                        <span class="reviews__spec-label">Форма:</span>
+                        <span class="reviews__spec-value">Пена 5%</span>
+                      </div>
+                      <div class="reviews__spec">
+                        <span class="reviews__spec-label">Частота применения:</span>
+                        <span class="reviews__spec-value">1 раз в день</span>
+                      </div>
+                      <div class="reviews__spec">
+                        <span class="reviews__spec-label">Срок:</span>
+                        <span class="reviews__spec-value">8 месяцев</span>
+                      </div>
+                      <div class="reviews__spec">
+                        <span class="reviews__spec-label">Результат:</span>
+                        <span class="reviews__spec-value">70% восстановления</span>
+                      </div>
+                    </div>
+                    <a href="#" class="btn btn--green reviews__cta">Попробовать</a>
+                  </div>
+                  <div class="reviews__photo">
+                    <img src="img/review-woman.webp" alt="Мария — до и после применения" width="870" height="580">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARTICLE -->
+      <section class="article">
+        <div class="article__grass" aria-hidden="true">
+          <img src="img/article-grass.webp" alt="" width="1920" height="645">
+        </div>
+        <div class="container">
+
+          <div class="article__top">
+            <h2 class="article__title">Статья</h2>
+            <a href="/articles.html" class="article__link">Больше статей</a>
+          </div>
+          <p class="article__desc">Останавливаем выпадение, пробуждаем спящие фолликулы. Только сертифицированные аналоги Rogaine и Generolon. Консультация трихолога в подарок при заказе курса.</p>
+        </div>
+      </section>
+
+    </main>
+
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

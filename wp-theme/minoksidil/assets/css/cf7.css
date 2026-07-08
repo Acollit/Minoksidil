@@ -1,0 +1,101 @@
+/* ============================================================
+   Contact Form 7 — адаптация под дизайн темы.
+   Формы создаются с классами modal-form__* (см. inc/cf7.php),
+   здесь — только обвязка CF7: врапперы, чекбоксы acceptance,
+   валидация и статусы отправки.
+   ============================================================ */
+
+.wpcf7 {
+  width: 100%;
+}
+
+/* Врапперы полей CF7 не должны ломать раскладку .modal-form */
+.modal-form .wpcf7-form-control-wrap {
+  display: block;
+  width: 100%;
+}
+
+.modal-form__row .wpcf7-form-control-wrap {
+  width: auto;
+  min-width: 0;
+}
+
+/* Чекбоксы согласий (acceptance) */
+.modal-form .wpcf7-acceptance .wpcf7-list-item {
+  display: block;
+  margin: 0;
+}
+
+.modal-form .wpcf7-acceptance .wpcf7-list-item label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.modal-form .wpcf7-acceptance input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--color-blue, #0063b1);
+  cursor: pointer;
+}
+
+.modal-form .wpcf7-acceptance .wpcf7-list-item-label {
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(0, 13, 36, 0.6);
+  line-height: 1.4;
+}
+
+@media (max-width: 576px) {
+  .modal-form .wpcf7-acceptance .wpcf7-list-item-label {
+    font-size: 13px;
+  }
+}
+
+.modal-form .wpcf7-acceptance .wpcf7-list-item-label a {
+  color: var(--color-blue, #0063b1);
+  text-decoration: underline;
+}
+
+/* Кнопка: CF7 блокирует её, пока не отмечены согласия */
+.modal-form__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Ошибки валидации под полями */
+.modal-form .wpcf7-not-valid-tip {
+  display: block;
+  font-family: var(--font-family);
+  font-size: 13px;
+  color: var(--color-red, #e93922);
+  margin: 6px 0 0 24px;
+}
+
+.modal-form .wpcf7-form-control.wpcf7-not-valid {
+  border-color: var(--color-red, #e93922);
+}
+
+/* Сообщение о результате отправки */
+.modal-form .wpcf7-response-output {
+  margin: 4px 0 0;
+  padding: 0;
+  border: none;
+  font-family: var(--font-family);
+  font-size: 14px;
+  text-align: center;
+  color: var(--color-red, #e93922);
+}
+
+form.wpcf7-form.sent .wpcf7-response-output {
+  color: var(--color-green, #83ca53);
+}
+
+.modal-form .wpcf7-spinner {
+  display: block;
+  margin: 0 auto;
+}

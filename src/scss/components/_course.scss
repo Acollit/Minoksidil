@@ -1,0 +1,208 @@
+.course {
+  margin-bottom: 100px;
+
+  @include tablet {
+    margin-bottom: 80px;
+  }
+
+  @include small-tablet {
+    margin-bottom: 60px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    @include tablet {
+      flex-direction: column-reverse;
+    }
+
+
+  }
+
+  &__content {
+    flex: 0 0 870px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include big-desktop {
+      flex: 0 0 680px;
+    }
+
+    @include laptop {
+      flex: 0 0 580px;
+    }
+
+    @include medium-desktop {
+      flex: 0 0 55%;
+    }
+
+    @include tablet {
+      flex: 0 0 55%;
+    }
+
+    @include small-tablet {
+      flex: none;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-family);
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 95%;
+    text-transform: uppercase;
+    color: var(--color-dark);
+    margin: 0 0 20px;
+
+    @include laptop {
+      font-size: 40px;
+    }
+
+    @include medium-desktop {
+      font-size: 36px;
+    }
+
+    @include tablet {
+      font-size: 36px;
+    }
+
+    @include small-tablet {
+      font-size: 20px;
+    }
+  }
+
+  &__desc {
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--color-dark);
+    line-height: 1.02;
+    margin: 0 0 30px;
+    max-width: 621px;
+
+    @include tablet {
+      font-size: 20px;
+    }
+
+    @include small-tablet {
+      font-size: 18px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__images {
+    display: flex;
+    gap: 20px;
+    margin-top: 80px;
+
+
+
+    @include tablet {
+      display: none;
+    }
+
+    @include small-tablet {
+      margin-top: 30px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @include mobile {
+      gap: 8px;
+    }
+  }
+
+  &__img-item {
+    width: 277px;
+    height: 277px;
+    border-radius: 40px;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    @include laptop {
+      width: 178px;
+      height: 178px;
+    }
+
+    @include tablet {
+      width: 178px;
+      height: 178px;
+    }
+
+    @include small-tablet {
+      width: calc(50% - 6px);
+      height: 180px;
+      flex-shrink: 1;
+    }
+
+    @include mobile {
+      height: 150px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+
+    }
+  }
+
+  &__visual {
+    flex: 1;
+    position: relative;
+    min-height: 748px;
+    pointer-events: none;
+
+    @include laptop {
+      width: 100%;
+      min-height: auto;
+      position: static;
+      height: 550px;
+    }
+
+
+    @include small-tablet {
+      height: 350px;
+    }
+  }
+
+  &__grass {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+
+    @include laptop {
+      position: static;
+
+      object-fit: contain;
+    }
+  }
+
+  &__bottle {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    max-width: 833px;
+    height: auto;
+    z-index: 1;
+  }
+
+  &__ladybug {
+    position: absolute;
+    bottom: 200px;
+    right: 80px;
+    z-index: 2;
+  }
+}

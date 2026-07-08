@@ -1,0 +1,280 @@
+// --- MODAL ---
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  @include small-tablet {
+    padding: 16px;
+  }
+
+  @include mobile {
+    padding: 12px;
+  }
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+
+    .modal__window {
+      transform: scale(1);
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 13, 36, 0.88);
+    cursor: pointer;
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--color-dark);
+    line-height: 0;
+    transition: opacity 0.2s;
+
+    svg {
+      width: 36px;
+      height: 36px;
+
+      path {
+        fill: currentColor;
+      }
+    }
+
+    @include small-tablet {
+      top: 14px;
+      right: 14px;
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  &__window {
+    position: relative;
+    z-index: 1;
+    background: var(--color-white);
+    border-radius: 30px;
+    padding: 60px 64px;
+    width: 100%;
+    max-width: 780px;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.96);
+    transition: transform 0.3s ease;
+
+    @include small-tablet {
+      padding: 40px 32px;
+      max-height: calc(100vh - 32px);
+    }
+
+    @include mobile {
+      padding: 24px 16px;
+      border-radius: 20px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__title {
+    font-family: var(--font-family);
+    font-size: 44px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-dark);
+    text-align: center;
+    line-height: 1.05;
+    margin: 0;
+
+    @include medium-desktop {
+      font-size: 36px;
+    }
+
+    @include tablet {
+      font-size: 30px;
+    }
+
+    @include small-tablet {
+      font-size: 20px;
+    }
+  }
+
+  &__subtitle {
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(0, 13, 36, 0.6);
+    text-align: center;
+    line-height: 1.4;
+    margin: 0 0 12px;
+
+    @include small-tablet {
+      font-size: 16px;
+    }
+  }
+}
+
+// --- MODAL FORM ---
+
+.modal-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @include mobile {
+    gap: 10px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 60px;
+    padding: 0 24px;
+    background: transparent;
+    border: 1.5px solid rgba(0, 13, 36, 0.2);
+    border-radius: 100px;
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-dark);
+    outline: none;
+    transition: border-color 0.15s;
+    box-sizing: border-box;
+
+    @include mobile {
+      height: 48px;
+      padding: 0 18px;
+      font-size: 16px;
+    }
+
+    &::placeholder {
+      color: rgba(0, 13, 36, 0.38);
+    }
+
+    &:focus {
+      border-color: var(--color-blue);
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    @include small-tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  &__check-input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+  }
+
+  &__check-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 13, 36, 0.25);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    transition: background-color 0.15s, border-color 0.15s;
+  }
+
+  &__check-input:checked + &__check-box {
+    background: var(--color-blue);
+    border-color: var(--color-blue);
+
+    &::after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 7px;
+      border-left: 2px solid var(--color-white);
+      border-bottom: 2px solid var(--color-white);
+      transform: rotate(-45deg) translateY(-1px);
+    }
+  }
+
+  &__check-text {
+    font-family: var(--font-family);
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(0, 13, 36, 0.6);
+    line-height: 1.4;
+
+    @include mobile {
+      font-size: 13px;
+    }
+
+    a {
+      color: var(--color-blue);
+      text-decoration: underline;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    height: 66px;
+    background: var(--color-blue);
+    border: none;
+    border-radius: 100px;
+    font-family: var(--font-family);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-top: 4px;
+
+    @include mobile {
+      height: 54px;
+      font-size: 18px;
+    }
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}

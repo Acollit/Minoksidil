@@ -1,0 +1,44 @@
+<div class="modal" id="modal-question" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-question-title">
+  <div class="modal__overlay" data-modal-close></div>
+
+
+
+  <div class="modal__window">
+    <button class="modal__close" type="button" aria-label="Закрыть" data-modal-close>
+      <svg width="72" height="71" viewBox="0 0 72 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M58.6387 53.1142C59.2727 53.7394 59.6289 54.5874 59.6289 55.4716C59.6289 56.3558 59.2727 57.2038 58.6387 57.829C58.0046 58.4543 57.1447 58.8055 56.248 58.8055C55.3514 58.8055 54.4914 58.4543 53.8574 57.829L36.0009 40.2149L18.1387 57.8235C17.5046 58.4487 16.6447 58.8 15.748 58.8C14.8514 58.8 13.9915 58.4487 13.3574 57.8235C12.7234 57.1983 12.3672 56.3503 12.3672 55.4661C12.3672 54.5819 12.7234 53.7339 13.3574 53.1086L31.2196 35.5001L13.363 17.886C12.729 17.2608 12.3728 16.4128 12.3728 15.5286C12.3728 14.6444 12.729 13.7964 13.363 13.1711C13.9971 12.5459 14.857 12.1947 15.7537 12.1947C16.6503 12.1947 17.5103 12.5459 18.1443 13.1711L36.0009 30.7852L53.863 13.1684C54.4971 12.5431 55.357 12.1919 56.2537 12.1919C57.1503 12.1919 58.0103 12.5431 58.6443 13.1684C59.2783 13.7936 59.6345 14.6416 59.6345 15.5258C59.6345 16.41 59.2783 17.258 58.6443 17.8832L40.7821 35.5001L58.6387 53.1142Z"
+          fill="white" />
+      </svg>
+    </button>
+    <div class="modal__content">
+      <h2 class="modal__title" id="modal-question-title">Остались вопросы?</h2>
+      <p class="modal__subtitle">С радостью ответим на них</p>
+
+      <form class="modal-form" action="#" method="post">
+        <input class="modal-form__input" type="text" name="name" placeholder="Имя" required>
+
+        <div class="modal-form__row">
+          <input class="modal-form__input" type="email" name="email" placeholder="E-mail" required>
+          <input class="modal-form__input" type="tel" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+        </div>
+
+        <input class="modal-form__input" type="text" name="comment" placeholder="Комментарий">
+
+        <label class="modal-form__check">
+          <input class="modal-form__check-input" type="checkbox" name="privacy" required>
+          <span class="modal-form__check-box"></span>
+          <span class="modal-form__check-text">Нажимая кнопку вы подтверждаете, что ознакомлены с нашей <a href="#">Политикой конфиденциальности</a></span>
+        </label>
+
+        <label class="modal-form__check">
+          <input class="modal-form__check-input" type="checkbox" name="consent" required>
+          <span class="modal-form__check-box"></span>
+          <span class="modal-form__check-text">Нажимая кнопку вы подтверждаете, что даете <a href="#">Согласие на обработку персональных данных</a></span>
+        </label>
+
+        <button class="modal-form__btn" type="submit">Перезвоните мне</button>
+      </form>
+    </div>
+  </div>
+</div>

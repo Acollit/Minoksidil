@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+
+    <main class="main">
+
+      <!-- BANNER -->
+      <section class="cat-banner">
+        <div class="cat-banner__grass" aria-hidden="true">
+          <img src="img/catalog-grass.webp" alt="" width="1920" height="469">
+        </div>
+        <div class="container cat-banner__inner">
+          <h1 class="cat-banner__title">Результаты и рекомендации</h1>
+          <p class="cat-banner__sub">Индивидуальные результаты</p>
+        </div>
+      </section>
+
+      <!-- RESULTS -->
+      <section class="ba-page">
+        <div class="container">
+
+          <!-- CONTROLS -->
+          <div class="catalog-controls ba-page__controls">
+
+            <div class="catalog-sort">
+              <button class="catalog-sort__btn" type="button" aria-expanded="false" aria-haspopup="listbox">
+                <span class="catalog-sort__current">Все результаты</span>
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 8L11 14L17 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <ul class="catalog-sort__dropdown" role="listbox">
+                <li class="catalog-sort__option is-selected" data-value="all">Все результаты</li>
+                <li class="catalog-sort__option" data-value="3">3 месяца</li>
+                <li class="catalog-sort__option" data-value="6">6 месяцев</li>
+                <li class="catalog-sort__option" data-value="12">12 месяцев</li>
+              </ul>
+            </div>
+
+            <label class="catalog-search">
+              <input class="catalog-search__input" type="text" placeholder="Поиск по используемому товару">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9.5" cy="9.5" r="6.5" stroke="currentColor" stroke-width="2"/><path d="M14 14L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </label>
+
+          </div>
+
+          <!-- GRID -->
+          <div class="ba-grid">
+
+            <div class="result-card">
+              <div class="result-card__image">
+                <img src="img/ba-1.webp" alt="Результат Андрей, 37 лет" width="560" height="360">
+                <div class="result-card__zoom" aria-hidden="true">
+                  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="52" cy="52" r="52" fill="rgba(0,0,0,0.4)"/><circle cx="23" cy="23" r="12" stroke="white" stroke-width="2.5"/><path d="M32 32L42 42" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M23 18V28M18 23H28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </div>
+
+              </div>
+              <div class="result-card__body">
+                <p class="result-card__name">Андрей, 37 лет</p>
+                <table class="result-specs">
+                  <tbody>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Форма:</td>
+                      <td class="result-specs__value">Раствор 5%</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Частота применения:</td>
+                      <td class="result-specs__value">2 раза в день</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Срок:</td>
+                      <td class="result-specs__value">6 месяцев</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Результат:</td>
+                      <td class="result-specs__value">80% восстановления</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-card__image">
+                <img src="img/ba-1.webp" alt="Результат Андрей, 37 лет" width="560" height="360">
+                <div class="result-card__zoom" aria-hidden="true">
+                  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="52" cy="52" r="52" fill="rgba(0,0,0,0.4)"/><circle cx="23" cy="23" r="12" stroke="white" stroke-width="2.5"/><path d="M32 32L42 42" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M23 18V28M18 23H28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </div>
+
+              </div>
+              <div class="result-card__body">
+                <p class="result-card__name">Андрей, 37 лет</p>
+                <table class="result-specs">
+                  <tbody>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Форма:</td>
+                      <td class="result-specs__value">Раствор 5%</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Частота применения:</td>
+                      <td class="result-specs__value">2 раза в день</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Срок:</td>
+                      <td class="result-specs__value">6 месяцев</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Результат:</td>
+                      <td class="result-specs__value">80% восстановления</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-card__image">
+                <img src="img/ba-1.webp" alt="Результат Андрей, 37 лет" width="560" height="360">
+                <div class="result-card__zoom" aria-hidden="true">
+                  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="52" cy="52" r="52" fill="rgba(0,0,0,0.4)"/><circle cx="23" cy="23" r="12" stroke="white" stroke-width="2.5"/><path d="M32 32L42 42" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M23 18V28M18 23H28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </div>
+
+              </div>
+              <div class="result-card__body">
+                <p class="result-card__name">Андрей, 37 лет</p>
+                <table class="result-specs">
+                  <tbody>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Форма:</td>
+                      <td class="result-specs__value">Раствор 5%</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Частота применения:</td>
+                      <td class="result-specs__value">2 раза в день</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Срок:</td>
+                      <td class="result-specs__value">6 месяцев</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Результат:</td>
+                      <td class="result-specs__value">80% восстановления</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-card__image">
+                <img src="img/ba-1.webp" alt="Результат Андрей, 37 лет" width="560" height="360">
+                <div class="result-card__zoom" aria-hidden="true">
+                  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="52" cy="52" r="52" fill="rgba(0,0,0,0.4)"/><circle cx="23" cy="23" r="12" stroke="white" stroke-width="2.5"/><path d="M32 32L42 42" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M23 18V28M18 23H28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </div>
+
+              </div>
+              <div class="result-card__body">
+                <p class="result-card__name">Андрей, 37 лет</p>
+                <table class="result-specs">
+                  <tbody>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Форма:</td>
+                      <td class="result-specs__value">Раствор 5%</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Частота применения:</td>
+                      <td class="result-specs__value">2 раза в день</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Срок:</td>
+                      <td class="result-specs__value">6 месяцев</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Результат:</td>
+                      <td class="result-specs__value">80% восстановления</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-card__image">
+                <img src="img/ba-1.webp" alt="Результат Андрей, 37 лет" width="560" height="360">
+                <div class="result-card__zoom" aria-hidden="true">
+                  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="52" cy="52" r="52" fill="rgba(0,0,0,0.4)"/><circle cx="23" cy="23" r="12" stroke="white" stroke-width="2.5"/><path d="M32 32L42 42" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M23 18V28M18 23H28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </div>
+
+              </div>
+              <div class="result-card__body">
+                <p class="result-card__name">Андрей, 37 лет</p>
+                <table class="result-specs">
+                  <tbody>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Форма:</td>
+                      <td class="result-specs__value">Раствор 5%</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Частота применения:</td>
+                      <td class="result-specs__value">2 раза в день</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Срок:</td>
+                      <td class="result-specs__value">6 месяцев</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Результат:</td>
+                      <td class="result-specs__value">80% восстановления</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-card__image">
+                <img src="img/ba-1.webp" alt="Результат Андрей, 37 лет" width="560" height="360">
+                <div class="result-card__zoom" aria-hidden="true">
+                  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="52" cy="52" r="52" fill="rgba(0,0,0,0.4)"/><circle cx="23" cy="23" r="12" stroke="white" stroke-width="2.5"/><path d="M32 32L42 42" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M23 18V28M18 23H28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </div>
+
+              </div>
+              <div class="result-card__body">
+                <p class="result-card__name">Андрей, 37 лет</p>
+                <table class="result-specs">
+                  <tbody>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Форма:</td>
+                      <td class="result-specs__value">Раствор 5%</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Частота применения:</td>
+                      <td class="result-specs__value">2 раза в день</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Срок:</td>
+                      <td class="result-specs__value">6 месяцев</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Результат:</td>
+                      <td class="result-specs__value">80% восстановления</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-card__image">
+                <img src="img/ba-1.webp" alt="Результат Андрей, 37 лет" width="560" height="360">
+                <div class="result-card__zoom" aria-hidden="true">
+                  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="52" cy="52" r="52" fill="rgba(0,0,0,0.4)"/><circle cx="23" cy="23" r="12" stroke="white" stroke-width="2.5"/><path d="M32 32L42 42" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M23 18V28M18 23H28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </div>
+
+              </div>
+              <div class="result-card__body">
+                <p class="result-card__name">Андрей, 37 лет</p>
+                <table class="result-specs">
+                  <tbody>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Форма:</td>
+                      <td class="result-specs__value">Раствор 5%</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Частота применения:</td>
+                      <td class="result-specs__value">2 раза в день</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Срок:</td>
+                      <td class="result-specs__value">6 месяцев</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Результат:</td>
+                      <td class="result-specs__value">80% восстановления</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-card__image">
+                <img src="img/ba-1.webp" alt="Результат Андрей, 37 лет" width="560" height="360">
+                <div class="result-card__zoom" aria-hidden="true">
+                  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="52" cy="52" r="52" fill="rgba(0,0,0,0.4)"/><circle cx="23" cy="23" r="12" stroke="white" stroke-width="2.5"/><path d="M32 32L42 42" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M23 18V28M18 23H28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </div>
+
+              </div>
+              <div class="result-card__body">
+                <p class="result-card__name">Андрей, 37 лет</p>
+                <table class="result-specs">
+                  <tbody>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Форма:</td>
+                      <td class="result-specs__value">Раствор 5%</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Частота применения:</td>
+                      <td class="result-specs__value">2 раза в день</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Срок:</td>
+                      <td class="result-specs__value">6 месяцев</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Результат:</td>
+                      <td class="result-specs__value">80% восстановления</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-card__image">
+                <img src="img/ba-1.webp" alt="Результат Андрей, 37 лет" width="560" height="360">
+                <div class="result-card__zoom" aria-hidden="true">
+                  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="52" cy="52" r="52" fill="rgba(0,0,0,0.4)"/><circle cx="23" cy="23" r="12" stroke="white" stroke-width="2.5"/><path d="M32 32L42 42" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M23 18V28M18 23H28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </div>
+
+              </div>
+              <div class="result-card__body">
+                <p class="result-card__name">Андрей, 37 лет</p>
+                <table class="result-specs">
+                  <tbody>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Форма:</td>
+                      <td class="result-specs__value">Раствор 5%</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Частота применения:</td>
+                      <td class="result-specs__value">2 раза в день</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Срок:</td>
+                      <td class="result-specs__value">6 месяцев</td>
+                    </tr>
+                    <tr class="result-specs__row">
+                      <td class="result-specs__label">Результат:</td>
+                      <td class="result-specs__value">80% восстановления</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- PAGINATION -->
+          <div class="ba-page__footer">
+            <p class="ba-page__disclaimer">Не является лекарством</p>
+            <div class="catalog-pagination">
+              <button class="pagination-btn pagination-btn--arrow" aria-label="Предыдущая страница">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 5L9 12L15 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="pagination-pages">
+                <button class="pagination-btn pagination-btn--active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn pagination-btn--dots">...123</button>
+              </div>
+              <button class="pagination-btn pagination-btn--arrow" aria-label="Следующая страница">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 5L15 12L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

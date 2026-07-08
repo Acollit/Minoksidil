@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+
+    <main class="main">
+
+      <!-- BANNER -->
+      <section class="cat-banner">
+        <div class="cat-banner__grass" aria-hidden="true">
+          <img src="img/catalog-grass.webp" alt="" width="1920" height="469">
+        </div>
+        <div class="container cat-banner__inner">
+          <h1 class="cat-banner__title">Контакты</h1>
+        </div>
+      </section>
+
+      <!-- CONTACT INFO -->
+      <section class="contacts-info">
+        <div class="container">
+          <div class="contacts-info__grid">
+
+            <div class="contacts-info__item">
+              <p class="contacts-info__label">Телефон</p>
+              <a class="contacts-info__value" href="tel:+79999999999">+7 (999) 999-99-99</a>
+            </div>
+
+            <div class="contacts-info__item">
+              <p class="contacts-info__label">Почта</p>
+              <a class="contacts-info__value" href="mailto:minoxidillum1@yandex.ru">minoxidillum1@yandex.ru</a>
+            </div>
+
+            <div class="contacts-info__item">
+              <p class="contacts-info__label">Адрес</p>
+              <p class="contacts-info__value">Адрес</p>
+            </div>
+
+            <div class="contacts-info__item">
+              <p class="contacts-info__label">Соц. сети</p>
+              <div class="contacts-info__socials">
+                <a href="#" class="contacts-info__social" aria-label="Telegram">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_9256_1554)">
+                      <path
+                        d="M22.557 1.68594L0.71875 10.9776L6.44369 13.2519L8.48169 20.9201L12.2343 17.2805L18.3394 21.5011L22.557 1.68594ZM8.77906 14.2348L8.55874 16.2341L7.71248 13.0496L22.557 1.68594L8.77906 14.2348Z"
+                        fill="white" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_9256_1554">
+                        <rect width="23.2941" height="23.2941" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </a>
+                <a href="#" class="contacts-info__social" aria-label="ВКонтакте">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M24.9225 17.5617C24.1484 16.6332 23.2374 15.8407 22.3755 14.9993C21.5978 14.2408 21.5488 13.8008 22.1739 12.9254C22.8561 11.9699 23.5898 11.0511 24.2782 10.1C24.9209 9.21113 25.5778 8.32467 25.9159 7.26037C26.1304 6.58327 25.9407 6.28419 25.2463 6.16563C25.1267 6.14489 25.003 6.14381 24.8813 6.14381L20.7618 6.13896C20.2544 6.13142 19.9739 6.35263 19.7945 6.80232C19.5522 7.41018 19.3025 8.0175 19.0139 8.60408C18.3592 9.93404 17.6279 11.2195 16.6027 12.3081C16.3766 12.5482 16.1266 12.8515 15.7488 12.7265C15.2762 12.5541 15.1369 11.7754 15.1447 11.5122L15.1407 6.75733C15.0491 6.07807 14.8985 5.77521 14.224 5.64319L9.94478 5.644C9.37356 5.644 9.08715 5.86467 8.78214 6.22195C8.6062 6.42834 8.55312 6.56225 8.91471 6.63069C9.62495 6.76541 10.0251 7.22508 10.1312 7.93721C10.3015 9.07506 10.2897 10.2175 10.1916 11.3599C10.1628 11.6935 10.1054 12.0263 9.97307 12.3377C9.76614 12.8273 9.43203 12.927 8.99311 12.6258C8.59569 12.3531 8.31655 11.9683 8.04333 11.5819C7.01703 10.1318 6.1982 8.56797 5.53052 6.92465C5.3376 6.4499 5.00484 6.16213 4.5018 6.15432C3.26587 6.13465 2.02967 6.13142 0.793748 6.1554C0.05009 6.16941 -0.17166 6.53046 0.131192 7.2046C1.47732 10.1989 2.97568 13.1099 4.93156 15.7618C5.93576 17.1227 7.0887 18.3242 8.57817 19.1756C10.2662 20.1407 12.0833 20.4312 13.9972 20.3417C14.8933 20.2997 15.1625 20.0666 15.204 19.1734C15.232 18.5624 15.3013 17.9548 15.6028 17.4056C15.8986 16.8668 16.3467 16.7641 16.8632 17.0993C17.1216 17.2672 17.3393 17.4808 17.5449 17.7061C18.0493 18.2579 18.5356 18.8264 19.0592 19.3596C19.7158 20.0278 20.4937 20.4226 21.4717 20.342L25.2579 20.3428C25.8679 20.3029 26.1843 19.555 25.834 18.8741C25.588 18.3972 25.2652 17.9725 24.9225 17.5617Z"
+                      fill="white" />
+                  </svg>
+                </a>
+                <a href="#" class="contacts-info__social" aria-label="WhatsApp">
+                  <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_9256_1581)">
+                      <path
+                        d="M5.9927 17.9787C9.29927 17.9787 11.9854 15.378 11.9854 12.1606C11.9854 8.9504 9.30657 6.34253 5.9927 6.34253C2.67883 6.34962 0 8.9504 0 12.1606C0 15.3709 2.67883 17.9787 5.9927 17.9787Z"
+                        fill="white" />
+                      <path
+                        d="M16.3782 17.2417C18.3782 17.2417 19.9987 15.6685 19.9987 13.7268C19.9987 11.7851 18.3782 10.2118 16.3782 10.2118C14.3782 10.2118 12.7578 11.7851 12.7578 13.7268C12.7578 15.6685 14.3782 17.2417 16.3782 17.2417Z"
+                        fill="white" />
+                      <path
+                        d="M7.13931 5.59132C8.37289 5.59132 9.38019 4.62046 9.38019 3.41573C9.38019 2.21101 8.38019 1.24014 7.13931 1.24014C5.90574 1.24014 4.89844 2.21101 4.89844 3.41573C4.89844 4.62046 5.89844 5.59132 7.13931 5.59132Z"
+                        fill="white" />
+                      <path
+                        d="M14.978 9.45354C17.6641 9.45354 19.8466 7.33464 19.8466 4.72677C19.8466 2.1189 17.6641 0 14.978 0C12.2919 0 10.1094 2.1189 10.1094 4.72677C10.1021 7.34173 12.2846 9.45354 14.978 9.45354Z"
+                        fill="white" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_9256_1581">
+                        <rect width="20" height="18" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- MAP -->
+      <div class="contacts-map">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=30.299000%2C59.970000&z=14&pt=30.299000,59.970000,pm2rdm"
+          width="1920" height="540" allowfullscreen="true" style="border:0" title="Карта"></iframe>
+      </div>
+
+      <!-- COLLAB -->
+      <section class="guide-collab contacts-collab">
+        <div class="container">
+          <div class="guide-collab__grid">
+
+            <!-- LEFT -->
+            <div class="guide-collab__left">
+              <div class="guide-collab__photo">
+                <img src="img/guide-collab-2.webp" alt="" width="820" height="520">
+              </div>
+              <div class="guide-partner">
+                <h2 class="guide-partner__title">Мы открыты к сотрудничеству</h2>
+                <div class="guide-partner__product">
+                  <img src="img/product-1.webp" alt="" width="120" height="120">
+                </div>
+                <p class="guide-partner__text">У нас действует простая система промокодов: клиент получает скидку на
+                  заказ, а тот, кто нас рекомендует, — денежное вознаграждение с каждой продажи.</p>
+              </div>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="guide-collab__right">
+              <div class="guide-wholesale">
+                <h2 class="guide-wholesale__title">Поставляем наши товары оптом под реализацию</h2>
+                <p class="guide-wholesale__text">Если вам интересен такой формат работы, напишите нам — обсудим условия
+                </p>
+                <div class="guide-wholesale__socials">
+                  <a href="#" class="guide-wholesale__social" aria-label="Telegram">
+                    <svg width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M31.7647 0L0 13.5151L8.32718 16.8232L11.2916 27.9769L16.7499 22.683L25.6301 28.8221L31.7647 0ZM11.7241 18.2529L11.4036 21.1609L10.1727 16.529L31.7647 0L11.7241 18.2529Z"
+                        fill="white" />
+                    </svg>
+                  </a>
+                  <a href="#" class="guide-wholesale__social" aria-label="Telegram 2">
+                    <svg width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M31.7647 0L0 13.5151L8.32718 16.8232L11.2916 27.9769L16.7499 22.683L25.6301 28.8221L31.7647 0ZM11.7241 18.2529L11.4036 21.1609L10.1727 16.529L31.7647 0L11.7241 18.2529Z"
+                        fill="white" />
+                    </svg>
+                  </a>
+                  <a href="#" class="guide-wholesale__social" aria-label="Telegram 3">
+                    <svg width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M31.7647 0L0 13.5151L8.32718 16.8232L11.2916 27.9769L16.7499 22.683L25.6301 28.8221L31.7647 0ZM11.7241 18.2529L11.4036 21.1609L10.1727 16.529L31.7647 0L11.7241 18.2529Z"
+                        fill="white" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
+              <form class="guide-form" action="#" method="post">
+                <div class="guide-form__row">
+                  <input class="guide-form__input" type="text" name="name" placeholder="Имя" required>
+                  <input class="guide-form__input" type="tel" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+                </div>
+                <label class="guide-form__check">
+                  <input class="guide-form__check-input" type="checkbox" name="privacy" required>
+                  <span class="guide-form__check-box"></span>
+                  <span class="guide-form__check-text">Нажимая кнопку вы подтверждаете, что ознакомились с нашей <a
+                      href="#">Политикой конфиденциальности</a></span>
+                </label>
+                <label class="guide-form__check">
+                  <input class="guide-form__check-input" type="checkbox" name="consent" required>
+                  <span class="guide-form__check-box"></span>
+                  <span class="guide-form__check-text">Нажимая кнопку вы подтверждаете, что даёте <a href="#">Согласие
+                      на обработку персональных данных</a></span>
+                </label>
+                <button class="guide-form__btn" type="submit">Перезвоните мне</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA + CONTACT FORM -->
+      <section class="contacts-cta">
+        <div class="container">
+          <div class="contacts-cta__grid">
+
+            <!-- LEFT: title + schedule -->
+            <div class="contacts-cta__left">
+              <div>
+                <h2 class="contacts-cta__title">Давайте обсудим ваш случай</h2>
+                <p class="contacts-cta__text">Если вы всё ещё сомневаетесь, какой лосьон выбрать, или хотите узнать, как
+                  начать — просто напишите. Мы на связи, чтобы вы наконец увидели первые новые волосы уже через 2.5
+                  месяца.</p>
+              </div>
+
+              <div class="contacts-cta__schedule">
+                <p class="contacts-cta__schedule-label">График работы</p>
+                <p class="contacts-cta__schedule-value">Пн-Пт с 9:00 до 18:00</p>
+              </div>
+            </div>
+
+            <!-- RIGHT: full form -->
+            <div class="contacts-cta__right">
+              <form class="contacts-form" action="#" method="post">
+                <input class="contacts-form__input" type="text" name="name" placeholder="Имя" required>
+                <div class="contacts-form__row">
+                  <input class="contacts-form__input" type="email" name="email" placeholder="E-mail" required>
+                  <input class="contacts-form__input" type="tel" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+                </div>
+                <textarea class="contacts-form__textarea" name="comment" placeholder="Комментарий" rows="3"></textarea>
+                <label class="contacts-form__check">
+                  <input class="contacts-form__check-input" type="checkbox" name="privacy" required>
+                  <span class="contacts-form__check-box"></span>
+                  <span class="contacts-form__check-text">Нажимая кнопку вы подтверждаете, что ознакомились с нашей <a
+                      href="#">Политикой конфиденциальности</a></span>
+                </label>
+                <label class="contacts-form__check">
+                  <input class="contacts-form__check-input" type="checkbox" name="consent" required>
+                  <span class="contacts-form__check-box"></span>
+                  <span class="contacts-form__check-text">Нажимая кнопку вы подтверждаете, что даёте <a
+                      href="#">Согласие на обработку персональных данных</a></span>
+                </label>
+                <button class="contacts-form__btn" type="submit">Перезвоните мне</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

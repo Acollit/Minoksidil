@@ -1,0 +1,313 @@
+/* WooCommerce — кастомные стили (поверх основного CSS темы) */
+
+/* ===== Уведомления WooCommerce ===== */
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-info {
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  list-style: none;
+}
+.woocommerce-message { background: #e8f5e9; color: #2e7d32; border-left: 4px solid #4caf50; }
+.woocommerce-error   { background: #fdecea; color: #c62828; border-left: 4px solid #f44336; }
+.woocommerce-info    { background: #e3f2fd; color: #1565c0; border-left: 4px solid #2196f3; }
+
+/* ===== Значок корзины в хедере ===== */
+.header__cart-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  background: var(--color-green, #83CA53);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 9px;
+  position: absolute;
+  top: -6px;
+  right: -8px;
+}
+
+/* ===== WC пагинация ===== */
+.woocommerce-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+.woocommerce-pagination ul { display: flex; gap: 6px; list-style: none; padding: 0; margin: 0; }
+.woocommerce-pagination ul li a,
+.woocommerce-pagination ul li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  color: var(--color-dark, #000d24);
+  text-decoration: none;
+  transition: background .15s, color .15s;
+}
+.woocommerce-pagination ul li a:hover { background: #f0f0f0; }
+.woocommerce-pagination ul li span.current { background: var(--color-blue, #0063b1); color: #fff; border-color: transparent; }
+
+/* ===== Страница статьи ===== */
+.article-page { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+.article-page__title { font-size: 28px; font-weight: 700; margin-bottom: 16px; }
+.article-page__meta  { font-size: 13px; color: #888; margin-bottom: 24px; }
+.article-page__cover { border-radius: 16px; overflow: hidden; margin-bottom: 32px; }
+.article-page__cover img { width: 100%; height: auto; display: block; }
+.article-page__content { font-size: 16px; line-height: 1.7; }
+.article-page__content h2 { font-size: 22px; margin: 32px 0 12px; }
+.article-page__content p  { margin-bottom: 16px; }
+.article-page__content img { max-width: 100%; border-radius: 12px; margin: 16px 0; }
+.article-page__tags { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 8px; }
+.article-page__tag {
+  padding: 4px 12px;
+  background: #f3f3f3;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #555;
+  text-decoration: none;
+}
+.article-page__tag:hover { background: var(--color-blue, #0063b1); color: #fff; }
+
+/* ===== ПВЗ модал — общие стили ===== */
+.pvz-tabs { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.pvz-tab {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 1.5px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  transition: all .15s;
+}
+.pvz-tab:hover   { border-color: var(--color-blue, #0063b1); color: var(--color-blue, #0063b1); }
+.pvz-tab.is-active { background: var(--color-blue, #0063b1); border-color: transparent; color: #fff; }
+.pvz-map-wrap { display: none; }
+.pvz-map-wrap:not([hidden]) { display: block; }
+
+/* ===== Строка поиска города (CDEK) ===== */
+.pvz-city-search {
+  display: flex;
+  gap: 8px;
+  padding: 12px 0 12px;
+  position: relative;
+  flex-wrap: wrap;
+}
+.pvz-city-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .15s;
+}
+.pvz-city-input:focus { border-color: var(--color-blue, #0063b1); }
+.pvz-city-btn {
+  padding: 10px 20px;
+  background: var(--color-blue, #0063b1);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: opacity .15s;
+}
+.pvz-city-btn:hover { opacity: .85; }
+
+/* Выпадающий список городов */
+.pvz-city-suggestions {
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 0;
+  right: 90px;
+  background: #fff;
+  border: 1.5px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+}
+.pvz-city-suggestion {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #f3f3f3;
+  transition: background .1s;
+}
+.pvz-city-suggestion:hover { background: #f0f5ff; }
+.pvz-city-suggestion:last-child { border-bottom: none; }
+
+/* Статус под картой */
+.pvz-status {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #555;
+  background: #f9f9f9;
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+}
+
+/* ===== CDEK маркер ===== */
+.cdek-pin {
+  width: 28px;
+  height: 36px;
+  background: var(--color-blue, #0063b1);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.3);
+  cursor: pointer;
+  transition: background .15s;
+}
+.cdek-pin:hover { background: var(--color-green, #83CA53); }
+
+/* ===== CDEK попап ===== */
+.cdek-popup { font-size: 13px; line-height: 1.5; max-width: 260px; }
+.cdek-popup__name  { font-weight: 700; font-size: 14px; margin: 0 0 4px; color: var(--color-dark, #000d24); }
+.cdek-popup__addr  { color: #333; margin: 0 0 4px; }
+.cdek-popup__work  { color: #666; margin: 0 0 4px; font-size: 12px; }
+.cdek-popup__phone { color: #888; margin: 0 0 8px; font-size: 12px; }
+.cdek-popup__btn {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  background: var(--color-green, #83CA53);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity .15s;
+}
+.cdek-popup__btn:hover { opacity: .85; }
+
+/* Скрываем стандартный Leaflet attribution на мобиле */
+@media (max-width: 480px) {
+  .leaflet-control-attribution { display: none; }
+}
+
+/* ===== Подсказка "не настроено" ===== */
+.pvz-setup-hint {
+  padding: 20px 24px;
+  background: #fff8e1;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #795548;
+  line-height: 1.6;
+}
+.pvz-setup-hint a { color: var(--color-blue, #0063b1); }
+
+/* ===== Ozon manual ===== */
+.pvz-ozon-manual { padding: 20px 0; }
+.pvz-ozon-info   { font-size: 14px; color: #555; margin-bottom: 16px; line-height: 1.6; }
+.pvz-ozon-link   { display: inline-flex; margin-bottom: 20px; }
+.pvz-ozon-form   { display: flex; gap: 10px; flex-wrap: wrap; }
+.pvz-ozon-form .cart-checkout__input { flex: 1; min-width: 220px; }
+
+/* ===== Выбранный ПВЗ в форме ===== */
+#pvz-selected-display {
+  margin: 8px 0;
+  padding: 12px 16px;
+  background: rgba(131, 202, 83, .12);
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* ===== Единая карта ПВЗ: легенда-фильтр ===== */
+.pvz-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  margin: 4px 0 12px;
+  padding: 10px 14px;
+  background: #f7f8fa;
+  border-radius: 10px;
+}
+.pvz-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+}
+.pvz-legend__item input { accent-color: var(--color-blue, #0063b1); cursor: pointer; }
+.pvz-legend__dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .15);
+  flex-shrink: 0;
+}
+
+/* ===== Балун выбранного ПВЗ на карте ===== */
+.pvz-balloon { font-size: 13px; line-height: 1.5; max-width: 260px; }
+.pvz-balloon__svc  { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; margin: 0 0 4px; }
+.pvz-balloon__name { font-weight: 700; font-size: 14px; margin: 0 0 4px; color: var(--color-dark, #000d24); }
+.pvz-balloon__addr  { color: #333; margin: 0 0 6px; }
+.pvz-balloon__work  { color: #666; font-size: 12px; margin: 0 0 4px; }
+.pvz-balloon__phone { color: #888; font-size: 12px; margin: 0 0 8px; }
+.pvz-pick {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  background: var(--color-green, #83CA53);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity .15s;
+}
+.pvz-pick:hover { opacity: .85; }
+
+/* ===== Метки ПВЗ на карте (Leaflet divIcon) ===== */
+.pvz-pin {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .45);
+}
+.pvz-pin--cdek   { background: #1AB248; }
+.pvz-pin--yandex { background: #FFCC00; }
+.pvz-pin--ozon   { background: #005BFF; }
+
+/* Кластеры точек */
+.pvz-cluster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+}

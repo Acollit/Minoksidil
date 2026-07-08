@@ -1,0 +1,17 @@
+:root {
+  --font-family: "Onest", sans-serif;
+  --font-angst: "Angst", sans-serif;
+  --font-involve: "Involve", sans-serif;
+  --content-width: 1760px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  --color-white: #fff;
+  --color-bg: #f3f3f3;
+  --color-blue: #0063b1;
+  --color-red: #e93922;
+  --color-green: #83ca53;
+  --color-dark: #000d24;
+  --color-cream: #fffaf3;
+  --color-card: #fafefd;
+}
