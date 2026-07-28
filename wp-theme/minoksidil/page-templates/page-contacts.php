@@ -64,12 +64,13 @@ function minoksidil_social_svg_contacts(): string {
             <a href="<?php echo esc_url($tg2); ?>" class="contacts-info__social" aria-label="Telegram 2" target="_blank" rel="noopener">
 
             </a>
+             <a href="<?php echo esc_url($max); ?>" class="contacts-info__social" aria-label="MAX" target="_blank" rel="noopener">
+
+            </a>
             <a href="<?php echo esc_url($vk); ?>" class="contacts-info__social" aria-label="ВКонтакте" target="_blank" rel="noopener">
 
             </a>
-            <a href="<?php echo esc_url($max); ?>" class="contacts-info__social" aria-label="MAX" target="_blank" rel="noopener">
 
-            </a>
             <a href="<?php echo esc_url($avito); ?>" class="contacts-info__social" aria-label="Avito" target="_blank" rel="noopener">
 
             </a>
@@ -113,8 +114,9 @@ function minoksidil_social_svg_contacts(): string {
             <div class="guide-wholesale__socials">
               <a href="<?php echo esc_url($tg); ?>" class="guide-wholesale__social" aria-label="Telegram" target="_blank" rel="noopener"></a>
               <a href="<?php echo esc_url($tg2); ?>" class="guide-wholesale__social" aria-label="Telegram 2" target="_blank" rel="noopener"></a>
-              <a href="<?php echo esc_url($vk); ?>" class="guide-wholesale__social" aria-label="ВКонтакте" target="_blank" rel="noopener"></a>
               <a href="<?php echo esc_url($max); ?>" class="guide-wholesale__social" aria-label="MAX" target="_blank" rel="noopener"></a>
+              <a href="<?php echo esc_url($vk); ?>" class="guide-wholesale__social" aria-label="ВКонтакте" target="_blank" rel="noopener"></a>
+
               <a href="<?php echo esc_url($avito); ?>" class="guide-wholesale__social" aria-label="Avito" target="_blank" rel="noopener"></a>
             </div>
           </div>

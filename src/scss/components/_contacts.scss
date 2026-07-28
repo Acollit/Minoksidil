@@ -13,9 +13,9 @@
 
   &__grid {
     display: grid;
+    align-items: flex-start;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
-    align-items: flex-start;
 
     @include tablet {
       grid-template-columns: repeat(2, 1fr);
@@ -79,44 +79,43 @@
 
   &__socials {
     display: flex;
-    gap: 10px;
     align-items: center;
+    gap: 10px;
   }
 
   &__social {
-
     flex-shrink: 0;
-    transition: all 0.3s ease-in-out;
     width: 44px;
     height: 44px;
     background-size: cover;
+    transition: all 0.3s ease-in-out;
 
     &:nth-child(1) {
-      background-image: url(../img/social-1.svg);
+      background-image: url("../img/social-1.svg");
 
 
     }
 
     &:nth-child(2) {
-      background-image: url(../img/social-2.svg);
+      background-image: url("../img/social-2.svg");
 
 
     }
 
     &:nth-child(3) {
-      background-image: url(../img/social-3.svg);
+      background-image: url("../img/social-3.svg");
 
 
     }
 
     &:nth-child(4) {
-      background-image: url(../img/social-4.svg);
+      background-image: url("../img/social-4.svg");
 
 
     }
 
     &:nth-child(5) {
-      background-image: url(../img/social-5.svg);
+      background-image: url("../img/social-5.svg");
 
 
     }
@@ -126,9 +125,9 @@
 // --- CONTACTS MAP ---
 
 .contacts-map {
-  line-height: 0;
   overflow: hidden;
   margin-bottom: 140px;
+  line-height: 0;
 
   @include tablet {
     margin-bottom: 80px;
@@ -140,9 +139,9 @@
 
   iframe {
     display: block;
+    border: none;
     width: 100%;
     height: 540px;
-    border: none;
 
     @include small-tablet {
       height: 300px;
@@ -159,24 +158,24 @@
 // --- CONTACTS CTA ---
 
 .contacts-cta {
-  margin-bottom: 140px;
   margin-top: 140px;
+  margin-bottom: 140px;
 
   @include tablet {
-    margin-bottom: 80px;
     margin-top: 80px;
+    margin-bottom: 80px;
   }
 
   @include small-tablet {
-    margin-bottom: 60px;
     margin-top: 60px;
+    margin-bottom: 60px;
   }
 
   &__grid {
     display: grid;
+    align-items: flex-start;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-    align-items: flex-start;
 
     @include tablet {
       gap: 40px;
@@ -189,10 +188,10 @@
   }
 
   &__left {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
     gap: 50px;
 
     @include small-tablet {
@@ -247,20 +246,20 @@
   }
 
   &__schedule-label {
+    margin: 0;
     font-family: var(--font-family);
-    font-size: 22px;
     font-weight: 700;
+    font-size: 22px;
     text-transform: uppercase;
     color: var(--color-dark);
-    margin: 0;
   }
 
   &__schedule-value {
-    font-family: var(--font-family);
-    font-size: 20px;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.6);
     margin: 0;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
   }
 }
 
@@ -273,19 +272,19 @@
 
   &__input,
   &__textarea {
-    width: 100%;
-    padding: 20px;
-    background-color: inherit;
+    outline: none;
     border: 3px solid rgba(0, 13, 36, 0.36);
     border-radius: 50px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 24px;
     line-height: 102%;
     color: rgba(0, 13, 36, 0.36);
-    outline: none;
+    background-color: inherit;
     transition: box-shadow 0.15s;
-    box-sizing: border-box;
 
     @include medium-desktop {
       font-size: 20px;
@@ -311,8 +310,8 @@
   &__textarea {
     border-radius: 24px;
     padding: 16px 20px;
-    resize: none;
     line-height: 1.5;
+    resize: none;
   }
 
   &__row {
@@ -328,42 +327,42 @@
   &__check {
     display: flex;
     align-items: center;
-    gap: 10px;
     cursor: pointer;
+    gap: 10px;
   }
 
   &__check-input {
     position: absolute;
-    opacity: 0;
     width: 1px;
     height: 1px;
+    opacity: 0;
     pointer-events: none;
   }
 
   &__check-box {
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
     margin-top: 2px;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
     transition: background-color 0.15s, border-color 0.15s;
   }
 
   &__check-input:checked+&__check-box {
-    background: var(--color-blue);
     border-color: var(--color-blue);
+    background: var(--color-blue);
 
     &::after {
       content: '';
       display: block;
+      border-bottom: 2px solid var(--color-white);
+      border-left: 2px solid var(--color-white);
       width: 10px;
       height: 7px;
-      border-left: 2px solid var(--color-white);
-      border-bottom: 2px solid var(--color-white);
       transform: rotate(-45deg) translateY(-1px);
     }
   }
@@ -386,22 +385,22 @@
   }
 
   &__btn {
-    width: 100%;
-    height: 67px;
-    background: var(--color-blue);
+    margin-top: 8px;
     border: none;
     border-radius: 100px;
+    width: 100%;
+    height: 67px;
     font-family: var(--font-family);
-    font-size: 24px;
     font-weight: 600;
+    font-size: 24px;
     color: var(--color-white);
-    cursor: pointer;
+    background: var(--color-blue);
     transition: opacity 0.2s;
-    margin-top: 8px;
+    cursor: pointer;
 
     @include small-tablet {
-      font-size: 14px;
       height: 50px;
+      font-size: 14px;
     }
 
     &:hover {

@@ -22,8 +22,8 @@
   }
 
   &__content {
-    flex: 0 0 870px;
     display: flex;
+    flex: 0 0 870px;
     flex-direction: column;
     align-items: flex-start;
 
@@ -50,13 +50,13 @@
   }
 
   &__title {
+    margin: 0 0 20px;
     font-family: var(--font-family);
-    font-size: 48px;
     font-weight: 600;
+    font-size: 48px;
     line-height: 95%;
     text-transform: uppercase;
     color: var(--color-dark);
-    margin: 0 0 20px;
 
     @include laptop {
       font-size: 40px;
@@ -76,13 +76,13 @@
   }
 
   &__desc {
-    font-family: var(--font-family);
-    font-size: 24px;
-    font-weight: 400;
-    color: var(--color-dark);
-    line-height: 1.02;
     margin: 0 0 30px;
     max-width: 621px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.02;
+    color: var(--color-dark);
 
     @include tablet {
       font-size: 20px;
@@ -99,8 +99,8 @@
 
   &__images {
     display: flex;
-    gap: 20px;
     margin-top: 80px;
+    gap: 20px;
 
 
 
@@ -109,8 +109,8 @@
     }
 
     @include small-tablet {
-      margin-top: 30px;
       flex-wrap: wrap;
+      margin-top: 30px;
       gap: 12px;
     }
 
@@ -120,11 +120,11 @@
   }
 
   &__img-item {
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 40px;
     width: 277px;
     height: 277px;
-    border-radius: 40px;
-    overflow: hidden;
-    flex-shrink: 0;
 
     @include laptop {
       width: 178px;
@@ -137,9 +137,9 @@
     }
 
     @include small-tablet {
+      flex-shrink: 1;
       width: calc(50% - 6px);
       height: 180px;
-      flex-shrink: 1;
     }
 
     @include mobile {
@@ -157,16 +157,16 @@
   }
 
   &__visual {
-    flex: 1;
     position: relative;
+    flex: 1;
     min-height: 748px;
     pointer-events: none;
 
     @include laptop {
-      width: 100%;
-      min-height: auto;
       position: static;
+      width: 100%;
       height: 550px;
+      min-height: auto;
     }
 
 
@@ -177,32 +177,31 @@
 
   &__grass {
     position: absolute;
-    bottom: 0;
     left: 0;
+    bottom: 0;
     width: 100%;
     height: auto;
 
     @include laptop {
       position: static;
-
       object-fit: contain;
     }
   }
 
   &__bottle {
     position: absolute;
-    top: -60px;
     left: 0;
-    width: 100%;
-    max-width: 833px;
-    height: auto;
+    top: -60px;
     z-index: 1;
+    width: 100%;
+    height: auto;
+    max-width: 833px;
   }
 
   &__ladybug {
     position: absolute;
-    bottom: 200px;
     right: 80px;
+    bottom: 200px;
     z-index: 2;
   }
 }

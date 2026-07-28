@@ -28,7 +28,7 @@ function minoksidil_social_svg(): string {
     <div class="container guide-hero__inner">
       <div class="guide-hero__content">
         <h1 class="guide-hero__title"><?php echo wp_kses_post(minoksidil_acf('hero_title', 'Minoxidillum<br>— ваш проводник в мир густых волос')); ?></h1>
-        
+
 
       </div>
     </div>
@@ -176,10 +176,11 @@ function minoksidil_social_svg(): string {
             <h2 class="guide-wholesale__title"><?php echo esc_html(minoksidil_acf('wholesale_title', 'Поставляем наши товары оптом под реализацию', get_queried_object_id())); ?></h2>
             <p class="guide-wholesale__text"><?php echo wp_kses_post(minoksidil_acf('wholesale_text', 'Если вам интересен такой формат работы, напишите нам — обсудим условия', get_queried_object_id())); ?></p>
             <div class="guide-wholesale__socials">
-              <a href="<?php echo esc_url($vk); ?>" class="guide-wholesale__social" aria-label="ВКонтакте" target="_blank" rel="noopener"></a>
               <a href="<?php echo esc_url($tg); ?>" class="guide-wholesale__social" aria-label="Telegram" target="_blank" rel="noopener"></a>
               <a href="<?php echo esc_url($tg2); ?>" class="guide-wholesale__social" aria-label="Telegram 2" target="_blank" rel="noopener"></a>
+
               <a href="<?php echo esc_url($max); ?>" class="guide-wholesale__social" aria-label="MAX" target="_blank" rel="noopener"></a>
+              <a href="<?php echo esc_url($vk); ?>" class="guide-wholesale__social" aria-label="ВКонтакте" target="_blank" rel="noopener"></a>
               <a href="<?php echo esc_url($avito); ?>" class="guide-wholesale__social" aria-label="Avito" target="_blank" rel="noopener"></a>
             </div>
           </div>

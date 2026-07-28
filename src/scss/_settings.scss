@@ -136,16 +136,16 @@ a {
 }
 
 .polit {
-  background-image: url(../img/404-grass.webp);
   padding-top: 100px;
   padding-bottom: 400px;
-  background-repeat: no-repeat;
+  background-image: url("../img/404-grass.webp");
   background-position: bottom;
   background-size: contain;
+  background-repeat: no-repeat;
 
   @include small-tablet {
-    padding-bottom: 115px;
     padding-top: 60px;
+    padding-bottom: 115px;
   }
 
   h1 {
@@ -166,8 +166,8 @@ a {
     }
 
     @include small-tablet {
-      font-size: 20px;
       margin-bottom: 30px;
+      font-size: 20px;
     }
   }
 
@@ -196,10 +196,10 @@ a {
 
 .error-404 {
   height: 100vh;
-  background-image: url(../img/404-grass.webp);
-  background-repeat: no-repeat;
+  background-image: url("../img/404-grass.webp");
   background-position: bottom;
   background-size: contain;
+  background-repeat: no-repeat;
 
   @include small-tablet {
     height: 480px;
@@ -207,9 +207,9 @@ a {
 
   &__content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     padding-top: 400px;
 
     @include small-tablet {

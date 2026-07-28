@@ -1,10 +1,10 @@
 .topbar {
-  background: var(--color-blue);
   height: 54px;
+  background: var(--color-blue);
 
   @include small-tablet {
-    height: auto;
     padding: 10px 0;
+    height: auto;
   }
 
   .container {
@@ -15,11 +15,11 @@
   }
 
   &__phone {
-    font-size: 24px;
     font-weight: 400;
-    color: var(--color-cream);
-    text-decoration: none;
+    font-size: 24px;
     line-height: 1.02;
+    text-decoration: none;
+    color: var(--color-cream);
 
     @include small-tablet {
       font-size: 16px;
@@ -38,37 +38,37 @@
 
   &__social {
     flex-shrink: 0;
-    transition: all 0.3s ease-in-out;
     width: 34px;
     height: 34px;
     background-size: cover;
+    transition: all 0.3s ease-in-out;
 
     &:nth-child(1) {
-      background-image: url(../img/header-social-1.svg);
+      background-image: url("../img/header-social-1.svg");
 
 
     }
 
     &:nth-child(2) {
-      background-image: url(../img/header-social-2.svg);
+      background-image: url("../img/header-social-2.svg");
 
 
     }
 
     &:nth-child(3) {
-      background-image: url(../img/header-social-3.svg);
+      background-image: url("../img/header-social-3.svg");
 
 
     }
 
     &:nth-child(4) {
-      background-image: url(../img/header-social-4.svg);
+      background-image: url("../img/header-social-4.svg");
 
 
     }
 
     &:nth-child(5) {
-      background-image: url(../img/header-social-5.svg);
+      background-image: url("../img/header-social-5.svg");
 
 
     }
@@ -108,24 +108,24 @@
 
     @include small-tablet {
       flex-wrap: wrap;
-      height: auto;
-      min-height: 60px;
       padding-top: 10px;
       padding-bottom: 10px;
+      height: auto;
+      min-height: 60px;
       gap: 10px;
     }
   }
 
   &__logo {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
     font-family: var(--font-angst);
-    font-size: 48px;
     font-weight: 400;
-    color: var(--color-red);
+    font-size: 48px;
     line-height: 1.02;
     text-decoration: none;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
+    color: var(--color-red);
 
     span {
       font-family: var(--font-family);
@@ -137,12 +137,11 @@
       color: #e93922;
 
       @include laptop {
-        letter-spacing: 0.84em;
         font-size: 18px;
+        letter-spacing: 0.84em;
       }
 
       @include small-tablet {
-
         font-size: 16px;
 
 
@@ -163,9 +162,9 @@
     }
 
     @include small-tablet {
-      font-size: 32px;
       flex: 1;
       flex-shrink: 1;
+      font-size: 32px;
     }
 
     @include mobile {
@@ -192,18 +191,18 @@
 
     @include small-tablet {
       position: absolute;
-      top: 115px;
       left: 0;
-      order: 3;
-      height: 100vh;
-      width: 100%;
+      top: 115px;
+      z-index: 10;
       display: none;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      order: 3;
       padding: 24px 10px;
-      z-index: 10;
+      width: 100%;
+      height: 100vh;
       background-color: #fff;
+      gap: 20px;
 
       &.menu--active {
         display: flex;
@@ -212,11 +211,11 @@
   }
 
   &__nav-link {
-    font-size: 24px;
     font-weight: 400;
-    color: var(--color-dark);
-    text-decoration: none;
+    font-size: 24px;
     white-space: nowrap;
+    text-decoration: none;
+    color: var(--color-dark);
     transition: color 0.2s;
 
     @include laptop {
@@ -248,39 +247,39 @@
 
   &__call-btn {
     display: inline-flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    height: 67px;
-    padding: 10px 30px;
-    background: none;
     border: 3px solid var(--color-blue);
     border-radius: 50px;
+    padding: 10px 30px;
+    height: 67px;
     font-family: var(--font-family);
-    font-size: 24px;
     font-weight: 600;
-    color: var(--color-blue);
-    text-decoration: none;
+    font-size: 24px;
     white-space: nowrap;
-    flex-shrink: 0;
-    cursor: pointer;
+    text-decoration: none;
+    color: var(--color-blue);
+    background: none;
     transition: opacity 0.2s;
+    cursor: pointer;
 
     @include laptop {
-      font-size: 20px;
-      height: 56px;
       padding: 8px 24px;
+      height: 56px;
+      font-size: 20px;
     }
 
     @include medium-desktop {
-      font-size: 18px;
-      height: 50px;
       padding: 8px 18px;
+      height: 50px;
+      font-size: 18px;
     }
 
     @include tablet {
-      font-size: 18px;
-      height: 52px;
       padding: 8px 20px;
+      height: 52px;
+      font-size: 18px;
     }
 
     &:hover {
@@ -292,11 +291,11 @@
 
       @include small-tablet {
         display: inline-flex;
-        font-size: 18px;
-        height: 52px;
-        padding: 8px 28px;
         margin-top: 50px;
+        padding: 8px 28px;
         width: 100%;
+        height: 52px;
+        font-size: 18px;
       }
     }
   }
@@ -304,14 +303,14 @@
   &__cart {
     position: relative;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    width: 67px;
-    height: 67px;
     border: 3px solid var(--color-blue);
     border-radius: 50%;
+    width: 67px;
+    height: 67px;
     color: var(--color-blue);
-    flex-shrink: 0;
     transition: opacity 0.2s;
 
     @include laptop {
@@ -351,16 +350,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25px;
-    height: 25px;
     border: 1px solid var(--color-blue);
     border-radius: 100%;
-    background-color: #fff;
+    width: 25px;
+    height: 25px;
     font-family: var(--font-family);
-    font-size: 14px;
     font-weight: 600;
+    font-size: 14px;
     line-height: 1;
     color: var(--color-blue);
+    background-color: #fff;
 
     &.is-empty {
       display: none;
@@ -373,8 +372,8 @@
     gap: 10px;
 
     @include small-tablet {
-      order: 2;
       flex-shrink: 0;
+      order: 2;
 
       .header__call-btn {
         display: none;
@@ -387,10 +386,10 @@
   display: none;
   width: 40px;
   height: 40px;
-  background-image: url(../img/menu.svg);
+  background-image: url("../img/menu.svg");
 
   &--active {
-    background-image: url(../img/close.svg);
+    background-image: url("../img/close.svg");
   }
 
   @include small-tablet {

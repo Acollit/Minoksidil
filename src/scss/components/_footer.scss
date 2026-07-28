@@ -1,6 +1,6 @@
 .footer {
-  background: var(--color-white);
   padding: 60px 0 50px;
+  background: var(--color-white);
 
   @include tablet {
     padding: 50px 0 40px;
@@ -33,15 +33,15 @@
 
     @include small-tablet {
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       gap: 30px;
     }
   }
 
   &__brand {
-    flex: 0 0 360px;
     display: flex;
+    flex: 0 0 360px;
     flex-direction: column;
     gap: 165px;
 
@@ -60,8 +60,8 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      gap: 0;
       width: 100%;
+      gap: 0;
     }
 
     @include mobile {
@@ -73,15 +73,15 @@
   }
 
   &__logo {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
     font-family: var(--font-angst);
-    font-size: 48px;
     font-weight: 400;
-    color: var(--color-red);
+    font-size: 48px;
     line-height: 1.02;
     text-decoration: none;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
+    color: var(--color-red);
 
     span {
       font-family: var(--font-family);
@@ -93,12 +93,11 @@
       color: #e93922;
 
       @include laptop {
-        letter-spacing: 0.84em;
         font-size: 18px;
+        letter-spacing: 0.84em;
       }
 
       @include small-tablet {
-
         font-size: 16px;
 
 
@@ -119,9 +118,9 @@
     }
 
     @include small-tablet {
-      font-size: 32px;
       flex: 1;
       flex-shrink: 1;
+      font-size: 32px;
     }
 
     @include mobile {
@@ -135,37 +134,36 @@
   }
 
   &__social {
-
     flex-shrink: 0;
-    transition: all 0.3s ease-in-out;
     width: 34px;
     height: 34px;
     background-size: cover;
+    transition: all 0.3s ease-in-out;
 
     &:nth-child(1) {
-      background-image: url(../img/social-1.svg);
+      background-image: url("../img/social-1.svg");
 
 
     }
 
     &:nth-child(2) {
-      background-image: url(../img/social-2.svg);
+      background-image: url("../img/social-2.svg");
 
     }
 
     &:nth-child(3) {
-      background-image: url(../img/social-3.svg);
+      background-image: url("../img/social-3.svg");
 
     }
 
     &:nth-child(4) {
-      background-image: url(../img/social-4.svg);
+      background-image: url("../img/social-4.svg");
 
 
     }
 
     &:nth-child(5) {
-      background-image: url(../img/social-5.svg);
+      background-image: url("../img/social-5.svg");
 
 
     }
@@ -173,16 +171,16 @@
 
   &__cols {
     display: flex;
-    gap: 214px;
     flex: 1;
+    gap: 214px;
 
     @include big-desktop {
       gap: 120px;
     }
 
     @include laptop {
-      gap: 80px;
       justify-content: space-between;
+      gap: 80px;
     }
 
     @include medium-desktop {
@@ -195,8 +193,8 @@
 
     @include small-tablet {
       flex-direction: column;
-      gap: 24px;
       width: 100%;
+      gap: 24px;
     }
   }
 
@@ -205,18 +203,18 @@
     flex-direction: column;
 
     @include small-tablet {
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
   }
 
   &__col-title {
-    font-family: var(--font-family);
-    font-size: 32px;
-    font-weight: 600;
-    color: var(--color-dark);
-    line-height: 1.02;
     margin: 0 0 30px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.02;
+    color: var(--color-dark);
 
     @include medium-desktop {
       font-size: 22px;
@@ -245,11 +243,11 @@
   &__nav-link,
   &__contacts-link {
     font-family: var(--font-family);
-    font-size: 24px;
     font-weight: 400;
-    color: var(--color-dark);
-    text-decoration: none;
+    font-size: 24px;
     line-height: 1.02;
+    text-decoration: none;
+    color: var(--color-dark);
     transition: color 0.2s;
 
     @include medium-desktop {
@@ -274,9 +272,8 @@
   }
 
   &__map {
-
-    border-radius: 40px;
     overflow: hidden;
+    border-radius: 40px;
     height: 263px;
 
     iframe {
@@ -284,14 +281,13 @@
     }
 
     @include laptop {
-      max-width: 300px;
       width: 100%;
+      max-width: 300px;
     }
 
     @include tablet {}
 
     @include small-tablet {
-
       width: 100%;
       height: 220px;
     }
@@ -306,8 +302,8 @@
 }
 
 .footer-bottom {
-  background: var(--color-green);
   height: 64px;
+  background: var(--color-green);
 
   @include small-tablet {
     height: auto;
@@ -316,8 +312,8 @@
   .container {
     display: flex;
     align-items: center;
-    gap: 80px;
     height: 100%;
+    gap: 80px;
 
     @include tablet {
       gap: 40px;
@@ -325,19 +321,19 @@
 
     @include small-tablet {
       flex-wrap: wrap;
-      gap: 10px 30px;
       padding-top: 14px;
       padding-bottom: 14px;
+      gap: 10px 30px;
     }
   }
 
   &__link {
     font-family: var(--font-family);
-    font-size: 24px;
     font-weight: 400;
-    color: var(--color-white);
-    text-decoration: none;
+    font-size: 24px;
     line-height: 1.02;
+    text-decoration: none;
+    color: var(--color-white);
     transition: opacity 0.2s;
 
     @include laptop {
@@ -349,9 +345,9 @@
     }
 
     @include small-tablet {
+      width: 100%;
       font-size: 16px;
       text-align: center;
-      width: 100%;
     }
 
     &:hover {

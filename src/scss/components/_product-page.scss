@@ -5,12 +5,12 @@
 
   &__list {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    row-gap: 4px;
+    align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
+    row-gap: 4px;
   }
 
   &__item {
@@ -21,8 +21,8 @@
       content: '/';
       margin: 0 10px;
       font-family: var(--font-family);
-      font-size: 20px;
       font-weight: 400;
+      font-size: 20px;
       color: rgba(0, 0, 0, 0.38);
 
       @include small-tablet {
@@ -32,8 +32,8 @@
 
     &--current {
       font-family: var(--font-family);
-      font-size: 20px;
       font-weight: 500;
+      font-size: 20px;
       color: var(--color-dark);
 
       @include small-tablet {
@@ -44,8 +44,8 @@
 
   &__link {
     font-family: var(--font-family);
-    font-size: 20px;
     font-weight: 400;
+    font-size: 20px;
     color: rgba(0, 0, 0, 0.38);
     transition: color 0.15s;
 
@@ -74,9 +74,9 @@
 
   &__layout {
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 80px;
-    align-items: flex-start;
 
     @include laptop {
       gap: 60px;
@@ -102,8 +102,8 @@
 .product-gallery {
   position: sticky;
   top: 50px;
-  max-width: 722px;
   width: 100%;
+  max-width: 722px;
 
   @include big-desktop {
     max-width: 600px;
@@ -128,14 +128,14 @@
 
   &__main {
     position: relative;
-    background: #fff;
-    border-radius: 40px;
-    height: 722px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 16px;
     overflow: hidden;
+    margin-bottom: 16px;
+    border-radius: 40px;
+    height: 722px;
+    background: #fff;
 
     @include big-desktop {
       height: 600px;
@@ -202,20 +202,20 @@
   &__nav {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    z-index: 2;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
+    border: none;
+    border-radius: 50%;
     width: 54px;
     height: 54px;
-    border-radius: 50%;
-    background: var(--color-blue);
-    border: none;
     color: var(--color-white);
-    cursor: pointer;
-    z-index: 2;
+    background: var(--color-blue);
+    transform: translateY(-50%);
     transition: opacity 0.2s;
-    flex-shrink: 0;
+    cursor: pointer;
 
     @include small-tablet {
       width: 40px;
@@ -245,35 +245,35 @@
 
   &__thumbs {
     display: flex;
-    gap: 12px;
     overflow-x: auto;
+    gap: 12px;
     -webkit-overflow-scrolling: touch;
 
     @include small-tablet {
-      gap: 8px;
       padding-bottom: 4px;
+      gap: 8px;
     }
   }
 
   &__thumb {
-    background: #fff;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
     border: 2px solid transparent;
     border-radius: 16px;
     padding: 10px;
     width: 90px;
     height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+    background: #fff;
     transition: border-color 0.15s;
-    flex-shrink: 0;
+    cursor: pointer;
 
     @include small-tablet {
+      border-radius: 12px;
+      padding: 8px;
       width: 70px;
       height: 70px;
-      padding: 8px;
-      border-radius: 12px;
     }
 
     img {
@@ -301,8 +301,8 @@
 
 .product-info {
   padding-top: 10px;
-  max-width: 870px;
   width: 100%;
+  max-width: 870px;
 
   @include laptop {
     max-width: 655px;
@@ -313,12 +313,12 @@
   }
 
   &__title {
+    margin: 0 0 30px;
     font-family: var(--font-angst);
     font-weight: 400;
     font-size: 60px;
     line-height: 98%;
     color: #000d24;
-    margin: 0 0 30px;
 
     @include medium-desktop {
       font-size: 36px;
@@ -333,8 +333,8 @@
     }
 
     @include mobile {
-      font-size: 20px;
       margin: 0 0 20px;
+      font-size: 20px;
     }
 
     &--mobile {
@@ -354,31 +354,31 @@
   }
 
   &__desc {
+    margin: 0 0 40px;
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 24px;
     line-height: 102%;
     color: #000d24;
-    margin: 0 0 40px;
 
     @include medium-desktop {
-      font-size: 16px;
       margin: 0 0 30px;
+      font-size: 16px;
     }
 
     @include small-tablet {
-      font-size: 14px;
       margin: 0 0 20px;
+      font-size: 14px;
     }
   }
 
   &__price {
+    margin: 0 0 30px;
     font-family: var(--font-involve);
     font-weight: 700;
     font-size: 48px;
     line-height: 102%;
     color: #e93922;
-    margin: 0 0 30px;
 
     @include laptop {
       font-size: 36px;
@@ -390,7 +390,6 @@
   }
 
   &__buy {
-
     margin-bottom: 100px;
 
     @include laptop {
@@ -399,8 +398,8 @@
 
     form {
       display: flex;
-      gap: 16px;
       align-items: center;
+      gap: 16px;
 
       @include mobile {
         flex-direction: column;
@@ -424,30 +423,29 @@
   }
 
   &__cart-btn {
-    max-width: 425px;
-    flex: 1;
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
-    padding: 6px 6px 6px 24px;
-    height: 66px;
-
-    @include mobile {
-      max-width: 100%;
-      height: 54px;
-    }
-
-    background: var(--color-green);
     border: none;
     border-radius: 50px;
+    padding: 6px 6px 6px 24px;
+    height: 66px;
+    max-width: 425px;
     font-family: var(--font-family);
-    font-size: 22px;
     font-weight: 600;
-    color: var(--color-white);
-    cursor: pointer;
-    transition: opacity 0.2s;
+    font-size: 22px;
     text-align: left;
+    color: var(--color-white);
+    background: var(--color-green);
+    transition: opacity 0.2s;
+    cursor: pointer;
+    gap: 12px;
+
+    @include mobile {
+      height: 54px;
+      max-width: 100%;
+    }
 
     @include small-tablet {
       font-size: 14px;
@@ -460,19 +458,19 @@
 
   &__cart-icon {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
     width: 54px;
     height: 54px;
-    background: var(--color-white);
-    border-radius: 50%;
     color: var(--color-dark);
-    flex-shrink: 0;
+    background: var(--color-white);
 
     @include small-tablet {
+      padding: 10px;
       width: 40px;
       height: 40px;
-      padding: 10px;
     }
   }
 }
@@ -480,14 +478,14 @@
 // --- QTY CONTROL ---
 
 .product-qty {
-  max-width: 280px;
   display: flex;
-  align-items: center;
-  gap: 4px;
   flex-shrink: 0;
-  border-radius: 30px;
+  align-items: center;
   overflow: hidden;
+  border-radius: 30px;
+  max-width: 280px;
   background: #fff;
+  gap: 4px;
 
   @include small-tablet {
     justify-content: space-between;
@@ -497,16 +495,16 @@
 
   &__btn {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
+    border: none;
     width: 54px;
     height: 54px;
-    background: var(--color-blue);
-    border: none;
     color: var(--color-white);
-    cursor: pointer;
-    flex-shrink: 0;
+    background: var(--color-blue);
     transition: opacity 0.2s;
+    cursor: pointer;
 
     &:hover {
       opacity: 0.85;
@@ -514,15 +512,14 @@
   }
 
   &__value {
-    min-width: 150px;
+    -moz-appearance: textfield;
     width: 150px;
-    text-align: center;
+    min-width: 150px;
     font-family: var(--font-family);
-    font-size: 28px;
     font-weight: 600;
+    font-size: 28px;
     text-align: center;
     color: #0063b1;
-    -moz-appearance: textfield;
 
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
@@ -531,9 +528,9 @@
     }
 
     @include small-tablet {
-      min-width: 60px;
-      width: auto;
       flex: 1;
+      width: auto;
+      min-width: 60px;
       font-size: 20px;
     }
   }
@@ -576,12 +573,12 @@
   }
 
   &__text {
+    margin: 0;
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 24px;
     line-height: 102%;
     color: #000d24;
-    margin: 0;
 
     @include medium-desktop {
       font-size: 16px;
@@ -611,19 +608,19 @@
     @include small-tablet {
       flex-direction: column;
       align-items: flex-start;
-      gap: 16px;
       margin-bottom: 20px;
+      gap: 16px;
     }
   }
 
   &__title {
+    margin: 0;
     font-family: var(--font-family);
-    font-size: 48px;
     font-weight: 600;
+    font-size: 48px;
     line-height: 95%;
     text-transform: uppercase;
     color: var(--color-dark);
-    margin: 0;
 
     @include laptop {
       font-size: 40px;
@@ -644,12 +641,12 @@
 
   &__nav {
     display: flex;
-    gap: 10px;
     flex-shrink: 0;
+    gap: 10px;
 
     @include small-tablet {
-      width: 100%;
       justify-content: space-between;
+      width: 100%;
     }
   }
 
@@ -663,18 +660,18 @@
 }
 
 .review-card {
-  background: var(--color-white);
   border-radius: 30px;
   padding: 28px 28px 32px;
+  background: var(--color-white);
 
   &__name {
+    margin: 0 0 16px;
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 32px;
     line-height: 95%;
     text-transform: uppercase;
     color: #000d24;
-    margin: 0 0 16px;
 
     @include medium-desktop {
       font-size: 26px;
@@ -687,21 +684,21 @@
 
   &__photos {
     display: flex;
-    gap: 8px;
     margin-bottom: 18px;
+    gap: 8px;
 
     @include small-tablet {
-      gap: 5px;
       margin-bottom: 15px;
+      gap: 5px;
     }
   }
 
   &__photo {
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 10px;
     width: 80px;
     height: 80px;
-    border-radius: 10px;
-    overflow: hidden;
-    flex-shrink: 0;
     background: var(--color-bg);
 
     @include small-tablet {
@@ -710,20 +707,20 @@
     }
 
     img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
   }
 
   &__text {
+    margin: 0;
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 24px;
     line-height: 102%;
     color: #000d24;
-    margin: 0;
 
     @include medium-desktop {
       font-size: 20px;
@@ -738,9 +735,9 @@
 // --- GRASS DECORATION ---
 
 .product-grass {
-  line-height: 0;
   overflow: hidden;
   margin-top: -100px;
+  line-height: 0;
 
   img {
     display: block;

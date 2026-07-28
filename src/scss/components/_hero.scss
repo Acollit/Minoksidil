@@ -2,28 +2,28 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  border-radius: 50px;
-  font-family: var(--font-family);
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.02;
-  cursor: pointer;
-  text-decoration: none;
   border: none;
+  border-radius: 50px;
   padding: 10px 30px;
-  transition: opacity 0.2s;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.02;
   white-space: nowrap;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  gap: 10px;
 
   @include tablet {
-    font-size: 20px;
     min-height: 56px;
+    font-size: 20px;
   }
 
   @include small-tablet {
-    font-size: 18px;
-    min-height: 52px;
     padding: 10px 24px;
+    min-height: 52px;
+    font-size: 18px;
   }
 
   &:hover {
@@ -31,11 +31,11 @@
   }
 
   &--green {
-    max-width: 425px;
     width: 100%;
-    background-color: var(--color-green);
-    color: var(--color-white);
     min-height: 67px;
+    max-width: 425px;
+    color: var(--color-white);
+    background-color: var(--color-green);
 
     @include small-tablet {
       width: 100%;
@@ -45,12 +45,12 @@
   }
 
   &--outline {
-    max-width: 425px;
-    width: 100%;
-    background: transparent;
     border: 3px solid var(--color-blue);
-    color: var(--color-blue);
+    width: 100%;
     min-height: 67px;
+    max-width: 425px;
+    color: var(--color-blue);
+    background: transparent;
 
     @include small-tablet {
       width: 100%;
@@ -61,20 +61,20 @@
 }
 
 .hero {
-  background-image: url(../img/hero-bg.webp);
-  background-size: cover;
-  background-position: center right;
   position: relative;
   overflow: hidden;
   margin-bottom: 140px;
+  background-image: url("../img/hero-bg.webp");
+  background-position: center right;
+  background-size: cover;
 
   @include tablet {
     margin-bottom: 80px;
   }
 
   @include small-tablet {
-    background-image:none;
     margin-bottom: 60px;
+    background-image: none;
   }
 
   @include mobile {
@@ -82,20 +82,20 @@
   }
 
   &__container {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    min-height: 923px;
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    min-height: 923px;
+    gap: 20px;
 
     @include big-desktop {
       min-height: 720px;
     }
 
     @include laptop {
-      min-height: 650px;
       padding-bottom: 40px;
+      min-height: 650px;
     }
 
     @include medium-desktop {
@@ -123,7 +123,7 @@
       top: -11px;
       width: 39px;
       height: 28px;
-      background-image: url(../img/goad.webp);
+      background-image: url("../img/goad.webp");
       background-size: cover;
     }
   }
@@ -189,11 +189,11 @@
   &__desc {
     margin: 0;
     margin-bottom: 30px;
+    max-width: 622px;
     font-weight: 400;
     font-size: 20px;
     line-height: 102%;
     color: #000d24;
-    max-width: 622px;
 
     @include small-tablet {
       font-size: 16px;
@@ -205,11 +205,11 @@
   }
 
   &__photo {
-    width: 870px;
     flex-shrink: 0;
-    border-radius: 40px;
-    overflow: hidden;
     align-self: flex-start;
+    overflow: hidden;
+    border-radius: 40px;
+    width: 870px;
 
     @include big-desktop {
       width: 700px;
@@ -228,8 +228,8 @@
     }
 
     @include small-tablet {
-      width: 100%;
       border-radius: 0 0 24px 24px;
+      width: 100%;
     }
 
     img {
@@ -246,17 +246,27 @@
 
   &__grass {
     position: absolute;
-    bottom: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     z-index: 0;
-    pointer-events: none;
     line-height: 0;
+    pointer-events: none;
+
+
 
     img {
       display: block;
       width: 100%;
       height: auto;
+      max-height: 450px;
+
+      @include laptop {
+        max-height: 270px;
+
+      }
+
+
     }
   }
 

@@ -1,0 +1,455 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link [ref=e4] [cursor=pointer]:
+        - /url: http://dev1.toppenoplast.ru
+        - img "Производство изделий из пенопласта" [ref=e5]
+      - button "Меню" [ref=e6] [cursor=pointer]
+      - generic [ref=e8]:
+        - button [ref=e9] [cursor=pointer]
+        - textbox "Поиск по сайту" [ref=e10]
+      - generic [ref=e11]:
+        - link "zakaz@toppenoplast.ru" [ref=e13] [cursor=pointer]:
+          - /url: mailto:zakaz@toppenoplast.ru
+        - generic [ref=e14]:
+          - link "+79689756348" [ref=e16] [cursor=pointer]:
+            - /url: tel:+79689756348
+          - link "+74957951590" [ref=e18] [cursor=pointer]:
+            - /url: tel:+74957951590
+      - link "Оставить заявку" [ref=e19] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=e21]:
+    - generic [ref=e25]:
+      - generic [ref=e26]: Изготовим фигуры любой сложности по фото, эскизу или вашей идее
+      - heading "ЗД фигуры и скульптуры из пенопласта" [level=1] [ref=e28]
+      - generic [ref=e29]:
+        - img "Бесплатное 3D-моделирование" [ref=e30]
+        - generic [ref=e31]:
+          - paragraph [ref=e32]: Бесплатное 3D-моделирование
+          - paragraph [ref=e33]: Покажем форму, пропорции и детали будущей фигуры перед изготовлением
+      - link "Оставить заявку" [ref=e35] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - list [ref=e42]:
+          - listitem [ref=e43]:
+            - link "Пенопласт" [ref=e44] [cursor=pointer]:
+              - /url: http://dev1.toppenoplast.ru/katalog-produkcii/
+            - list [ref=e45]:
+              - listitem [ref=e46]:
+                - link "Буквы из пенопласта" [ref=e47] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/obemnye-bukvy-iz-penoplasta/
+              - listitem [ref=e49]:
+                - link "Фасадный декор" [ref=e50] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/dekor-iz-penoplasta/dekorativnye-elementy-dlja-fasada/
+              - listitem [ref=e52]:
+                - link "Реклама из пенопласта" [ref=e53] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/reklama-iz-penoplasta/
+              - listitem [ref=e55]:
+                - link "Фигуры и скульптуры 3D" [ref=e56] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/
+              - listitem [ref=e58]:
+                - link "Модели" [ref=e59] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/modeli-iz-penoplasta/
+              - listitem [ref=e61]:
+                - link "Памятники из пенопласта" [ref=e62] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/pamyatniki-iz-penoplasta/
+              - listitem [ref=e63]:
+                - link "Декорации" [ref=e64] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/dekoratsii/
+              - listitem [ref=e66]:
+                - link "Макеты" [ref=e67] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/makety-iz-penoplasta/
+              - listitem [ref=e69]:
+                - link "Муляжи" [ref=e70] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/muljazhi-iz-penoplasta/
+              - listitem [ref=e72]:
+                - link "Манекены" [ref=e73] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/muljazhi-iz-penoplasta/manekeny-iz-penoplasta/
+              - listitem [ref=e75]:
+                - link "Шары" [ref=e76] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/shari-iz-penoplasta/
+              - listitem [ref=e78]:
+                - link "Внутренняя отделка" [ref=e79] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/penoplast-dlja-vnutrennej-otdelki-sten-potolkov/
+              - listitem [ref=e81]:
+                - link "Садово-парковые скульптуры" [ref=e82] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/sadovo-parkovye-skulptury-statui-iz-penoplasta/
+              - listitem [ref=e84]:
+                - link "Упаковка" [ref=e85] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/upakovka-posuda-tara-iz-penoplasta/
+              - listitem [ref=e87]:
+                - link "Резка пенопласта" [ref=e88] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/rezka-penoplasta/
+              - listitem [ref=e90]:
+                - link "Кинетические скульптуры" [ref=e91] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/kineticheskie-skulptury/
+              - listitem [ref=e92]:
+                - link "Блоки" [ref=e93] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/bloki-iz-penoplasta/
+              - listitem [ref=e94]:
+                - link "Конусы из пенопласта" [ref=e95] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/konusy-iz-penoplasta/
+              - listitem [ref=e96]:
+                - link "Заготовки для творчества" [ref=e97] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/zagotovki-dlya-tvorchestva/
+              - listitem [ref=e98]:
+                - link "Хамам из пенопласта" [ref=e99] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/hamam/
+              - listitem [ref=e100]:
+                - link "Скорлупа для труб" [ref=e101] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/skorlupa-ppu/
+              - listitem [ref=e102]:
+                - link "Опалубка из пенопласта" [ref=e103] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/opalubka-iz-penoplasta/
+              - listitem [ref=e104]:
+                - link "Ракушки из пенопласта" [ref=e105] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/rakushka-iz-penoplasta/
+              - listitem [ref=e106]:
+                - link "Цифры из пенопласта" [ref=e107] [cursor=pointer]:
+                  - /url: http://dev1.toppenoplast.ru/obemnye-bukvy-iz-penoplasta/tsifry-iz-penoplasta/
+          - listitem [ref=e109]:
+            - link "Праздники" [ref=e110] [cursor=pointer]:
+              - /url: http://dev1.toppenoplast.ru/prazdniki/
+          - listitem [ref=e112]:
+            - link "Декор" [ref=e113] [cursor=pointer]:
+              - /url: http://dev1.toppenoplast.ru/dekor-iz-penoplasta/
+          - listitem [ref=e115]:
+            - generic [ref=e116]: Оформление
+          - listitem [ref=e118]:
+            - link "Пластик" [ref=e119] [cursor=pointer]:
+              - /url: http://dev1.toppenoplast.ru/plastik/
+          - listitem [ref=e121]:
+            - link "Стеклопластик" [ref=e122] [cursor=pointer]:
+              - /url: http://dev1.toppenoplast.ru/stekloplastik/
+          - listitem [ref=e124]:
+            - link "Полипропилен" [ref=e125] [cursor=pointer]:
+              - /url: http://dev1.toppenoplast.ru/izdeliya-iz-polipropilena/
+          - listitem [ref=e127]:
+            - link "Дерево" [ref=e128] [cursor=pointer]:
+              - /url: http://dev1.toppenoplast.ru/iz-dereva/
+          - listitem [ref=e130]:
+            - link "Бетон" [ref=e131] [cursor=pointer]:
+              - /url: http://dev1.toppenoplast.ru/izdeliya-iz-betona/
+          - listitem [ref=e133]:
+            - link "Металл" [ref=e134] [cursor=pointer]:
+              - /url: http://dev1.toppenoplast.ru/metall/
+          - listitem [ref=e136]:
+            - link "Светодиодные фигуры" [ref=e137] [cursor=pointer]:
+              - /url: http://dev1.toppenoplast.ru/svetodiodnye-figury/
+        - link "Виды услуг" [ref=e139] [cursor=pointer]:
+          - /url: /uslugi
+      - generic [ref=e141]:
+        - link "Фигурки Фигурки" [ref=e142] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/figurki-iz-penoplasta-dlja-dekora/
+          - img "Фигурки" [ref=e143]
+          - generic [ref=e144]: Фигурки
+        - link "Яйца из пенопласта Яйца из пенопласта" [ref=e145] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/yajtsa-iz-penoplasta/
+          - img "Яйца из пенопласта" [ref=e146]
+          - generic [ref=e147]: Яйца из пенопласта
+        - link "Сердце из пенопласта Сердце из пенопласта" [ref=e148] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/serdtse-iz-penoplasta/
+          - img "Сердце из пенопласта" [ref=e149]
+          - generic [ref=e150]: Сердце из пенопласта
+        - link "Камни из пенопласта Камни из пенопласта" [ref=e151] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/kamni-iz-penoplasta/
+          - img "Камни из пенопласта" [ref=e152]
+          - generic [ref=e153]: Камни из пенопласта
+        - link "Пенопластовые кольца Пенопластовые кольца" [ref=e154] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/penoplastovye-koltsa/
+          - img "Пенопластовые кольца" [ref=e155]
+          - generic [ref=e156]: Пенопластовые кольца
+        - link "Новогодние фигуры Новогодние фигуры" [ref=e157] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/novogodnie-figury/
+          - img "Новогодние фигуры" [ref=e158]
+          - generic [ref=e159]: Новогодние фигуры
+        - link "Подставки для торта из пенопласта Подставки для торта из пенопласта" [ref=e160] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/podstavki-dlya-torta-iz-penoplasta/
+          - img "Подставки для торта из пенопласта" [ref=e161]
+          - generic [ref=e162]: Подставки для торта из пенопласта
+        - link "Матрёшки из пенопласта Матрёшки из пенопласта" [ref=e163] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/matrjoshka/
+          - img "Матрёшки из пенопласта" [ref=e164]
+          - generic [ref=e165]: Матрёшки из пенопласта
+        - link "Полигональные фигуры Полигональные фигуры" [ref=e166] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/poligonalnye-figury/
+          - img "Полигональные фигуры" [ref=e167]
+          - generic [ref=e168]: Полигональные фигуры
+        - link "Лошади из пенопласта Лошади из пенопласта" [ref=e169] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/loshadi/
+          - img "Лошади из пенопласта" [ref=e170]
+          - generic [ref=e171]: Лошади из пенопласта
+        - link "Динозавры из пенопласта Динозавры из пенопласта" [ref=e172] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/dinozavry/
+          - img "Динозавры из пенопласта" [ref=e173]
+          - generic [ref=e174]: Динозавры из пенопласта
+        - link "Драконы из пенопласта Драконы из пенопласта" [ref=e175] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/drakony/
+          - img "Драконы из пенопласта" [ref=e176]
+          - generic [ref=e177]: Драконы из пенопласта
+        - link "Фигуры и скульптуры из пенопласта Фигуры и скульптуры из пенопласта" [ref=e178] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/figury-i-skulptury-iz-penoplasta/
+          - img "Фигуры и скульптуры из пенопласта" [ref=e179]
+          - generic [ref=e180]: Фигуры и скульптуры из пенопласта
+        - link "Три кота Три кота" [ref=e181] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/tri-kota/
+          - img "Три кота" [ref=e182]
+          - generic [ref=e183]: Три кота
+        - link "Маша и Медведи Маша и Медведи" [ref=e184] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/masha-i-medvedi/
+          - img "Маша и Медведи" [ref=e185]
+          - generic [ref=e186]: Маша и Медведи
+        - link "Спорт Спорт" [ref=e187] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/sport/
+          - img "Спорт" [ref=e188]
+          - generic [ref=e189]: Спорт
+        - link "Смешарики Смешарики" [ref=e190] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/smeshariki/
+          - img "Смешарики" [ref=e191]
+          - generic [ref=e192]: Смешарики
+        - link "Ворона Ворон Ворона Ворон" [ref=e193] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/vorona-voron/
+          - img "Ворона Ворон" [ref=e194]
+          - generic [ref=e195]: Ворона Ворон
+        - link "Компот Компот" [ref=e196] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/kompot/
+          - img "Компот" [ref=e197]
+          - generic [ref=e198]: Компот
+        - link "Лунтик Лунтик" [ref=e199] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/luntik/
+          - img "Лунтик" [ref=e200]
+          - generic [ref=e201]: Лунтик
+        - link "Миньоны Миньоны" [ref=e202] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/minony/
+          - img "Миньоны" [ref=e203]
+          - generic [ref=e204]: Миньоны
+        - link "Бременские музыканты Бременские музыканты" [ref=e205] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/bremenskie-muzykanty/
+          - img "Бременские музыканты" [ref=e206]
+          - generic [ref=e207]: Бременские музыканты
+        - link "Чайка Чайка" [ref=e208] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/chajka/
+          - img "Чайка" [ref=e209]
+          - generic [ref=e210]: Чайка
+        - link "Дракон Дракон" [ref=e211] [cursor=pointer]:
+          - /url: http://dev1.toppenoplast.ru/obemnye-figury-iz-penoplasta/drakon/
+          - img "Дракон" [ref=e212]
+          - generic [ref=e213]: Дракон
+    - generic [ref=e218]:
+      - generic [ref=e219]:
+        - heading "Расчет стоимости" [level=2] [ref=e220]
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - generic [ref=e223]: "Высота фигуры:"
+            - generic [ref=e224]:
+              - generic [ref=e225] [cursor=pointer]: 50 см
+              - generic [ref=e227] [cursor=pointer]: 100 см
+              - generic [ref=e229] [cursor=pointer]: 200 см
+              - generic [ref=e231] [cursor=pointer]: 300 см
+          - generic [ref=e233]:
+            - generic [ref=e234]: Сложность фигуры
+            - generic [ref=e235]:
+              - generic [ref=e236] [cursor=pointer]: Простая
+              - generic [ref=e238] [cursor=pointer]: Сложная
+        - generic [ref=e240]:
+          - generic [ref=e241]: Покрытие
+          - generic [ref=e242]:
+            - generic [ref=e243] [cursor=pointer]: Без покрытия
+            - generic [ref=e245] [cursor=pointer]: Шпаклевка, полимочевина и покраска
+            - generic [ref=e247] [cursor=pointer]: Стеклопластик и раскраска
+            - generic [ref=e249] [cursor=pointer]: Шпаклевка и раскраска
+      - generic [ref=e251]:
+        - generic [ref=e252]: "4500"
+        - textbox "ФИО" [ref=e254]
+        - textbox "Почта" [ref=e256]
+        - textbox "Ваш телефон" [ref=e258]
+        - textbox "Комментарии" [ref=e260]
+        - button "Отправить заявку" [ref=e261] [cursor=pointer]
+        - generic [ref=e262] [cursor=pointer]:
+          - checkbox "Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных." [ref=e263]
+          - generic [ref=e264]: Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных.
+    - generic [ref=e266]:
+      - generic [ref=e269]:
+        - heading [level=2]
+        - emphasis [ref=e271]:
+          - strong [ref=e272]: Фигуры из пенопласта — современное и недорогое решение для оформления любых пространств. Они станут прекрасным дополнением вашего дома, офиса или дачного участка.
+        - generic [ref=e273]: Купить уже готовые объемные фигуры из пенопласта или заказать индивидуальное изготовление пенопластовых 3D-фигур Вы сможете в компании «ТОП-Пенопласт».
+      - generic [ref=e276]:
+        - heading [level=3]
+        - generic [ref=e277]:
+          - text: Воспользуйтесь формой
+          - link [ref=e278] [cursor=pointer]:
+            - /url: https://dev1.toppenoplast.ru/zakazat-raschet
+            - strong [ref=e279]: «ЗАКАЗАТЬ РАСЧЕТ»
+          - text: ", указав необходимые размеры и дополнительные параметры объемной фигуры из пенопласта, или"
+          - strong [ref=e280]:
+            - link "ЗАКАЖИТЕ ЗВОНОК" [ref=e281] [cursor=pointer]:
+              - /url: https://dev1.toppenoplast.ru/#
+          - text: и наш менеджер свяжется с Вами в течение нескольких минут для уточнения всех необходимых деталей.
+        - strong [ref=e284]: Пенопластовые объемные фигуры – великолепная и оригинальная возможность прорекламировать свой бизнес.
+        - generic [ref=e285]: Представители любого бизнеса задаются вопросом, как сделать рекламируемый продукт ближе к покупателю и оживить процесс знакомства с ним потенциальных клиентов. На этот счет у нашей компании имеется интересное предложение – 3Д фигуры из пенопласта, изготовлением которых мы занимаемся на заказ по низким ценам.
+        - generic [ref=e286]: Нечто подобное в рекламном мире уже практикуется. Аналогами являются к примеру яркие тематические вывески, ростовые куклы, надувные копии предметов. Тем не менее, каждый из приведенных вариантов имеет свои недочеты, при этом наши пенопластовые изделия практически лишена недостатков, и мы объясним Вам, почему.
+      - generic [ref=e289]:
+        - heading "Неоспоримые преимущества 3d фигур из пенопласта" [level=3] [ref=e290]
+        - strong [ref=e292]: "Объемные 3Д фигуры из пенопласта по праву можно назвать настоящей революцией в мире современного декора. Они обладают массой положительных характеристик:"
+        - list [ref=e294]:
+          - listitem [ref=e295]:
+            - emphasis [ref=e296]:
+              - strong [ref=e297]: Малый вес
+            - text: . За счет данного свойства пенопластовые фигуры легко транспортируются, купив их, не требуется привлечение спецтехники и большого количества рабочих. Доставка даже самых крупногабаритных моделей выполняется максимально быстро и удобно. Не менее комфортен и монтаж изделий, установка которых может производиться в любом месте. Для этого нет необходимости обладать строительными навыками, а сборка объемных фигур из пенопласта, состоящих из нескольких частей, выполняется с помощью специальных составов;
+        - list [ref=e299]:
+          - listitem [ref=e300]:
+            - emphasis [ref=e301]:
+              - strong [ref=e302]: Устойчивость к внешним воздействиям
+            - text: . Принято считать, что пенопласт относится к материалам, обладающим низкой прочностью. Мы готовы успокоить даже самых убежденных скептиков. Для изготовления объемных фигур из пенопласта нами используются специальные сорта пенополистирола, материала повышенной прочности. Дополнительную защиту от механических и климатических воздействий им обеспечивают специальные покрытия. Кроме того, для придания крупногабаритным пенопластовым фигурам особой устойчивости мы можем оснастить их металлическим каркасом;
+        - list [ref=e304]:
+          - listitem [ref=e305]:
+            - emphasis [ref=e306]:
+              - strong [ref=e307]: Широкие возможности для оформления
+            - text: . При декорировании помещений или открытых пространств пенопластовыми фигурами особое внимание уделяется выбору материала, внешний вид которого должен в точности соответствовать имеющемуся дизайнерскому решению. Подобные изделия легко имитируют структуру металла, дерева или ткани. А, благодаря специальным методам отделки, при изготовлении мы сможем придать вашим 3D фигурам из пенопласта схожесть с каменными изваяниями или роскошными гипсовыми скульптурами.
+        - generic [ref=e308]: Кроме того, вся продукция из пенопласта абсолютно экологична, а стоимость фигур намного ниже, чем у аналогичных изделий из других материалов.
+      - generic [ref=e311]:
+        - heading "Нестандартные решения при изготовлении объемных фигур" [level=3] [ref=e312]
+        - generic [ref=e313]: Компания «ТОП-Пенопласт» предлагает своим клиентам только по-настоящему качественные и доступные решения для оформления любых помещений, магазинов, торговых центров, а также открытых площадок.
+        - generic [ref=e314]: У нас Вы можете купить фигуры из пенопласта по привлекательным ценам, выполненные специалистами, которые прекрасно знакомы с тонкостями изготовления данных изделий.
+        - generic [ref=e315]: При производстве объемных пенопластовых фигур используется современное оборудование, благодаря которому удается добиться максимальной точности выполнения каждой детали. В процессе разработки моделей фигур принимают участие опытные дизайнеры, способные помочь в выборе идеальной для Ваших условий концепции готового изделия.
+        - generic [ref=e316]: При этом мы учитываем индивидуальные требования заказчика, ведь только такой подход можно назвать по-настоящему профессиональным!
+        - emphasis [ref=e318]:
+          - strong [ref=e319]: "Кроме объемных фигур из пенопласта в нашей компании Вы можете купить и другие пенопластовые изделия или заказать изготовление по привлекательным ценам:"
+        - list [ref=e321]:
+          - listitem [ref=e322]:
+            - link "модели и макеты из пенопласта" [ref=e323] [cursor=pointer]:
+              - /url: https://dev1.toppenoplast.ru/makety-iz-penoplasta/
+            - text: ;
+          - listitem [ref=e324]:
+            - link "муляжи и декорации" [ref=e325] [cursor=pointer]:
+              - /url: https://dev1.toppenoplast.ru/muljazhi-iz-penoplasta/
+            - text: ;
+          - listitem [ref=e326]:
+            - link "фигурки" [ref=e327] [cursor=pointer]:
+              - /url: https://dev1.toppenoplast.ru/dekor-iz-penoplasta/figurki-iz-penoplasta-dlja-dekora/
+            - text: ;
+          - listitem [ref=e328]:
+            - link "пенопластовые буквы и цифры" [ref=e329] [cursor=pointer]:
+              - /url: https://dev1.toppenoplast.ru/obemnye-bukvy-iz-penoplasta/
+            - text: ;
+          - listitem [ref=e330]:
+            - link "вывески" [ref=e331] [cursor=pointer]:
+              - /url: https://dev1.toppenoplast.ru/reklama-iz-penoplasta/izgotovlenie-vyvesok/
+            - text: и
+            - link "таблички" [ref=e332] [cursor=pointer]:
+              - /url: https://dev1.toppenoplast.ru/reklama-iz-penoplasta/tablichki/
+            - text: ;
+          - listitem [ref=e333]:
+            - link "шары" [ref=e334] [cursor=pointer]:
+              - /url: https://dev1.toppenoplast.ru/shari-iz-penoplasta/
+            - text: и
+            - link "конусы" [ref=e335] [cursor=pointer]:
+              - /url: https://dev1.toppenoplast.ru/konusy-iz-penoplasta/
+            - text: из пенопласта и многое другое.
+    - generic [ref=e337]:
+      - generic [ref=e338]:
+        - heading "Галерея работ" [level=2] [ref=e339]:
+          - generic [ref=e340]: Галерея
+          - text: работ
+        - link "Смотреть каталог" [ref=e341] [cursor=pointer]:
+          - /url: /galereya
+      - list [ref=e342]:
+        - listitem [ref=e343]:
+          - generic [ref=e344]: "1"
+        - listitem [ref=e346]:
+          - generic [ref=e347]: "2"
+        - listitem [ref=e349]:
+          - generic [ref=e350]: "3"
+        - listitem [ref=e352]:
+          - generic [ref=e353]: "4"
+        - listitem [ref=e355]:
+          - generic [ref=e356]: "5"
+      - button "Смотреть ещё работы" [ref=e358] [cursor=pointer]
+    - generic [ref=e359]:
+      - heading "Частые" [level=2] [ref=e360]
+      - heading "Вопросы и ответы" [level=2] [ref=e361]
+      - generic [ref=e362]:
+        - button "Что представляют собой 3D фигуры и скульптуры из пенопласта?" [ref=e364] [cursor=pointer]
+        - button "Почему 3D фигуры из пенопласта так популярны?" [ref=e366] [cursor=pointer]
+        - button "Где используются объёмные фигуры из пенопласта?" [ref=e368] [cursor=pointer]
+        - button "В чём преимущества 3D фигур из пенопласта?" [ref=e370] [cursor=pointer]
+        - button "Какие бывают покрытия для 3D фигур из пенопласта?" [ref=e372] [cursor=pointer]
+        - button "Можно ли заказать индивидуальное изготовление фигур?" [ref=e374] [cursor=pointer]
+        - button "Как происходит процесс производства объёмных фигур?" [ref=e376] [cursor=pointer]
+        - button "Насколько прочны и долговечны такие изделия?" [ref=e378] [cursor=pointer]
+        - button "Сколько стоит изготовление фигуры из пенопласта?" [ref=e380] [cursor=pointer]
+        - button "Почему стоит заказать 3D фигуры именно в компании «ТОП-Пенопласт»?" [ref=e382] [cursor=pointer]
+  - contentinfo [ref=e383]:
+    - generic [ref=e384]:
+      - generic [ref=e385]:
+        - generic [ref=e386]:
+          - link [ref=e387] [cursor=pointer]:
+            - /url: http://dev1.toppenoplast.ru
+            - img "Производство изделий из пенопласта" [ref=e388]
+          - generic [ref=e389]:
+            - generic [ref=e390]: Телефон поддержки
+            - link "+74957951590" [ref=e391] [cursor=pointer]:
+              - /url: tel:+74957951590
+          - generic [ref=e392]:
+            - generic [ref=e393]: Почтовый ящик
+            - link "zakaz@toppenoplast.ru" [ref=e394] [cursor=pointer]:
+              - /url: mailto:zakaz@toppenoplast.ru
+          - generic [ref=e395]: с 9:00 до 2:00 без выходных
+        - navigation [ref=e396]:
+          - list [ref=e398]:
+            - listitem [ref=e399]:
+              - link "О компании" [ref=e400] [cursor=pointer]:
+                - /url: http://dev1.toppenoplast.ru/o-kompanii/
+            - listitem [ref=e401]:
+              - link "Услуги" [ref=e402] [cursor=pointer]:
+                - /url: http://dev1.toppenoplast.ru/uslugi/
+            - listitem [ref=e403]:
+              - link "Галерея" [ref=e404] [cursor=pointer]:
+                - /url: http://dev1.toppenoplast.ru/galereya/
+            - listitem [ref=e405]:
+              - link "Цены" [ref=e406] [cursor=pointer]:
+                - /url: http://dev1.toppenoplast.ru/tseny/
+            - listitem [ref=e407]:
+              - link "Производство" [ref=e408] [cursor=pointer]:
+                - /url: http://dev1.toppenoplast.ru/proizvodstvo/
+          - list [ref=e410]:
+            - listitem [ref=e411]:
+              - link "Оборудование и материалы" [ref=e412] [cursor=pointer]:
+                - /url: http://dev1.toppenoplast.ru/oborudovanie-i-materialy/
+            - listitem [ref=e413]:
+              - link "Новости" [ref=e414] [cursor=pointer]:
+                - /url: /novosti/
+            - listitem [ref=e415]:
+              - link "Акции" [ref=e416] [cursor=pointer]:
+                - /url: /akcii-i-skidki/
+            - listitem [ref=e417]:
+              - link "Контакты" [ref=e418] [cursor=pointer]:
+                - /url: http://dev1.toppenoplast.ru/kontakty/
+          - list [ref=e420]:
+            - listitem [ref=e421]:
+              - link "Сотрудничество" [ref=e422] [cursor=pointer]:
+                - /url: http://dev1.toppenoplast.ru/sotrudnichestvo/
+            - listitem [ref=e423]:
+              - link "Оплата и доставка" [ref=e424] [cursor=pointer]:
+                - /url: http://dev1.toppenoplast.ru/oplata/
+            - listitem [ref=e425]:
+              - link "Отзывы" [ref=e426] [cursor=pointer]:
+                - /url: http://dev1.toppenoplast.ru/otzivy/
+            - listitem [ref=e427]:
+              - link "Статьи" [ref=e428] [cursor=pointer]:
+                - /url: /stati/
+      - generic [ref=e429]:
+        - paragraph [ref=e430]: Компания «ТОП-ПЕНОПЛАСТ» © 2007-2026 Все права защищены
+        - generic [ref=e431]:
+          - link "Политика конфиденциальности" [ref=e432] [cursor=pointer]:
+            - /url: "#"
+          - link "Пользовательское соглашение" [ref=e433] [cursor=pointer]:
+            - /url: "#"
+  - iframe [ref=e434]:
+    
+  - iframe [ref=e437]:
+    - generic [ref=f4e6]:
+      - text: защита от спама
+      - strong [ref=f4e7]: reCAPTCHA

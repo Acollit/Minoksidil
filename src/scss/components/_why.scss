@@ -10,13 +10,13 @@
   }
 
   &__title {
+    margin: 0 0 60px;
     font-family: var(--font-family);
-    font-size: 48px;
     font-weight: 600;
+    font-size: 48px;
     line-height: 95%;
     text-transform: uppercase;
     color: var(--color-dark);
-    margin: 0 0 60px;
 
     @include laptop {
       font-size: 40px;
@@ -27,13 +27,13 @@
     }
 
     @include tablet {
-      font-size: 36px;
       margin-bottom: 40px;
+      font-size: 36px;
     }
 
     @include small-tablet {
-      font-size: 20px;
       margin-bottom: 24px;
+      font-size: 20px;
     }
   }
 
@@ -53,14 +53,14 @@
 }
 
 .why-card {
-  background: var(--color-white);
-  border-radius: 40px;
-  padding: 25px;
-  min-height: 540px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 40px;
+  padding: 25px;
+  min-height: 540px;
   text-align: center;
+  background: var(--color-white);
 
   @include medium-desktop {
     min-height: 406px;
@@ -71,19 +71,19 @@
   }
 
   @include small-tablet {
-    min-height: auto;
     padding: 20px;
+    min-height: auto;
   }
 
   &__title {
+    align-self: stretch;
+    margin: 0;
     font-family: var(--font-family);
-    font-size: 32px;
     font-weight: 600;
+    font-size: 32px;
     line-height: 109%;
     text-transform: uppercase;
     color: var(--color-dark);
-    margin: 0;
-    align-self: stretch;
 
 
     @include laptop {
@@ -100,8 +100,8 @@
   }
 
   &__img {
-    flex: 1;
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: center;
     padding: 20px 0;
@@ -110,8 +110,8 @@
 
     img {
       display: block;
-      max-width: 100%;
       height: auto;
+      max-width: 100%;
       object-fit: contain;
 
       @include mobile {
@@ -122,12 +122,12 @@
   }
 
   &__desc {
-    font-family: var(--font-family);
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--color-dark);
-    line-height: 1.02;
     margin: 0;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.02;
+    color: var(--color-dark);
 
     @include laptop {
       font-size: 16px;

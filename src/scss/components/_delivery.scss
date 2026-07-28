@@ -1,14 +1,14 @@
 // --- DELIVERY METHODS ---
 
 .delivery {
-  padding: 0px 0 140px;
+  padding: 0 0 140px;
 
   @include tablet {
-    padding: 0px 0 80px;
+    padding: 0 0 80px;
   }
 
   @include small-tablet {
-    padding: 0px 0 60px;
+    padding: 0 0 60px;
   }
 
   &__header {
@@ -20,8 +20,8 @@
     @include small-tablet {
       flex-direction: column;
       align-items: flex-start;
-      gap: 16px;
       margin-bottom: 30px;
+      gap: 16px;
     }
   }
 
@@ -67,11 +67,11 @@
 }
 
 .delivery-card {
-  border-radius: 30px;
-  background-color: #fff;
-  padding: 40px 30px;
   display: flex;
   flex-direction: column;
+  border-radius: 30px;
+  padding: 40px 30px;
+  background-color: #fff;
   gap: 60px;
 
   @include medium-desktop {
@@ -80,8 +80,8 @@
   }
 
   @include small-tablet {
-    padding: 20px;
     border-radius: 30px;
+    padding: 20px;
     gap: 20px;
   }
 
@@ -105,26 +105,24 @@
     }
 
     @include small-tablet {
-
       font-size: 16px
     }
   }
 
   &__specs {
-    flex: 1;
     display: flex;
+    flex: 1;
     flex-direction: column;
   }
 
   &__spec {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 15px 0;
     border-bottom: 1px solid rgba(0, 13, 36, 0.1);
+    padding: 15px 0;
+    gap: 12px;
 
     @include small-tablet {
-
       padding: 10px 0;
     }
   }
@@ -138,7 +136,6 @@
     color: #000d24;
 
     @include small-tablet {
-
       font-size: 14px;
     }
   }
@@ -152,28 +149,26 @@
     color: #000d24;
 
     @include small-tablet {
-
       font-size: 14px;
     }
   }
 
   &__btn {
-    width: 100%;
-    height: 67px;
-    background: var(--color-blue);
     border: none;
     border-radius: 100px;
+    width: 100%;
+    height: 67px;
     font-family: var(--font-family);
-    font-size: 24px;
     font-weight: 600;
+    font-size: 24px;
     color: var(--color-white);
-    cursor: pointer;
+    background: var(--color-blue);
     transition: opacity 0.2s;
+    cursor: pointer;
 
     @include small-tablet {
-
-      font-size: 14px;
       height: 50px;
+      font-size: 14px;
     }
 
     &:hover {
@@ -189,13 +184,13 @@
   margin-bottom: 140px;
 
   @include tablet {
-    margin-bottom: 80px;
     margin-top: 60px;
+    margin-bottom: 80px;
   }
 
   @include small-tablet {
-    margin-bottom: 60px;
     margin-top: 40px;
+    margin-bottom: 60px;
   }
 
   &__title {
@@ -217,13 +212,13 @@
     }
 
     @include tablet {
-      font-size: 36px;
       margin-bottom: 40px;
+      font-size: 36px;
     }
 
     @include small-tablet {
-      font-size: 20px;
       margin-bottom: 24px;
+      font-size: 20px;
     }
   }
 
@@ -262,11 +257,11 @@
 }
 
 .payment-card {
-  background: var(--color-white);
-  border-radius: 40px;
-  padding: 30px;
   display: flex;
   align-items: center;
+  border-radius: 40px;
+  padding: 30px;
+  background: var(--color-white);
   gap: 15px;
 
   @include medium-desktop {
@@ -283,9 +278,9 @@
 
   &__icon {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
     line-height: 0;
 
     @include medium-desktop {
@@ -333,9 +328,9 @@
 
   &__grid {
     display: grid;
+    align-items: flex-start;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-    align-items: flex-start;
 
     @include medium-desktop {
       gap: 50px;
@@ -388,10 +383,10 @@
   }
 
   &__left {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
     gap: 50px;
   }
 

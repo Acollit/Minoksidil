@@ -22,10 +22,10 @@ $shop_url = function_exists('wc_get_page_permalink') ? wc_get_page_permalink('sh
         <a href="<?php echo esc_url(home_url('/')); ?>" class="footer__logo"> Minoxidillum
       <span>Рост волос</span></a>
         <div class="footer__socials">
-          <a href="<?php echo esc_url($vk); ?>" class="footer__social" aria-label="ВКонтакте" target="_blank" rel="noopener"></a>
           <a href="<?php echo esc_url($tg); ?>" class="footer__social" aria-label="Telegram" target="_blank" rel="noopener"></a>
           <a href="<?php echo esc_url($tg2); ?>" class="footer__social" aria-label="Telegram2" target="_blank" rel="noopener"></a>
           <a href="<?php echo esc_url($max); ?>" class="footer__social" aria-label="MAX" target="_blank" rel="noopener"></a>
+          <a href="<?php echo esc_url($vk); ?>" class="footer__social" aria-label="ВКонтакте" target="_blank" rel="noopener"></a>
           <a href="<?php echo esc_url($avito); ?>" class="footer__social" aria-label="Avito" target="_blank" rel="noopener"></a>
         </div>
       </div>

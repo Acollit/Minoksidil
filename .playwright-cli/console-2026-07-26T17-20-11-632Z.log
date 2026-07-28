@@ -1,0 +1,18 @@
+[    9294ms] [LOG] > longCodeInit @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[    9294ms] [LOG] > try @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[    9294ms] [LOG] config loading.. 10 @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[    9294ms] [LOG] validation... false @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[    9301ms] [LOG] Load more button hidden because no more item to load @ http://dev1.toppenoplast.ru/thanks/:2588
+[    9305ms] [LOG] nen @ http://dev1.toppenoplast.ru/wp-content/cache/autoptimize/js/autoptimize_single_cd1c7cbc6d01db60cf666de88d46026e.js:1
+[    9805ms] [LOG] config loading.. 500 @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[    9820ms] [LOG] config loading.. 9 @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[   10326ms] [LOG] config loading.. 499 @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[   10332ms] [WARNING] GetButton works in DEMO mode, please renew subscription or contact with us: https://getbutton.io @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[   10334ms] [LOG] config loading.. 8 @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[   12546ms] [INFO] Primary api server %s (%s) ru https://api.marquiz.ru @ https://quiz.marquiz.ru/assets/index-lPuo87wo.js:8
+[   12546ms] [INFO] Primary provider server %s (%s) ru https://quiz.provider.marquiz.ru @ https://quiz.marquiz.ru/assets/index-lPuo87wo.js:8
+[   13387ms] [INFO] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3iUBGEe.woff2 @ https://www.gstatic.com/recaptcha/releases/A7KpaEASfhDcK0nXxgQEyyYv/recaptcha__ru.js:586
+[   13387ms] [INFO] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2 @ https://www.gstatic.com/recaptcha/releases/A7KpaEASfhDcK0nXxgQEyyYv/recaptcha__ru.js:586
+[   14730ms] [INFO] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2 @ https://quiz.marquiz.ru/assets/index-lPuo87wo.js:2
+[   14730ms] [INFO] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2 @ https://quiz.marquiz.ru/assets/index-lPuo87wo.js:2
+[   14730ms] [INFO] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2 @ https://quiz.marquiz.ru/assets/index-lPuo87wo.js:2

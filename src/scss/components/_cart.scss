@@ -9,9 +9,9 @@
 
   &__layout {
     display: grid;
+    align-items: flex-start;
     grid-template-columns: 1fr 573px;
     gap: 40px;
-    align-items: flex-start;
 
     @include big-desktop {
       grid-template-columns: 1fr 490px;
@@ -41,13 +41,13 @@
   }
 
   &__count {
+    margin: 0 0 10px;
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 24px;
     line-height: 102%;
     letter-spacing: -0.01em;
     color: #616976;
-    margin: 0 0 10px;
 
     @include small-tablet {
       font-size: 16px;
@@ -55,12 +55,12 @@
   }
 
   &__title {
+    margin: 0;
     font-family: var(--font-angst);
     font-weight: 400;
     font-size: 60px;
     line-height: 98%;
     color: #000d24;
-    margin: 0;
 
     @include medium-desktop {
       font-size: 50px;
@@ -78,23 +78,23 @@
   &__controls {
     display: flex;
     align-items: center;
-    gap: 30px;
     margin-bottom: 50px;
+    gap: 30px;
 
     @include mobile {
       flex-direction: column;
-      gap: 20px;
       align-items: flex-start;
       margin-bottom: 40px;
+      gap: 20px;
     }
   }
 
   &__right {
+    position: sticky;
+    top: 20px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    position: sticky;
-    top: 20px;
 
     @include small-tablet {
       position: static;
@@ -107,26 +107,26 @@
 .cart-check-all {
   display: flex;
   align-items: center;
-  gap: 10px;
   cursor: pointer;
+  gap: 10px;
 
   &__input {
     position: absolute;
-    opacity: 0;
     width: 1px;
     height: 1px;
+    opacity: 0;
     pointer-events: none;
   }
 
   &__box {
-    width: 24px;
-    height: 24px;
-    border: 2px solid #000d24;
-    border-radius: 5px;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    border: 2px solid #000d24;
+    border-radius: 5px;
+    width: 24px;
+    height: 24px;
     transition: background-color 0.15s, border-color 0.15s;
 
     @include small-tablet {
@@ -136,16 +136,16 @@
   }
 
   &__input:checked+&__box {
-    background: var(--color-blue);
     border-color: var(--color-blue);
+    background: var(--color-blue);
 
     &::after {
       content: '';
       display: block;
+      border-bottom: 2px solid var(--color-white);
+      border-left: 2px solid var(--color-white);
       width: 10px;
       height: 7px;
-      border-left: 2px solid var(--color-white);
-      border-bottom: 2px solid var(--color-white);
       transform: rotate(-45deg) translateY(-1px);
 
       @include small-tablet {
@@ -173,17 +173,17 @@
 .cart-delete-selected {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: none;
   border: none;
   padding: 0;
-  cursor: pointer;
   font-family: var(--font-family);
-  font-size: 20px;
   font-weight: 400;
-  color: var(--color-red);
+  font-size: 20px;
   line-height: 1.2;
+  color: var(--color-red);
+  background: none;
   transition: opacity 0.2s;
+  cursor: pointer;
+  gap: 8px;
 
   @include small-tablet {
     font-size: 16px;
@@ -204,8 +204,8 @@
 .cart-items {
   display: flex;
   flex-direction: column;
-  gap: 12px;
   max-width: 1020px;
+  gap: 12px;
 }
 
 // --- CART ITEM ---
@@ -213,22 +213,22 @@
 .cart-item {
   display: flex;
   align-items: center;
-  gap: 20px;
-  background: var(--color-white);
   border-radius: 40px;
   padding: 30px;
+  background: var(--color-white);
+  gap: 20px;
 
   @include medium-desktop {
+    border-radius: 30px;
     padding: 24px;
     gap: 16px;
-    border-radius: 30px;
   }
 
   @include small-tablet {
     flex-wrap: wrap;
-    gap: 12px;
-    padding: 20px;
     border-radius: 20px;
+    padding: 20px;
+    gap: 12px;
   }
 
   &__check {
@@ -238,24 +238,24 @@
 
   &__check-input {
     position: absolute;
-    opacity: 0;
     width: 1px;
     height: 1px;
+    opacity: 0;
     pointer-events: none;
   }
 
   &__check-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    border: 2px solid #000d24;
-    border-radius: 5px;
-    flex-shrink: 0;
-    transition: background-color 0.15s, border-color 0.15s;
     position: relative;
     z-index: 10;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000d24;
+    border-radius: 5px;
+    width: 24px;
+    height: 24px;
+    transition: background-color 0.15s, border-color 0.15s;
 
     @include small-tablet {
       width: 17px;
@@ -264,16 +264,16 @@
   }
 
   &__check-input:checked+&__check-box {
-    background: var(--color-blue);
     border-color: var(--color-blue);
+    background: var(--color-blue);
 
     &::after {
       content: '';
       display: block;
+      border-bottom: 2px solid var(--color-white);
+      border-left: 2px solid var(--color-white);
       width: 10px;
       height: 7px;
-      border-left: 2px solid var(--color-white);
-      border-bottom: 2px solid var(--color-white);
       transform: rotate(-45deg) translateY(-1px);
 
       @include small-tablet {
@@ -284,14 +284,14 @@
   }
 
   &__img {
-    flex-shrink: 0;
-    width: 138px;
-    height: 138px;
-    border-radius: 12px;
-    overflow: hidden;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    border-radius: 12px;
+    width: 138px;
+    height: 138px;
 
     @include medium-desktop {
       width: 110px;
@@ -312,12 +312,11 @@
   }
 
   &__info {
-    flex: 1;
     display: flex;
+    flex: 1;
     flex-direction: column;
-
-    gap: 20px;
     min-width: 0;
+    gap: 20px;
 
 
     @include small-tablet {
@@ -329,17 +328,17 @@
   &__badge {
     display: inline-flex;
     align-items: center;
+    align-self: flex-start;
     justify-content: center;
-    background: var(--color-red);
+    border-radius: 35px;
+    padding: 10px;
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 22px;
     line-height: 102%;
     text-align: center;
     color: #fff;
-    border-radius: 35px;
-    padding: 10px;
-    align-self: flex-start;
+    background: var(--color-red);
 
     @include small-tablet {
       padding: 6px 10px;
@@ -348,12 +347,12 @@
   }
 
   &__name {
+    margin: 0;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 28px;
     line-height: 102%;
     color: #000d24;
-    margin: 0;
 
     @include medium-desktop {
       font-size: 22px;
@@ -380,12 +379,12 @@
   }
 
   &__volume {
+    margin: 0;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 20px;
     line-height: 102%;
     color: rgba(0, 13, 36, 0.46);
-    margin: 0;
 
     @include small-tablet {
       font-size: 14px;
@@ -393,28 +392,28 @@
   }
 
   &__right {
-    flex-shrink: 0;
     display: flex;
+    flex-shrink: 0;
     flex-direction: column;
     align-items: flex-end;
     gap: 10px;
 
     @include small-tablet {
-      width: 100%;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
       align-items: flex-start;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
 
     }
   }
 
   &__prices {
     display: flex;
-    align-items: center;
-    gap: 10px;
     flex-direction: row-reverse;
+    align-items: center;
     justify-content: flex-end;
     grid-column: 2 span;
+    gap: 10px;
   }
 
   &__old-price {
@@ -449,18 +448,18 @@
   &__delete {
     display: flex;
     align-items: center;
-    gap: 6px;
-    background: none;
     border: none;
     padding: 0;
-    cursor: pointer;
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 24px;
     line-height: 102%;
     text-align: right;
     color: #e93922;
+    background: none;
     transition: opacity 0.2s;
+    cursor: pointer;
+    gap: 6px;
 
     @include medium-desktop {
       font-size: 18px;
@@ -472,9 +471,9 @@
     }
 
     @include small-tablet {
-      font-size: 16px;
-      margin: auto 0;
       justify-content: flex-end;
+      margin: auto 0;
+      font-size: 16px;
 
       svg {
         width: 16px;
@@ -493,40 +492,37 @@
 .qty-stepper {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: #f3f3f3;
-  border-radius: 20px;
   overflow: hidden;
+  border-radius: 20px;
+  background: #f3f3f3;
+  gap: 10px;
 
   @include small-tablet {
-    max-width: 130px;
     justify-content: space-between;
+    max-width: 130px;
   }
 
   &__btn {
-    width: 30px;
-    height: 38px;
-
-    background: var(--color-blue);
-    border: none;
-    color: var(--color-white);
-    font-family: var(--font-family);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1;
-    cursor: pointer;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    border: none;
+    width: 30px;
+    height: 38px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--color-white);
+    background: var(--color-blue);
     transition: opacity 0.2s;
+    cursor: pointer;
 
     @include small-tablet {
-      font-size: 16px;
-      width: 30px;
-      height: 38px;
       width: 22px;
       height: 27px;
+      font-size: 16px;
     }
 
     &:hover {
@@ -535,15 +531,14 @@
   }
 
   &__value {
+    min-width: 44px;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 24px;
     line-height: 102%;
+    line-height: 1;
     text-align: center;
     color: #0063b1;
-    min-width: 44px;
-    text-align: center;
-    line-height: 1;
 
     @include small-tablet {
       font-size: 16px;
@@ -554,23 +549,21 @@
 // --- CART ASIDE (right panel) ---
 
 .cart-aside {
-
-
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  max-width: 573px;
   width: 100%;
+  max-width: 573px;
+  gap: 20px;
 
   &__summary {
     display: flex;
     flex-direction: column;
-    gap: 14px;
     padding-bottom: 40px;
+    gap: 14px;
 
     @include small-tablet {
-      gap: 10px;
       padding-bottom: 30px;
+      gap: 10px;
     }
   }
 
@@ -598,9 +591,9 @@
     font-weight: 500;
     font-size: 24px;
     line-height: 102%;
+    white-space: nowrap;
     text-align: right;
     color: rgba(0, 13, 36, 0.7);
-    white-space: nowrap;
 
     @include small-tablet {
       font-size: 16px;
@@ -611,8 +604,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
     margin-bottom: 30px;
+    gap: 16px;
   }
 
   &__total-label {
@@ -632,9 +625,9 @@
     font-weight: 500;
     font-size: 24px;
     line-height: 102%;
+    white-space: nowrap;
     text-align: right;
     color: #000d24;
-    white-space: nowrap;
 
     @include small-tablet {
       font-size: 20px;
@@ -681,23 +674,22 @@
 
   &__promo-input {
     flex: 1;
-    min-width: 0;
-
-    padding: 17px 20px;
+    outline: none;
     border: none;
     border: 2px solid rgba(0, 13, 36, 0.36);
     border-radius: 50px;
+    padding: 17px 20px;
+    min-width: 0;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 20px;
     line-height: 102%;
     color: rgba(0, 13, 36, 1);
-    outline: none;
     transition: box-shadow 0.15s;
 
     @include small-tablet {
-      font-size: 16px;
       padding: 13px 20px;
+      font-size: 16px;
     }
 
     &::placeholder {
@@ -711,22 +703,22 @@
 
   &__promo-btn {
     flex-shrink: 0;
-    height: 55px;
-    padding: 0 20px;
-    background: #a3a8b0;
     border: none;
     border-radius: 50px;
+    padding: 0 20px;
+    height: 55px;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 20px;
     line-height: 102%;
     color: var(--color-white);
-    cursor: pointer;
+    background: #a3a8b0;
     transition: opacity 0.2s;
+    cursor: pointer;
 
     @include small-tablet {
-      font-size: 16px;
       height: 50px;
+      font-size: 16px;
     }
 
     &:hover {
@@ -740,23 +732,23 @@
 .cart-checkout {
   display: flex;
   flex-direction: column;
-  gap: 18px;
   border-radius: 40px;
   padding: 30px;
   background: var(--color-white);
+  gap: 18px;
 
   @include small-tablet {
-    padding: 20px;
     border-radius: 30px;
+    padding: 20px;
   }
 
   &__title {
+    margin: 0;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 24px;
     line-height: 102%;
     color: #000d24;
-    margin: 0;
   }
 
   &__fields {
@@ -766,19 +758,18 @@
   }
 
   &__input {
-    width: 100%;
-    padding: 17px 16px;
-
+    outline: none;
     border: 2px solid rgba(0, 13, 36, 0.36);
     border-radius: 50px;
+    padding: 17px 16px;
+    width: 100%;
+    box-sizing: border-box;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 20px;
     line-height: 102%;
     color: rgba(0, 13, 36, 1);
-    outline: none;
     transition: box-shadow 0.15s;
-    box-sizing: border-box;
 
     &::placeholder {
       color: rgba(0, 13, 36, 0.38);
@@ -796,12 +787,12 @@
   }
 
   &__group-label {
-    font-family: var(--font-family);
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--color-dark);
     margin: 0;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
     line-height: 1.2;
+    color: var(--color-dark);
   }
 
   &__radios {
@@ -811,14 +802,14 @@
   }
 
   &__pvz {
-    font-family: var(--font-family);
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--color-blue);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    transition: opacity 0.2s;
     align-self: flex-start;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: underline;
+    color: var(--color-blue);
+    transition: opacity 0.2s;
+    text-underline-offset: 2px;
 
     &:hover {
       opacity: 0.75;
@@ -831,33 +822,33 @@
 .cart-radio {
   display: flex;
   align-items: center;
-  gap: 10px;
   cursor: pointer;
+  gap: 10px;
 
   &__input {
     position: absolute;
-    opacity: 0;
     width: 1px;
     height: 1px;
+    opacity: 0;
     pointer-events: none;
   }
 
   &__dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid rgba(0, 13, 36, 0.3);
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    border: 2px solid rgba(0, 13, 36, 0.3);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
     transition: border-color 0.15s;
 
     &::after {
       content: '';
+      border-radius: 50%;
       width: 8px;
       height: 8px;
-      border-radius: 50%;
       background: var(--color-blue);
       opacity: 0;
       transition: opacity 0.15s;
@@ -874,27 +865,27 @@
 
   &__text {
     font-family: var(--font-family);
-    font-size: 18px;
     font-weight: 400;
-    color: var(--color-dark);
+    font-size: 18px;
     line-height: 1.2;
+    color: var(--color-dark);
   }
 }
 
 // --- SUBMIT BUTTON ---
 
 .cart-submit {
-  width: 100%;
-  height: 64px;
-  background: var(--color-blue);
   border: none;
   border-radius: 100px;
+  width: 100%;
+  height: 64px;
   font-family: var(--font-family);
-  font-size: 22px;
   font-weight: 600;
+  font-size: 22px;
   color: var(--color-white);
-  cursor: pointer;
+  background: var(--color-blue);
   transition: opacity 0.2s;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.85;

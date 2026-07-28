@@ -1,0 +1,10 @@
+[    6309ms] [LOG] > longCodeInit @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[    6309ms] [LOG] > try @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[    6309ms] [LOG] config loading.. 10 @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[    6310ms] [LOG] validation... false @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[    6318ms] [LOG] Load more button hidden because no more item to load @ http://dev1.toppenoplast.ru/novosti/:2604
+[    6323ms] [LOG] nen @ http://dev1.toppenoplast.ru/wp-content/cache/autoptimize/js/autoptimize_single_cd1c7cbc6d01db60cf666de88d46026e.js:1
+[    6736ms] [WARNING] GetButton works in DEMO mode, please renew subscription or contact with us: https://getbutton.io @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[    6820ms] [LOG] config loading.. 500 @ http://static.getbutton.io/widget-send-button/js/init.js:1
+[    7199ms] [INFO] Primary api server %s (%s) ru https://api.marquiz.ru @ https://quiz.marquiz.ru/assets/index-p4_LR5qb.js:8
+[    7200ms] [INFO] Primary provider server %s (%s) ru https://quiz.provider.marquiz.ru @ https://quiz.marquiz.ru/assets/index-p4_LR5qb.js:8
