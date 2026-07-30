@@ -95,6 +95,7 @@ require_once get_template_directory() . '/inc/delivery-maps.php';
 require_once get_template_directory() . '/inc/pvz-admin.php';
 require_once get_template_directory() . '/inc/admin-settings.php';
 require_once get_template_directory() . '/inc/cpt-results.php';
+require_once get_template_directory() . '/inc/cpt-requests.php';
 require_once get_template_directory() . '/inc/acf-fields.php';
 require_once get_template_directory() . '/inc/cf7.php';
 

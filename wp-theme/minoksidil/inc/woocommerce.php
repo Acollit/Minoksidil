@@ -626,6 +626,9 @@ function minoksidil_handle_callback(): void {
         wp_send_json_error(['message' => 'Заполните обязательные поля.']);
     }
 
+    // Сохраняем заявку в админку до отправки письма — иначе при сбое почты она пропадёт бесследно.
+    minoksidil_save_request_lead($name, $phone, $email, $message, 'Форма на сайте (модальное окно)');
+
     $admin_email = get_option('minoksidil_order_email', get_option('admin_email'));
     $subject     = 'Заявка на обратный звонок с сайта ' . get_bloginfo('name');
     $body        = sprintf(

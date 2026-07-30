@@ -99,3 +99,21 @@ function minoksidil_cf7_create_form(string $title, string $submit_label): int {
 
     return (int) $contact_form->id();
 }
+
+// ===== Сохранение заявки в админку до отправки письма =====
+// wpcf7_before_send_mail срабатывает после успешной валидации, но до отправки —
+// заявка попадёт в Minoksidil → Заявки, даже если само письмо не дойдёт.
+add_action('wpcf7_before_send_mail', function ($contact_form): void {
+    $submission = WPCF7_Submission::get_instance();
+    if (!$submission) return;
+
+    $data = $submission->get_posted_data();
+
+    minoksidil_save_request_lead(
+        sanitize_text_field((string) ($data['your-name'] ?? '')),
+        sanitize_text_field((string) ($data['your-phone'] ?? '')),
+        sanitize_email((string) ($data['your-email'] ?? '')),
+        sanitize_textarea_field((string) ($data['your-message'] ?? '')),
+        'CF7: ' . $contact_form->title()
+    );
+});
