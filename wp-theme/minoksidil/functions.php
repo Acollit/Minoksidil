@@ -30,28 +30,22 @@ function minoksidil_enqueue(): void {
     $v   = '1.0.0';
     $uri = get_template_directory_uri();
 
-    // Google Fonts (как в оригинале)
-    wp_enqueue_style('minoksidil-fonts-pre1', false);
-    add_action('wp_head', function () {
-        echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
-        echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
-        echo '<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">' . "\n";
-    }, 1);
-
     // Gulp скомпилированные стили
     wp_enqueue_style('minoksidil-vendor', $uri . '/assets/css/vendor.css', [], $v);
     wp_enqueue_style('minoksidil-main',   $uri . '/assets/css/main.css', ['minoksidil-vendor'], $v);
 
     // WooCommerce-специфичные стили (то чего нет в gulp-CSS)
-    if (is_woocommerce() || is_cart() || is_checkout() || is_account_page()) {
+    $woo_page = function_exists('is_woocommerce')
+        && (is_woocommerce() || is_cart() || is_checkout() || is_account_page());
+    if ($woo_page) {
         wp_enqueue_style('minoksidil-woo', $uri . '/assets/css/woocommerce-custom.css', ['minoksidil-main'], $v);
     }
 
     // Карты ПВЗ — на корзине (оформление встроено) и на checkout
-    if (is_cart() || is_checkout()) {
+    if (function_exists('is_cart') && (is_cart() || is_checkout())) {
         wp_enqueue_script('minoksidil-delivery-maps', $uri . '/assets/js/delivery-maps.js', ['jquery'], $v, true);
         wp_localize_script('minoksidil-delivery-maps', 'minoksidilConfig', [
-            'ymapsApiKey' => esc_js(get_option('minoksidil_ymaps_key', '')),
+            'ymapsApiKey' => esc_js((string) get_option('minoksidil_ymaps_key', '')),
             'ajaxUrl'     => admin_url('admin-ajax.php'),
             'nonce'       => wp_create_nonce('minoksidil_nonce'),
         ]);
@@ -65,10 +59,12 @@ add_action('wp_enqueue_scripts', 'minoksidil_enqueue');
 // ===== Корзина: загружать наш шаблон напрямую как полную страницу =====
 // Иначе WordPress грузит page.php → внутри him WC шорткод → внутри him cart.php
 // → get_header() вызывается дважды, получается дубль хедера/футера.
-add_filter('template_include', function (string $template): string {
-    if (is_cart()) {
+add_filter('template_include', function ($template) {
+    if (function_exists('is_cart') && is_cart()) {
         $custom = get_template_directory() . '/woocommerce/cart/cart.php';
-        if (file_exists($custom)) return $custom;
+        if (file_exists($custom)) {
+            return $custom;
+        }
     }
     return $template;
 });
@@ -76,6 +72,9 @@ add_filter('template_include', function (string $template): string {
 // Checkout отдельной страницей не нужен — редиректим на корзину,
 // но пропускаем страницу "Спасибо за заказ" и оплату.
 add_action('template_redirect', function (): void {
+    if (!function_exists('is_checkout')) {
+        return;
+    }
     if (is_checkout() && !is_order_received_page() && !is_checkout_pay_page()) {
         wp_safe_redirect(wc_get_cart_url());
         exit;
@@ -149,7 +148,7 @@ function minoksidil_cart_svg(string $fill = '#0063B1'): string {
 function minoksidil_cart_count_fragment(array $fragments): array {
     $count = (function_exists('WC') && WC()->cart) ? WC()->cart->get_cart_contents_count() : 0;
     $class = 'header__count' . ($count ? '' : ' is-empty');
-    $fragments['.header__count'] = '<span class="' . esc_attr($class) . '">' . esc_html($count) . '</span>';
+    $fragments['.header__count'] = '<span class="' . esc_attr($class) . '">' . esc_html((string) $count) . '</span>';
     return $fragments;
 }
 add_filter('woocommerce_add_to_cart_fragments', 'minoksidil_cart_count_fragment');

@@ -81,7 +81,7 @@ function minoksidil_cf7_create_form(string $title, string $submit_label): int {
 [acceptance consent] Нажимая кнопку вы подтверждаете, что даёте <a href="' . esc_url($consent) . '">Согласие на обработку персональных данных</a> [/acceptance]
 [submit class:modal-form__btn "' . $submit_label . '"]';
 
-    $admin_email = get_option('minoksidil_order_email', get_option('admin_email'));
+    $admin_email = minoksidil_notification_email();
 
     $contact_form = WPCF7_ContactForm::get_template(['title' => $title]);
     $props        = $contact_form->get_properties();
@@ -99,6 +99,15 @@ function minoksidil_cf7_create_form(string $title, string $submit_label): int {
 
     return (int) $contact_form->id();
 }
+
+// Актуальный email из настроек темы — даже если в форме CF7 указан старый адрес
+add_filter('wpcf7_mail_components', function (array $components): array {
+    $email = minoksidil_notification_email();
+    if ($email !== '') {
+        $components['recipient'] = $email;
+    }
+    return $components;
+});
 
 // ===== Сохранение заявки в админку до отправки письма =====
 // wpcf7_before_send_mail срабатывает после успешной валидации, но до отправки —

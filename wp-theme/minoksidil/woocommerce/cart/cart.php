@@ -216,7 +216,7 @@ $checkout_nonce = wp_create_nonce('woocommerce-process_checkout');
                     <label class="cart-radio">
                       <input class="cart-radio__input" type="radio" name="delivery_method" value="courier">
                       <span class="cart-radio__dot"></span>
-                      <span class="cart-radio__text">Курьер</span>
+                      <span class="cart-radio__text">Экспресс курьер по Москве</span>
                     </label>
                     <label class="cart-radio">
                       <input class="cart-radio__input" type="radio" name="delivery_method" value="post" checked>
@@ -832,6 +832,7 @@ var minoksidilCart = {
     }
     if (!privacy) errors.push('Необходимо согласие с политикой конфиденциальности.');
     if (delivery === 'pvz' && !address) errors.push('Выберите пункт выдачи на карте.');
+    if (delivery === 'courier' && !address) errors.push('Введите адрес доставки для курьера.');
 
     if (errors.length) {
       errBox.innerHTML = errors.join('<br>');
@@ -873,13 +874,12 @@ var minoksidilCart = {
       terms:               '1', // WC требует согласие с условиями, если настроена T&C страница
     });
 
-    // Поля доставки
-    if (delivery !== 'pvz') {
-      data.append('shipping_first_name', firstName);
-      data.append('shipping_last_name',  lastName);
-      data.append('shipping_country',    'RU');
-      data.append('shipping_address_1',  address);
-    }
+    // Поля доставки — адрес из поля корзины всегда уходит в заказ
+    data.append('ship_to_different_address', '1');
+    data.append('shipping_first_name', firstName);
+    data.append('shipping_last_name',  lastName);
+    data.append('shipping_country',    'RU');
+    data.append('shipping_address_1',  address);
 
     fetch(minoksidilCart.checkoutUrl, {
       method:  'POST',

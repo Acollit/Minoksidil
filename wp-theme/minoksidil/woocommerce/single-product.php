@@ -4,7 +4,9 @@ get_header();
 while (have_posts()) : the_post();
 global $product;
 // ACF gallery field name: 'product_gallery'
-$acf_gallery = get_field('product_gallery', $product->get_id()) ?: [];
+$acf_gallery = (function_exists('get_field') && $product)
+    ? (get_field('product_gallery', $product->get_id()) ?: [])
+    : [];
 
 if (!empty($acf_gallery)) {
     $gallery_images = array_map(function($img) {
@@ -130,6 +132,8 @@ $in_stock    = $product->is_in_stock();
           <?php
           $sostav = get_post_meta($product->get_id(), '_product_sostav', true);
           $sposob = get_post_meta($product->get_id(), '_product_sposob', true);
+          $sostav = is_scalar($sostav) ? (string) $sostav : '';
+          $sposob = is_scalar($sposob) ? (string) $sposob : '';
           ?>
           <?php if ($sostav || $sposob) : ?>
             <?php if ($sostav) : ?>
@@ -155,6 +159,145 @@ $in_stock    = $product->is_in_stock();
 
       </div>
 
+    </div>
+  </section>
+
+  <?php
+  $pid = (int) $product->get_id();
+  $suitable_html = '';
+  $suitable_cols = ['', ''];
+  $faq_items     = [];
+  $delivery_url  = home_url('/dostavka-i-oplata/');
+  $consult_url   = $delivery_url;
+  $img           = defined('MINOKSIDIL_IMG') ? MINOKSIDIL_IMG : get_template_directory_uri() . '/assets/img/';
+
+  try {
+      if (function_exists('minoksidil_product_suitable_text')) {
+          $suitable_html = (string) minoksidil_product_suitable_text($pid);
+      }
+      if (function_exists('minoksidil_html_columns')) {
+          $suitable_cols = minoksidil_html_columns($suitable_html);
+      } elseif ($suitable_html !== '' && preg_match_all('/<p\b[^>]*>.*?<\/p>/is', $suitable_html, $m) && count($m[0]) > 1) {
+          $mid = (int) ceil(count($m[0]) / 2);
+          $suitable_cols = [
+              implode('', array_slice($m[0], 0, $mid)),
+              implode('', array_slice($m[0], $mid)),
+          ];
+      } else {
+          $suitable_cols = [$suitable_html, ''];
+      }
+      if (!is_array($suitable_cols) || !isset($suitable_cols[0])) {
+          $suitable_cols = [$suitable_html, ''];
+      }
+      $suitable_cols[0] = (string) $suitable_cols[0];
+      $suitable_cols[1] = (string) ($suitable_cols[1] ?? '');
+
+      if (function_exists('minoksidil_product_faq_items')) {
+          $faq_items = minoksidil_product_faq_items($pid);
+      }
+      if (!is_array($faq_items)) {
+          $faq_items = [];
+      }
+
+      $delivery_page = get_page_by_path('dostavka-i-oplata');
+      if ($delivery_page) {
+          $delivery_url = get_permalink($delivery_page);
+      }
+
+      $consult_posts = get_posts([
+          'name'           => 'onlajn-konsultacziya-15-20-minut',
+          'post_type'      => 'product',
+          'posts_per_page' => 1,
+          'post_status'    => 'publish',
+      ]);
+      if ($consult_posts) {
+          $consult_url = get_permalink($consult_posts[0]);
+      }
+  } catch (Throwable $e) {
+      $suitable_cols = [$suitable_html, ''];
+      $faq_items     = [];
+  }
+  ?>
+
+  <section class="product-suitable">
+    <div class="container">
+      <div class="product-suitable__card">
+        <h2 class="product-suitable__title">Кому подходит средство</h2>
+        <div class="product-suitable__cols<?php echo $suitable_cols[1] === '' ? ' product-suitable__cols--single' : ''; ?>">
+          <div class="product-suitable__col"><?php echo wp_kses_post($suitable_cols[0]); ?></div>
+          <?php if ($suitable_cols[1] !== '') : ?>
+            <div class="product-suitable__col"><?php echo wp_kses_post($suitable_cols[1]); ?></div>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="payment product-pay">
+    <div class="container">
+      <div class="delivery__header">
+        <h2 class="delivery__title">Доставка и оплата</h2>
+        <a href="<?php echo esc_url($delivery_url); ?>" class="btn btn--green product-pay__btn">Подробнее</a>
+      </div>
+      <p class="product-pay__lead">Оплатить заказ можно после подтверждения наличия:</p>
+      <div class="payment__grid">
+        <div class="payment-card">
+          <div class="payment-card__icon" aria-hidden="true">
+            <img src="<?php echo esc_url($img . 'pay-card.svg'); ?>" alt="" width="52" height="52">
+          </div>
+          <p class="payment-card__text">Банковской картой онлайн</p>
+        </div>
+        <div class="payment-card">
+          <div class="payment-card__icon" aria-hidden="true">
+            <img src="<?php echo esc_url($img . 'pay-cash.svg'); ?>" alt="" width="52" height="52">
+          </div>
+          <p class="payment-card__text">Наличными при самовывозе в Москве</p>
+        </div>
+        <div class="payment-card">
+          <div class="payment-card__icon" aria-hidden="true">
+            <img src="<?php echo esc_url($img . 'pay-telegram.svg'); ?>" alt="" width="52" height="52">
+          </div>
+          <p class="payment-card__text">Картой через Telegram-бот</p>
+        </div>
+      </div>
+      <p class="product-pay__note">
+        Доставка осуществляется во все регионы РФ через СДЭК, Яндекс Доставку, Ozon, Почту России, Яндекс Экспресс, Авито-доставка (если делаете заказ через площадку Авито).
+      </p>
+    </div>
+  </section>
+
+  <?php if ($faq_items) : ?>
+  <section class="product-faq">
+    <div class="container">
+      <h2 class="product-faq__title">Частые вопросы по использованию и выбору средства</h2>
+      <div class="product-faq__list">
+        <?php foreach ($faq_items as $item) : ?>
+          <details class="product-faq__item">
+            <summary class="product-faq__question">
+              <span class="product-faq__q"><?php echo esc_html($item['question']); ?></span>
+              <img class="product-faq__caret" src="<?php echo esc_url($img . 'faq-caret.svg'); ?>" alt="" width="24" height="24">
+            </summary>
+            <?php if ($item['answer'] !== '') : ?>
+              <div class="product-faq__answer"><?php echo wp_kses_post(wpautop((string) $item['answer'])); ?></div>
+            <?php endif; ?>
+          </details>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+  <?php endif; ?>
+
+  <section class="product-consult">
+    <div class="container">
+      <div class="product-consult__grid">
+        <div class="product-consult__copy">
+          <h2 class="product-consult__title">Остались вопросы<br>или нужна помощь с выбором?</h2>
+          <p class="product-consult__text">Мы сотрудничаем с трихологом, который поможет определить причину выпадения волос, подобрать средство, подберет другой уход для волос лица и головы</p>
+        </div>
+        <div class="product-consult__action">
+          <a href="<?php echo esc_url($consult_url); ?>" class="btn btn--blue">Заказать консультацию</a>
+        </div>
+      </div>
     </div>
   </section>
 

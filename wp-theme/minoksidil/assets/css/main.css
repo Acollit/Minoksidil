@@ -595,6 +595,18 @@ a {
     font-size: 14px;
   }
 }
+.btn--blue {
+  width: 100%;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  min-height: 67px;
+}
+@media (max-width: 768px) {
+  .btn--blue {
+    min-height: 50px;
+    font-size: 14px;
+  }
+}
 .btn--outline {
   max-width: 425px;
   width: 100%;

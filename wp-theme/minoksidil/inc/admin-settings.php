@@ -67,9 +67,17 @@ function minoksidil_settings_page(): void {
             'minoksidil_cf7_cta',
         ];
         foreach ($options as $key) {
+            if ($key === 'minoksidil_order_email') {
+                continue;
+            }
             if (isset($_POST[$key])) {
                 update_option($key, sanitize_text_field(wp_unslash($_POST[$key])));
             }
+        }
+        if (isset($_POST['minoksidil_order_email'])) {
+            update_option('minoksidil_order_email', minoksidil_sanitize_notification_email(
+                (string) wp_unslash($_POST['minoksidil_order_email'])
+            ));
         }
         // Textarea: map embed (allow iframe)
         if (isset($_POST['minoksidil_map_embed'])) {
@@ -84,10 +92,25 @@ function minoksidil_settings_page(): void {
       <form method="post">
         <?php wp_nonce_field('minoksidil_settings_save', 'minoksidil_nonce'); ?>
 
+        <h2 class="title">Письма о заказах</h2>
+        <table class="form-table">
+          <tr>
+            <th><label for="minoksidil_order_email">Куда приходят письма</label></th>
+            <td>
+              <input type="text" id="minoksidil_order_email" name="minoksidil_order_email"
+                     class="regular-text" value="<?php echo esc_attr(minoksidil_notification_email()); ?>"
+                     placeholder="<?php echo esc_attr((string) get_option('admin_email')); ?>">
+              <p class="description">
+                Сюда уходят письма о новых заказах и заявках с сайта.
+                Несколько адресов можно указать через запятую.
+              </p>
+            </td>
+          </tr>
+        </table>
+
         <h2 class="title">Контакты</h2>
         <table class="form-table">
           <?php minoksidil_settings_row('Телефон', 'minoksidil_phone', '+7 (999) 999-99-99'); ?>
-          <?php minoksidil_settings_row('Email для уведомлений о заказах', 'minoksidil_order_email', get_option('admin_email')); ?>
           <?php minoksidil_settings_row('Email (публичный)', 'minoksidil_email', 'info@minoxidillum.ru'); ?>
           <?php minoksidil_settings_row('Адрес', 'minoksidil_address', ''); ?>
         </table>
@@ -241,6 +264,19 @@ function minoksidil_settings_cf7_row(string $label, string $key): void {
     echo '</select></td></tr>';
 }
 
+/**
+ * Email(ы) для писем о заказах и заявках. Если поле пустое — почта администратора сайта.
+ */
+function minoksidil_notification_email(): string {
+    $saved = minoksidil_sanitize_notification_email((string) get_option('minoksidil_order_email', ''));
+    return $saved !== '' ? $saved : (string) get_option('admin_email');
+}
+
+function minoksidil_sanitize_notification_email(string $raw): string {
+    $parts = array_filter(array_map('sanitize_email', array_map('trim', explode(',', $raw))));
+    return implode(', ', $parts);
+}
+
 function minoksidil_settings_row(string $label, string $key, string $default): void {
     $value = get_option($key, $default);
     printf(
@@ -267,7 +303,11 @@ add_filter('manage_woocommerce_page_wc-orders_columns', function (array $columns
 add_action('manage_woocommerce_page_wc-orders_custom_column', function (string $column, WC_Order $order) {
     if ($column === 'delivery_type') {
         $type = $order->get_meta('_delivery_type', true);
-        $labels = ['courier' => '🚚 Курьер', 'pvz' => '📦 ПВЗ'];
+        $labels = [
+            'courier' => '🚚 Курьер',
+            'pvz'     => '📦 ПВЗ',
+            'post'    => '📮 Почта России',
+        ];
         echo esc_html($labels[$type] ?? '—');
     }
 }, 10, 2);

@@ -311,3 +311,254 @@
   border: 3px solid #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
 }
+
+/* ===== Блоки на странице товара ===== */
+.product-suitable,
+.product-pay,
+.product-faq,
+.product-consult {
+  margin-bottom: 140px;
+}
+.product-suitable__card {
+  padding: 50px;
+  border-radius: 40px;
+  background: #fff;
+}
+.product-suitable__title {
+  margin: 0 0 20px;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 95%;
+  text-transform: uppercase;
+  color: #000d24;
+}
+.product-suitable__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.product-suitable__cols--single {
+  grid-template-columns: 1fr;
+}
+.product-suitable__col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 24px;
+  line-height: 102%;
+  color: #000d24;
+}
+.product-suitable__col p {
+  margin: 0;
+}
+.product-pay {
+  margin-top: 0;
+}
+.product-pay .delivery__header {
+  margin-bottom: 60px;
+}
+.product-pay__btn {
+  max-width: 445px;
+}
+.product-pay__lead {
+  margin: 0 0 60px;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 95%;
+  text-transform: uppercase;
+  color: #000d24;
+}
+.product-pay .payment-card {
+  min-height: 112px;
+  box-sizing: border-box;
+}
+.product-pay .payment-card__icon img {
+  display: block;
+  width: 52px;
+  height: 52px;
+}
+.product-pay .payment-card__text {
+  font-size: 24px;
+}
+.product-pay__note {
+  margin: 80px 0 0;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 102%;
+  color: #000d24;
+}
+.product-faq__title {
+  margin: 0 0 60px;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 95%;
+  text-transform: uppercase;
+  color: #000d24;
+}
+.product-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.product-faq__item {
+  overflow: hidden;
+  border: 3px solid rgba(0, 13, 36, 0.36);
+  border-radius: 20px;
+  background: #fff;
+}
+.product-faq__question {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 25px;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 102%;
+  color: rgba(0, 13, 36, 0.74);
+  cursor: pointer;
+  list-style: none;
+  gap: 10px;
+}
+.product-faq__question::-webkit-details-marker {
+  display: none;
+}
+.product-faq__q {
+  flex: 1 1 auto;
+}
+.product-faq__caret {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  transition: transform 0.2s;
+}
+.product-faq__item[open] .product-faq__caret {
+  transform: rotate(180deg);
+}
+.product-faq__answer {
+  padding: 0 25px 25px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 102%;
+  color: rgba(0, 13, 36, 0.45);
+}
+.product-faq__answer p {
+  margin: 0 0 10px;
+}
+.product-faq__answer p:last-child {
+  margin-bottom: 0;
+}
+.product-consult__grid {
+  display: grid;
+  align-items: flex-end;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.product-consult__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.product-consult__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 95%;
+  text-transform: uppercase;
+  color: #000d24;
+}
+.product-consult__text {
+  margin: 0;
+  max-width: 772px;
+  font-size: 24px;
+  line-height: 102%;
+  color: #000d24;
+}
+.product-consult__action .btn {
+  width: 100%;
+  max-width: none;
+}
+.btn--blue {
+  width: 100%;
+  min-height: 67px;
+  color: #fff;
+  background-color: #0063b1;
+}
+@media (max-width: 1024px) {
+  .product-suitable,
+  .product-pay,
+  .product-faq,
+  .product-consult {
+    margin-bottom: 80px;
+  }
+  .product-suitable__title,
+  .product-faq__title {
+    font-size: 32px;
+  }
+  .product-suitable__col {
+    font-size: 18px;
+  }
+  .product-pay__lead {
+    margin-bottom: 32px;
+    font-size: 28px;
+  }
+  .product-pay__note {
+    margin-top: 40px;
+    font-size: 20px;
+  }
+  .product-faq__question {
+    padding: 20px;
+    font-size: 20px;
+  }
+  .product-faq__answer {
+    padding: 0 20px 20px;
+    font-size: 16px;
+  }
+  .product-consult__title {
+    font-size: 28px;
+  }
+  .product-consult__text {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .product-suitable,
+  .product-pay,
+  .product-faq,
+  .product-consult {
+    margin-bottom: 60px;
+  }
+  .product-suitable__card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .product-suitable__cols,
+  .product-consult__grid {
+    grid-template-columns: 1fr;
+  }
+  .product-suitable__title,
+  .product-faq__title,
+  .product-consult__title {
+    font-size: 20px;
+  }
+  .product-suitable__col,
+  .product-pay__note,
+  .product-consult__text {
+    font-size: 14px;
+  }
+  .product-pay__lead {
+    margin-bottom: 24px;
+    font-size: 16px;
+  }
+  .product-faq__title {
+    margin-bottom: 24px;
+  }
+  .product-faq__question {
+    padding: 16px;
+    font-size: 16px;
+  }
+  .product-faq__answer {
+    padding: 0 16px 16px;
+    font-size: 14px;
+  }
+}

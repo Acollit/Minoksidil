@@ -44,6 +44,18 @@
     }
   }
 
+  &--blue {
+    width: 100%;
+    min-height: 67px;
+    color: var(--color-white);
+    background-color: var(--color-blue);
+
+    @include small-tablet {
+      min-height: 50px;
+      font-size: 14px;
+    }
+  }
+
   &--outline {
     border: 3px solid var(--color-blue);
     width: 100%;

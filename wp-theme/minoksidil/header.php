@@ -61,7 +61,7 @@ $count = (function_exists('WC') && WC()->cart) ? WC()->cart->get_cart_contents_c
       <span>Рост волос</span>
     </a>
     <nav class="header__nav" data-menu>
-      <a href="<?php echo esc_url($shop); ?>" class="header__nav-link<?php echo is_shop() ? ' is-active' : ''; ?>" data-menu-item>Каталог</a>
+      <a href="<?php echo esc_url($shop); ?>" class="header__nav-link<?php echo (function_exists('is_shop') && is_shop()) ? ' is-active' : ''; ?>" data-menu-item>Каталог</a>
       <?php
       $pages = [
           'До/после'          => 'do-posle',
@@ -84,7 +84,7 @@ $count = (function_exists('WC') && WC()->cart) ? WC()->cart->get_cart_contents_c
       <button type="button" class="header__call-btn" data-modal-open>Заказать звонок</button>
       <a href="<?php echo esc_url($cart); ?>" class="header__cart" aria-label="Корзина">
         <?php echo minoksidil_cart_svg('#0063B1'); ?>
-        <span class="header__count <?php echo $count ? '' : ' is-empty'; ?>"><?php echo esc_html($count); ?></span>
+        <span class="header__count <?php echo $count ? '' : ' is-empty'; ?>"><?php echo esc_html((string) $count); ?></span>
       </a>
       <button class="btn-reset burger" type="button" aria-expanded="false" aria-label="Открыть меню" data-burger></button>
     </div>

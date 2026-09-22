@@ -4,12 +4,16 @@ declare(strict_types=1);
 if (!defined('ABSPATH')) exit;
 
 // ===== Первое фото товара для каталога: ACF gallery → WooCommerce fallback =====
-function minoksidil_get_product_catalog_img(WC_Product $product): string {
-    $acf = get_field('product_gallery', $product->get_id());
+function minoksidil_get_product_catalog_img($product): string {
+    if (!$product instanceof WC_Product) {
+        return MINOKSIDIL_IMG . 'product-1.webp';
+    }
+    $acf = function_exists('get_field') ? get_field('product_gallery', $product->get_id()) : null;
     if (!empty($acf)) {
         $first = $acf[0];
         if (is_array($first)) {
-            return $first['sizes']['product-catalog'] ?? ($first['sizes']['medium'] ?? $first['url']);
+            $url = $first['sizes']['product-catalog'] ?? ($first['sizes']['medium'] ?? ($first['url'] ?? ''));
+            return (string) ($url !== '' ? $url : MINOKSIDIL_IMG . 'product-1.webp');
         }
         if (is_numeric($first)) {
             return wp_get_attachment_image_url((int) $first, 'product-catalog') ?: MINOKSIDIL_IMG . 'product-1.webp';
@@ -17,7 +21,12 @@ function minoksidil_get_product_catalog_img(WC_Product $product): string {
         return (string) $first;
     }
     $img_id = $product->get_image_id();
-    return $img_id ? wp_get_attachment_image_url($img_id, 'product-catalog') : MINOKSIDIL_IMG . 'product-1.webp';
+    $fallback = MINOKSIDIL_IMG . 'product-1.webp';
+    if (!$img_id) {
+        return $fallback;
+    }
+    $url = wp_get_attachment_image_url($img_id, 'product-catalog');
+    return $url ?: $fallback;
 }
 
 // ===== Исправление элементов корзины (PHP 8.x: Undefined array key "line_total") =====
@@ -25,7 +34,10 @@ function minoksidil_get_product_catalog_img(WC_Product $product): string {
 // WooCommerce обращается к line_total/line_tax до calculate_totals() — ключей ещё нет.
 
 // При добавлении НОВОГО товара в корзину
-add_filter('woocommerce_add_cart_item', function (array $cart_item): array {
+add_filter('woocommerce_add_cart_item', function ($cart_item) {
+    if (!is_array($cart_item)) {
+        return $cart_item;
+    }
     foreach (['line_total', 'line_tax', 'line_subtotal', 'line_subtotal_tax'] as $field) {
         if (!isset($cart_item[$field])) {
             $cart_item[$field] = 0;
@@ -35,7 +47,10 @@ add_filter('woocommerce_add_cart_item', function (array $cart_item): array {
 });
 
 // При загрузке СУЩЕСТВУЮЩИХ товаров из сессии
-add_filter('woocommerce_get_cart_item_from_session', function (array $cart_item, array $values, string $key): array {
+add_filter('woocommerce_get_cart_item_from_session', function ($cart_item, $values, $key) {
+    if (!is_array($cart_item)) {
+        return $cart_item;
+    }
     foreach (['line_total', 'line_tax', 'line_subtotal', 'line_subtotal_tax'] as $field) {
         if (!isset($cart_item[$field])) {
             $cart_item[$field] = 0;
@@ -54,7 +69,7 @@ remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 // filter_cat=slug          →  tax_query по product_cat
 add_action('pre_get_posts', function (WP_Query $query): void {
     if (is_admin() || !$query->is_main_query()) return;
-    if (!is_shop() && !is_product_category() && !is_product_tag()) return;
+    if (!function_exists('is_shop') || (!is_shop() && !is_product_category() && !is_product_tag())) return;
 
     $tax_query = (array) $query->get('tax_query');
     $changed   = false;
@@ -243,7 +258,7 @@ function minoksidil_ajax_filter_products(): void {
 add_action('add_meta_boxes', function (): void {
     add_meta_box(
         'minoksidil_product_fields',
-        'Состав и Способ применения',
+        'Состав и способ применения',
         'minoksidil_product_fields_render',
         'product',
         'normal',
@@ -251,10 +266,81 @@ add_action('add_meta_boxes', function (): void {
     );
 });
 
+function minoksidil_product_faq_questions(): array {
+    return [
+        'Как выбрать средство под себя?',
+        'Что делать, если пропустил нанесение средства?',
+        'Можно ли использовать средство вместе с другими средствами для волос?',
+        'Когда появляются результаты роста волос?',
+        'Можно ли использовать лосьон для роста волос на бороде?',
+        'Какие побочные эффекты могут возникнуть при использовании?',
+        'Как работает миноксидил?',
+    ];
+}
+
+function minoksidil_product_suitable_default(): string {
+    return '<p>Мы продаём только оригинальные лосьоны для восстановления волос. Привозим их из Америки и Индии, не работаем с сомнительными копиями и не собираем ассортимент ради количества. В нашей линейке — только те препараты, которые действительно помогают восстанавливать волосы и многократно проверены на практике.</p>'
+        . '<p>Для нас важно не просто продать человеку лосьон, а показать, что восстановление волос — это доступный и не сложный процесс, которым может воспользоваться практически любой человек. Без лишних усложнений, без мифов и без ощущения, что для результата нужны какие-то недостижимые решения.</p>'
+        . '<p>Именно поэтому мы не ограничиваемся только продажей. Мы собираем понятную информацию, инструкции, ответы на частые вопросы и рекомендации по использованию, чтобы человек мог либо самостоятельно разобраться в теме, либо обратиться к нам за консультацией.</p>'
+        . '<p>Наша идея простая: дать человеку оригинальный препарат, понятную схему, рабочий инструмент и поддержку. Чтобы восстановление волос было не пугающей историей, а лёгким процессом с хорошими результатами!</p>';
+}
+
+function minoksidil_product_suitable_text($product_id): string {
+    $product_id = (int) $product_id;
+    $acf = function_exists('minoksidil_acf') ? minoksidil_acf('product_suitable', '', $product_id) : '';
+    if (is_string($acf) && trim(wp_strip_all_tags($acf)) !== '') {
+        $html = $acf;
+    } else {
+        $meta = (string) get_post_meta($product_id, '_product_suitable', true);
+        $html = $meta !== '' ? wpautop($meta) : minoksidil_product_suitable_default();
+    }
+    if (!preg_match('/<p[\s>]/i', $html)) {
+        $html = wpautop($html);
+    }
+    return $html;
+}
+
+function minoksidil_html_columns($html): array {
+    $html = (string) $html;
+    if (!preg_match_all('/<p\b[^>]*>.*?<\/p>/is', $html, $matches) || count($matches[0]) < 2) {
+        return [$html, ''];
+    }
+    $paras = $matches[0];
+    $mid   = (int) ceil(count($paras) / 2);
+    return [
+        implode('', array_slice($paras, 0, $mid)),
+        implode('', array_slice($paras, $mid)),
+    ];
+}
+
+function minoksidil_product_faq_items($product_id): array {
+    $product_id = (int) $product_id;
+    $rows = function_exists('minoksidil_acf_rows') ? minoksidil_acf_rows('product_faq', [], $product_id) : [];
+    if (!$rows) {
+        $raw = get_post_meta($product_id, '_product_faq', true);
+        $rows = is_array($raw) ? $raw : [];
+    }
+    $out = [];
+    foreach ($rows as $row) {
+        $q = trim((string) ($row['question'] ?? ''));
+        $a = trim((string) ($row['answer'] ?? ''));
+        if ($q === '') {
+            continue;
+        }
+        $out[] = ['question' => $q, 'answer' => $a];
+    }
+    if (!$out) {
+        foreach (minoksidil_product_faq_questions() as $q) {
+            $out[] = ['question' => $q, 'answer' => ''];
+        }
+    }
+    return $out;
+}
+
 function minoksidil_product_fields_render(WP_Post $post): void {
     wp_nonce_field('minoksidil_product_fields_save', 'minoksidil_product_nonce');
-    $sostav  = get_post_meta($post->ID, '_product_sostav', true);
-    $sposob  = get_post_meta($post->ID, '_product_sposob', true);
+    $sostav = (string) get_post_meta($post->ID, '_product_sostav', true);
+    $sposob = (string) get_post_meta($post->ID, '_product_sposob', true);
     ?>
     <p>
       <label style="font-weight:600;display:block;margin-bottom:4px;" for="product_sostav">Состав</label>
@@ -269,9 +355,10 @@ function minoksidil_product_fields_render(WP_Post $post): void {
     <?php
 }
 
-add_action('save_post_product', function (int $post_id): void {
+add_action('save_post_product', function ($post_id): void {
+    $post_id = (int) $post_id;
     if (!isset($_POST['minoksidil_product_nonce'])) return;
-    if (!wp_verify_nonce(wp_unslash($_POST['minoksidil_product_nonce']), 'minoksidil_product_fields_save')) return;
+    if (!wp_verify_nonce((string) wp_unslash($_POST['minoksidil_product_nonce']), 'minoksidil_product_fields_save')) return;
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
     if (!current_user_can('edit_post', $post_id)) return;
 
@@ -312,7 +399,7 @@ add_filter('woocommerce_email_enabled_new_order', '__return_false');
 add_action('woocommerce_checkout_order_processed', 'minoksidil_send_order_email_to_admin', 10, 3);
 
 function minoksidil_send_order_email_to_admin(int $order_id, array $posted_data, WC_Order $order): void {
-    $admin_email = get_option('minoksidil_order_email', get_option('admin_email'));
+    $admin_email = minoksidil_notification_email();
 
     $subject = sprintf('Новый заказ #%d на сайте %s', $order->get_order_number(), get_bloginfo('name'));
 
@@ -326,12 +413,11 @@ function minoksidil_send_order_email_to_admin(int $order_id, array $posted_data,
 }
 
 function minoksidil_render_order_email(WC_Order $order): void {
-    $delivery_type   = $order->get_meta('_delivery_type', true);
-    $delivery_label  = $delivery_type === 'pvz' ? 'Пункт выдачи заказов (ПВЗ)' : 'Курьерская доставка';
-    $pvz_address     = $order->get_meta('_pvz_address', true);
-    $pvz_service     = $order->get_meta('_pvz_service', true);
-    $service_labels  = ['cdek' => 'СДЭК', 'yandex' => 'Яндекс Маркет', 'ozon' => 'Ozon'];
-    $pvz_service_label = $service_labels[$pvz_service] ?? strtoupper((string) $pvz_service);
+    $delivery_type     = (string) $order->get_meta('_delivery_type', true);
+    $delivery_label    = minoksidil_delivery_type_labels()[$delivery_type] ?? $delivery_type;
+    $delivery_address  = minoksidil_order_delivery_address($order);
+    $pvz_service_label = minoksidil_order_pvz_service_label($order);
+    $address_label     = $delivery_type === 'pvz' ? 'Адрес ПВЗ' : 'Адрес';
     ?>
     <!DOCTYPE html>
     <html>
@@ -374,14 +460,13 @@ function minoksidil_render_order_email(WC_Order $order): void {
         <table style="width:100%; border-collapse: collapse;">
           <tr><td style="padding:6px 0; color:#666; width:140px;">Способ:</td>
               <td style="padding:6px 0; font-weight:600;"><?php echo esc_html($delivery_label); ?></td></tr>
-          <?php if ($delivery_type === 'pvz' && $pvz_address): ?>
+          <?php if ($delivery_type === 'pvz') : ?>
           <tr><td style="padding:6px 0; color:#666;">Служба:</td>
-              <td style="padding:6px 0; font-weight:600;"><?php echo esc_html($pvz_service_label); ?></td></tr>
-          <tr><td style="padding:6px 0; color:#666;">Адрес ПВЗ:</td>
-              <td style="padding:6px 0; font-weight:600;"><?php echo esc_html($pvz_address); ?></td></tr>
-          <?php elseif ($delivery_type === 'courier'): ?>
-          <tr><td style="padding:6px 0; color:#666;">Адрес:</td>
-              <td style="padding:6px 0; font-weight:600;"><?php echo esc_html($order->get_formatted_shipping_address()); ?></td></tr>
+              <td style="padding:6px 0; font-weight:600;"><?php echo esc_html($pvz_service_label !== '' ? $pvz_service_label : '—'); ?></td></tr>
+          <?php endif; ?>
+          <?php if ($delivery_address !== '') : ?>
+          <tr><td style="padding:6px 0; color:#666;"><?php echo esc_html($address_label); ?>:</td>
+              <td style="padding:6px 0; font-weight:600;"><?php echo esc_html($delivery_address); ?></td></tr>
           <?php endif; ?>
         </table>
 
@@ -452,17 +537,64 @@ function minoksidil_render_order_email(WC_Order $order): void {
 // ===== Save custom checkout fields to order meta =====
 add_action('woocommerce_checkout_create_order', 'minoksidil_save_checkout_meta', 10, 2);
 
+function minoksidil_delivery_type_labels(): array {
+    return [
+        'pvz'     => 'Пункт выдачи заказов (ПВЗ)',
+        'courier' => 'Экспресс курьер по Москве',
+        'post'    => 'Почта России',
+    ];
+}
+
+function minoksidil_pvz_service_labels(): array {
+    return [
+        'cdek'   => 'СДЭК',
+        'yandex' => 'Яндекс Маркет',
+        'ozon'   => 'Ozon',
+    ];
+}
+
+function minoksidil_order_delivery_address(WC_Order $order): string {
+    $pvz = trim((string) $order->get_meta('_pvz_address', true));
+    if ($pvz !== '') {
+        return $pvz;
+    }
+    $shipping = trim((string) $order->get_shipping_address_1());
+    return $shipping;
+}
+
+function minoksidil_order_pvz_service_label(WC_Order $order): string {
+    $service = (string) $order->get_meta('_pvz_service', true);
+    if ($service === '') {
+        return '';
+    }
+    $labels = minoksidil_pvz_service_labels();
+    return $labels[$service] ?? strtoupper($service);
+}
+
 function minoksidil_save_checkout_meta(WC_Order $order, array $data): void {
     $delivery_type = isset($_POST['delivery_type']) ? sanitize_text_field(wp_unslash($_POST['delivery_type'])) : 'courier';
     $order->update_meta_data('_delivery_type', $delivery_type);
 
-    if ($delivery_type === 'pvz') {
-        $pvz_service = isset($_POST['pvz_service']) ? sanitize_text_field(wp_unslash($_POST['pvz_service'])) : '';
-        $pvz_code    = isset($_POST['pvz_code']) ? sanitize_text_field(wp_unslash($_POST['pvz_code'])) : '';
-        $pvz_address = isset($_POST['pvz_address']) ? sanitize_text_field(wp_unslash($_POST['pvz_address'])) : '';
-        $order->update_meta_data('_pvz_service', $pvz_service);
-        $order->update_meta_data('_pvz_code', $pvz_code);
-        $order->update_meta_data('_pvz_address', $pvz_address);
+    $pvz_service = isset($_POST['pvz_service']) ? sanitize_text_field(wp_unslash($_POST['pvz_service'])) : '';
+    $pvz_code    = isset($_POST['pvz_code']) ? sanitize_text_field(wp_unslash($_POST['pvz_code'])) : '';
+    $address     = isset($_POST['pvz_address']) ? sanitize_text_field(wp_unslash($_POST['pvz_address'])) : '';
+    if ($address === '' && isset($_POST['shipping_address_1'])) {
+        $address = sanitize_text_field(wp_unslash($_POST['shipping_address_1']));
+    }
+
+    $order->update_meta_data('_pvz_service', $pvz_service);
+    $order->update_meta_data('_pvz_code', $pvz_code);
+    $order->update_meta_data('_pvz_address', $address);
+
+    if ($address !== '') {
+        $order->set_shipping_address_1($address);
+        $order->set_shipping_country('RU');
+        if ($order->get_shipping_first_name() === '') {
+            $order->set_shipping_first_name($order->get_billing_first_name());
+        }
+        if ($order->get_shipping_last_name() === '') {
+            $order->set_shipping_last_name($order->get_billing_last_name());
+        }
     }
 }
 
@@ -479,20 +611,24 @@ add_action('woocommerce_checkout_process', function () {
 
 // ===== Display delivery info in admin order view =====
 add_action('woocommerce_admin_order_data_after_shipping_address', function (WC_Order $order) {
-    $delivery_type = $order->get_meta('_delivery_type', true);
-    if (!$delivery_type) return;
+    $delivery_type = (string) $order->get_meta('_delivery_type', true);
+    if ($delivery_type === '') {
+        return;
+    }
 
-    $labels = ['courier' => 'Курьер', 'pvz' => 'Пункт выдачи (ПВЗ)'];
+    $labels = minoksidil_delivery_type_labels();
     $label  = $labels[$delivery_type] ?? $delivery_type;
     echo '<p><strong>Тип доставки:</strong> ' . esc_html($label) . '</p>';
 
     if ($delivery_type === 'pvz') {
-        $service    = $order->get_meta('_pvz_service', true);
-        $address    = $order->get_meta('_pvz_address', true);
-        $svc_labels = ['cdek' => 'СДЭК', 'yandex' => 'Яндекс Маркет', 'ozon' => 'Ozon'];
-        $svc_label  = $svc_labels[$service] ?? strtoupper((string) $service);
-        if ($service) echo '<p><strong>Служба доставки:</strong> ' . esc_html($svc_label) . '</p>';
-        if ($address) echo '<p><strong>Адрес ПВЗ:</strong> ' . esc_html($address) . '</p>';
+        $svc_label = minoksidil_order_pvz_service_label($order);
+        echo '<p><strong>Служба доставки:</strong> ' . esc_html($svc_label !== '' ? $svc_label : '—') . '</p>';
+    }
+
+    $address = minoksidil_order_delivery_address($order);
+    if ($address !== '') {
+        $addr_label = $delivery_type === 'pvz' ? 'Адрес ПВЗ' : 'Адрес доставки';
+        echo '<p><strong>' . esc_html($addr_label) . ':</strong> ' . esc_html($address) . '</p>';
     }
 }, 10);
 
@@ -629,7 +765,7 @@ function minoksidil_handle_callback(): void {
     // Сохраняем заявку в админку до отправки письма — иначе при сбое почты она пропадёт бесследно.
     minoksidil_save_request_lead($name, $phone, $email, $message, 'Форма на сайте (модальное окно)');
 
-    $admin_email = get_option('minoksidil_order_email', get_option('admin_email'));
+    $admin_email = minoksidil_notification_email();
     $subject     = 'Заявка на обратный звонок с сайта ' . get_bloginfo('name');
     $body        = sprintf(
         "<p><b>Имя:</b> %s</p><p><b>Телефон:</b> %s</p><p><b>Email:</b> %s</p><p><b>Сообщение:</b> %s</p>",
